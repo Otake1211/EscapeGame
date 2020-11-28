@@ -23,14 +23,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Setting"
-        android:onClick="onClick"/>
+        android:onClick="onSetting"/>
 
     <Button
         android:id="@+id/Start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:onClick="onClick"/>
+        android:onClick="onStart"/>
 
     </LinearLayout>
 
