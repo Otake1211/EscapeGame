@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class north extends AppCompatActivity {
+public class south extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_north);
+        setContentView(R.layout.activity_south);
     }
-
 
     public void onMain(View view) {
         switch (view.getId()) {
@@ -21,14 +20,6 @@ public class north extends AppCompatActivity {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
-        }
-    }
-
-    public void onWest(View view) {
-        switch (view.getId()) {
-            case R.id.west:
-                Intent intent = new  Intent(this, west.class);
-                startActivity(intent);break;
         }
     }
 
@@ -40,4 +31,11 @@ public class north extends AppCompatActivity {
         }
     }
 
+    public void onWest(View view) {
+        switch (view.getId()) {
+            case R.id.west:
+                Intent intent = new  Intent(this, west.class);
+                startActivity(intent);break;
+        }
+    }
 }

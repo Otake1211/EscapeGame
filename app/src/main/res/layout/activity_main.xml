@@ -26,11 +26,11 @@
         android:onClick="onSetting"/>
 
     <Button
-        android:id="@+id/Start"
+        android:id="@+id/north"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:onClick="onStart"/>
+        android:onClick="onNorth"/>
 
     </LinearLayout>
 

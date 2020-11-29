@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".north">
+    tools:context=".east">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/north"/>
+        android:src="@drawable/east"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,22 +25,22 @@
             android:text="Main Menu" />
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/west"
+                android:id="@+id/north"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onWest"
+                android:onClick="onNorth"
                 android:text="Left" />
 
             <Button
-                android:id="@+id/east"
+                android:id="@+id/south"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onEast"
+                android:onClick="onSouth"
                 android:text="Right" />
 
 

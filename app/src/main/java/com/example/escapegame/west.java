@@ -6,19 +6,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class west extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_west);
     }
 
-    public void onSetting(View view) {
+    public void onMain(View view) {
         switch (view.getId()) {
-            case R.id.Setting:
-            Intent intent = new  Intent(this, Setting.class);
-        startActivity(intent);break;
+            case R.id.Main:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
+
+    public void onSouth(View view) {
+        switch (view.getId()) {
+            case R.id.south:
+                Intent intent = new  Intent(this, south.class);
+                startActivity(intent);break;
         }
     }
 
@@ -29,4 +38,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);break;
         }
     }
+
 }
