@@ -20,24 +20,27 @@
         android:onClick="onMain"
         android:text="⚙" />
 
-
-    <Button
+    <ImageButton
         android:id="@+id/East"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:background="@null"
         android:onClick="onEast"
-        android:text="Right" />
+        android:scaleType="centerInside"
+        android:src="@drawable/arrowright" />
 
-    <Button
+    <ImageButton
         android:id="@+id/West"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
+        android:background="@null"
+        android:scaleType="centerInside"
         android:onClick="onWest"
-        android:text="Left" />
+        android:src="@drawable/arrowleft" />
 
 
 </RelativeLayout>

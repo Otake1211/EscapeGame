@@ -20,24 +20,28 @@
         android:layout_alignParentRight="true"
         android:text="⚙" />
 
+<ImageButton
+    android:id="@+id/South"
+    android:layout_width="60sp"
+    android:layout_height="60sp"
+    android:scaleType="centerInside"
+    android:background="@null"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:onClick="onSouth"
+    android:src="@drawable/arrowright"/>
 
-    <Button
-        android:id="@+id/South"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:onClick="onSouth"
-        android:text="Right" />
-
-    <Button
+    <ImageButton
         android:id="@+id/North"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
+        android:background="@null"
+        android:scaleType="centerInside"
         android:onClick="onNorth"
-        android:text="Left" />
+        android:src="@drawable/arrowleft" />
+
 
 
 </RelativeLayout>
