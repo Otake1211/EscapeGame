@@ -20,7 +20,7 @@
         android:layout_alignParentRight="true"
         android:text="⚙" />
 
-<ImageButton
+    <ImageButton
     android:id="@+id/South"
     android:layout_width="60sp"
     android:layout_height="60sp"
