@@ -20,7 +20,6 @@
         android:onClick="onMain"
         android:text="⚙" />
 
-
     <Button
         android:id="@+id/West"
         android:layout_width="wrap_content"
