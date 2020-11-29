@@ -4,48 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".north">
+    tools:context=".North">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/north"/>
+        android:src="@drawable/north" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/Main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onMain"
-            android:text="Main Menu" />
-
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/west"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onWest"
-                android:text="Left" />
-
-            <Button
-                android:id="@+id/east"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onEast"
-                android:text="Right" />
+    <Button
+        android:id="@+id/Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="onMain"
+        android:text="⚙" />
 
 
-        </LinearLayout>
+    <Button
+        android:id="@+id/East"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:onClick="onEast"
+        android:text="Right" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/West"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:onClick="onWest"
+        android:text="Left" />
+
 
 </RelativeLayout>

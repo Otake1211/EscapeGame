@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onNorth(View view) {
         switch (view.getId()) {
-            case R.id.north:
-                Intent intent = new  Intent(this, north.class);
+            case R.id.North:
+                Intent intent = new  Intent(this, North.class);
                 startActivity(intent);break;
         }
     }

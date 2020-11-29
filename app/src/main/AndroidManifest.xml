@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
-        <activity android:name=".west"></activity>
+        <activity android:name=".West"/>
         <activity android:name=".South" />
-        <activity android:name=".east" />
-        <activity android:name=".north" />
+        <activity android:name=".East" />
+        <activity android:name=".North" />
         <activity android:name=".Setting" />
         <activity android:name=".MainActivity">
             <intent-filter>
