@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
         <activity android:name=".west"></activity>
-        <activity android:name=".south" />
+        <activity android:name=".South" />
         <activity android:name=".east" />
         <activity android:name=".north" />
         <activity android:name=".Setting" />

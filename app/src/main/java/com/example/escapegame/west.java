@@ -26,7 +26,7 @@ public class west extends AppCompatActivity {
     public void onSouth(View view) {
         switch (view.getId()) {
             case R.id.south:
-                Intent intent = new  Intent(this, south.class);
+                Intent intent = new  Intent(this, South.class);
                 startActivity(intent);break;
         }
     }
