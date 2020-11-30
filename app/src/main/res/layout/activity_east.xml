@@ -18,7 +18,11 @@
         android:layout_height="wrap_content"
         android:onClick="onMain"
         android:layout_alignParentRight="true"
-        android:text="⚙" />
+        android:text="⚙"
+        android:textSize="30sp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="5dp"/>
 
     <ImageButton
     android:id="@+id/South"
