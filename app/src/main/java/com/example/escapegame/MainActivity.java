@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.Setting:
             Intent intent = new  Intent(this, Setting.class);
-        startActivity(intent);break;
+        startActivity(intent);
+        break;
         }
     }
 
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.North:
                 Intent intent = new  Intent(this, North.class);
-                startActivity(intent);break;
+                startActivity(intent);
+                break;
         }
     }
 }

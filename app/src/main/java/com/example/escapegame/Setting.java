@@ -19,7 +19,9 @@ public class Setting extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.Main:
                 Intent intent = new Intent(this,MainActivity.class);
-                startActivity(intent);break;
+                startActivity(intent);
+                finish();
+                break;
         }
     }
 

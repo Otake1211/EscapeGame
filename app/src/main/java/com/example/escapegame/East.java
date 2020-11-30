@@ -19,6 +19,7 @@ public class East extends AppCompatActivity {
             case R.id.Main:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
@@ -27,6 +28,7 @@ public class East extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.North:
                 Intent intent = new  Intent(this, North.class);
+                finish();
                 startActivity(intent);break;
         }
     }
@@ -35,6 +37,7 @@ public class East extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.South:
                 Intent intent = new  Intent(this, South.class);
+                finish();
                 startActivity(intent);break;
         }
     }
