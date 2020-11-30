@@ -6,23 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".South">
 
+
     <ImageView
+        android:src="@drawable/south"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/south" />
+        android:scaleType="centerCrop" />
+
 
     <Button
         android:id="@+id/Main"
+        android:onClick="onMain"
+        android:text="⚙"
+
+        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:onClick="onMain"
-        android:text="⚙"
-        android:textSize="30sp"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:padding="5dp"/>
+        android:layout_margin="6sp"
+        android:padding="7dp"/>
+
 
     <ImageButton
         android:id="@+id/West"
@@ -35,16 +41,17 @@
         android:scaleType="centerInside"
         android:src="@drawable/arrowright" />
 
+
     <ImageButton
         android:id="@+id/East"
+        android:onClick="onEast"
+        android:src="@drawable/arrowleft"
+
         android:layout_width="60sp"
         android:layout_height="60sp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:background="@null"
-        android:scaleType="centerInside"
-        android:onClick="onEast"
-        android:src="@drawable/arrowleft" />
-
+        android:scaleType="centerInside" />
 
 </RelativeLayout>

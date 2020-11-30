@@ -8,32 +8,36 @@
 
 
     <ImageView
+        android:src="@drawable/face"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/face"/>
+        android:scaleType="centerCrop" />
+
 
     <Button
         android:id="@+id/Setting"
+        android:onClick="onSetting"
+        android:text="⚙"
+
+        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:textSize="30sp"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:padding="5dp"
-        android:text="⚙"
-        android:onClick="onSetting"/>
+        android:layout_margin="6sp"
+        android:padding="7dp"/>
 
     <Button
         android:id="@+id/North"
+        android:onClick="onNorth"
+        android:text="Start"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Start"
-        android:textSize="50sp"
-        android:onClick="onNorth"/>
-
+        android:textSize="50sp" />
 
 </RelativeLayout>
 
