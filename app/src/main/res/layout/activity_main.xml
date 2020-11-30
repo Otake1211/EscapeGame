@@ -13,26 +13,21 @@
         android:scaleType="centerCrop"
         android:src="@drawable/face"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
     <Button
         android:id="@+id/Setting"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Setting"
+        android:layout_alignParentRight="true"
+        android:text="⚙"
         android:onClick="onSetting"/>
 
     <Button
         android:id="@+id/North"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:text="Start"
         android:onClick="onNorth"/>
-
-    </LinearLayout>
 
 
 </RelativeLayout>
