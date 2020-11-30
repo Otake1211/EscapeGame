@@ -18,9 +18,9 @@
     <Button
         android:id="@+id/Main"
         android:onClick="onMain"
+        android:text="Main Menu"
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main Menu" />
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
