@@ -6,17 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Setting">
 
+
     <ImageView
+        android:src="@drawable/green"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/green"/>
+        android:scaleType="centerCrop" />
+
 
     <Button
         android:id="@+id/Main"
+        android:onClick="onMain"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Main Menu"
-        android:onClick="onMain"/>
+        android:text="Main Menu" />
 
 </RelativeLayout>
