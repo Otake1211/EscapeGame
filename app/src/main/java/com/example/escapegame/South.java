@@ -14,6 +14,8 @@ public class South extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_south);
+        View decor = getWindow().getDecorView();
+        decor.setSystemUiVisibility( View.SYSTEM_UI_FLAG_FULLSCREEN );
     }
 
 
