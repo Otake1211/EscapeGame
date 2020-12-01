@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +11,8 @@
 
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/north" />
+        android:src="@drawable/north"
+        android:contentDescription="@null" />
 
 
     <Button
@@ -29,7 +29,8 @@
         android:padding="0dp"
         android:text="⚙"
         android:textColor="#000000"
-        android:textSize="60sp" />
+        android:textSize="60sp"
+        android:layout_alignParentEnd="true" />
 
 
     <LinearLayout
@@ -53,7 +54,8 @@
                 android:background="@null"
                 android:onClick="onEast"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowright" />
+                android:src="@drawable/arrowright"
+                android:contentDescription="@null" />
 
 
             <ImageButton
@@ -66,7 +68,8 @@
                 android:background="@null"
                 android:onClick="onWest"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowleft"/>
+                android:src="@drawable/arrowleft"
+                android:contentDescription="@null" />
 
         </RelativeLayout>
 
@@ -89,31 +92,36 @@
                     android:layout_width="130sp"
                     android:layout_height="match_parent"
                     android:text="①"
-                    android:textSize="45sp" />
+                    android:textSize="45sp"
+                    tools:ignore="ButtonStyle" />
 
                 <Button
                     android:layout_width="130sp"
                     android:layout_height="match_parent"
                     android:text="②"
-                    android:textSize="45sp" />
+                    android:textSize="45sp"
+                    tools:ignore="ButtonStyle" />
 
                 <Button
                     android:layout_width="130sp"
                     android:layout_height="match_parent"
                     android:text="③"
-                    android:textSize="45sp" />
+                    android:textSize="45sp"
+                    tools:ignore="ButtonStyle" />
 
                 <Button
                     android:layout_width="130sp"
                     android:layout_height="match_parent"
                     android:text="④"
-                    android:textSize="45sp" />
+                    android:textSize="45sp"
+                    tools:ignore="ButtonStyle" />
 
                 <Button
                     android:layout_width="130sp"
                     android:layout_height="match_parent"
                     android:text="⑤"
-                    android:textSize="45sp" />
+                    android:textSize="45sp"
+                    tools:ignore="ButtonStyle" />
 
 
             </LinearLayout>
