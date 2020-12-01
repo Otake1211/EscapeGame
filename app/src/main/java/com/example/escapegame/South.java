@@ -15,32 +15,20 @@ public class South extends AppCompatActivity {
     }
 
     public void onMain(View view) {
-        switch (view.getId()) {
-            case R.id.Main:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
-                break;
-        }
     }
 
     public void onEast(View view) {
-        switch (view.getId()) {
-            case R.id.East:
                 Intent intent = new  Intent(this, East.class);
                 startActivity(intent);
                 finish();
-                break;
-        }
     }
 
     public void onWest(View view) {
-        switch (view.getId()) {
-            case R.id.West:
                 Intent intent = new  Intent(this, West.class);
                 startActivity(intent);
                 finish();
-                break;
-        }
     }
 }
