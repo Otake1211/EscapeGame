@@ -70,9 +70,26 @@
 
         </RelativeLayout>
 
+
         //アイテム欄
-        //ここに広告
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="80sp"
+                android:orientation="horizontal">
+
+
+                //アイテムのボタンを配置する場所
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        //広告を配置する場所
 
     </LinearLayout>
-
 </RelativeLayout>
