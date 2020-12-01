@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(xplace+","+yplace)
-                        .setPositiveButton("#", null);
+                        .setPositiveButton("OK", null);
                 builder.show();
                 break;
 
