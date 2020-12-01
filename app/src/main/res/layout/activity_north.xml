@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -47,8 +48,8 @@
                 android:layout_width="60sp"
                 android:layout_height="60sp"
 
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
                 android:background="@null"
                 android:onClick="onEast"
                 android:scaleType="centerInside"
@@ -60,12 +61,12 @@
                 android:layout_width="60sp"
                 android:layout_height="60sp"
 
+                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
                 android:background="@null"
                 android:onClick="onWest"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowleft" />
+                android:src="@drawable/arrowleft"/>
 
         </RelativeLayout>
 
@@ -85,17 +86,34 @@
                 //アイテムのボタンを配置する場所
 
                 <Button
-                    android:layout_width="150sp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="130sp"
+                    android:layout_height="match_parent"
+                    android:text="①"
+                    android:textSize="45sp" />
+
                 <Button
-                    android:layout_width="150sp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="130sp"
+                    android:layout_height="match_parent"
+                    android:text="②"
+                    android:textSize="45sp" />
+
                 <Button
-                    android:layout_width="150sp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="130sp"
+                    android:layout_height="match_parent"
+                    android:text="③"
+                    android:textSize="45sp" />
+
                 <Button
-                    android:layout_width="150sp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="130sp"
+                    android:layout_height="match_parent"
+                    android:text="④"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:layout_width="130sp"
+                    android:layout_height="match_parent"
+                    android:text="⑤"
+                    android:textSize="45sp" />
 
 
             </LinearLayout>
@@ -103,6 +121,14 @@
 
 
         //広告を配置する場所
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:textColor="#000"
+            android:text="広告"
+            android:textSize="50sp" />
+
 
     </LinearLayout>
 </RelativeLayout>
