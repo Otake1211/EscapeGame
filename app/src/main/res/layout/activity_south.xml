@@ -3,16 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".South">
+    tools:context=".South"
+    tools:ignore="ExtraText">
 
+
+    //背景
 
     <ImageView
         android:layout_width="match_parent"
 
         android:layout_height="match_parent"
+        android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/south"
-        android:contentDescription="@null" />
+        android:src="@drawable/south" />
 
 
     <Button
@@ -20,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="0sp"
         android:background="#00000000"
@@ -29,8 +33,7 @@
         android:padding="0dp"
         android:text="⚙"
         android:textColor="#000000"
-        android:textSize="60sp"
-        android:layout_alignParentEnd="true" />
+        android:textSize="60sp" />
 
 
     <LinearLayout
@@ -39,6 +42,9 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         tools:ignore="ExtraText">
+
+
+        //視点移動
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,14 +55,14 @@
                 android:id="@+id/West"
                 android:layout_width="60sp"
                 android:layout_height="60sp"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:background="@null"
+                android:contentDescription="@null"
                 android:onClick="onWest"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowright"
-                android:contentDescription="@null"
-                android:layout_alignParentEnd="true" />
+                android:src="@drawable/arrowright" />
 
 
             <ImageButton
@@ -64,15 +70,15 @@
                 android:layout_width="60sp"
                 android:layout_height="60sp"
 
+                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:background="@null"
+                android:contentDescription="@null"
                 android:onClick="onEast"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowleft"
-                android:contentDescription="@null" />
+                android:src="@drawable/arrowleft" />
         </RelativeLayout>
-
 
 
         //アイテム欄

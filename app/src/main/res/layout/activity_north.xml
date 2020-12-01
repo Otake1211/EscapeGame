@@ -3,16 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".North">
+    tools:context=".North"
+    tools:ignore="ExtraText">
 
+
+    //背景
 
     <ImageView
         android:layout_width="match_parent"
 
         android:layout_height="match_parent"
+        android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/north"
-        android:contentDescription="@null" />
+        android:src="@drawable/north" />
 
 
     <Button
@@ -20,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="0sp"
         android:background="#00000000"
@@ -29,8 +33,7 @@
         android:padding="0dp"
         android:text="⚙"
         android:textColor="#000000"
-        android:textSize="60sp"
-        android:layout_alignParentEnd="true" />
+        android:textSize="60sp" />
 
 
     <LinearLayout
@@ -39,6 +42,9 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         tools:ignore="ExtraText">
+
+
+        //視点移動
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -52,10 +58,10 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:background="@null"
+                android:contentDescription="@null"
                 android:onClick="onEast"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowright"
-                android:contentDescription="@null" />
+                android:src="@drawable/arrowright" />
 
 
             <ImageButton
@@ -66,10 +72,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:background="@null"
+                android:contentDescription="@null"
                 android:onClick="onWest"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowleft"
-                android:contentDescription="@null" />
+                android:src="@drawable/arrowleft" />
 
         </RelativeLayout>
 
@@ -133,8 +139,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="80sp"
-            android:textColor="#000"
             android:text="広告"
+            android:textColor="#000"
             android:textSize="50sp" />
 
 
