@@ -16,13 +16,9 @@ public class Setting extends AppCompatActivity {
     }
 
     public void onMain(View view) {
-                Intent intent = new Intent(this,MainActivity.class);
-                startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
-
-
-
-
 
 
 }
