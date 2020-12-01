@@ -8,53 +8,70 @@
 
 
     <ImageView
-        android:src="@drawable/west"
-
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/west" />
 
 
     <Button
         android:id="@+id/Main"
-        android:onClick="onMain"
-        android:text="⚙"
-
-        android:background="#00000000"
-        android:textColor="#000000"
-        android:textSize="60sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_alignParentRight="true"
+        android:layout_margin="0sp"
+        android:background="#00000000"
         android:minWidth="0dp"
         android:minHeight="0dp"
-        android:layout_margin="0sp"
-        android:padding="0dp"/>
+        android:onClick="onMain"
+        android:padding="0dp"
+        android:text="⚙"
+        android:textColor="#000000"
+        android:textSize="60sp" />
 
 
-    <ImageButton
-        android:id="@+id/North"
-        android:onClick="onNorth"
-        android:src="@drawable/arrowright"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
 
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:background="@null"
-        android:scaleType="centerInside" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/North"
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:onClick="onNorth"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrowright" />
 
 
-    <ImageButton
-        android:id="@+id/South"
-        android:onClick="onSouth"
-        android:src="@drawable/arrowleft"
+            <ImageButton
+                android:id="@+id/South"
+                android:layout_width="60sp"
+                android:layout_height="60sp"
 
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:background="@null"
-        android:scaleType="centerInside" />
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:onClick="onSouth"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrowleft" />
+
+        </RelativeLayout>
+
+        //アイテム欄
+        //ここに広告
+
+    </LinearLayout>
 
 </RelativeLayout>
