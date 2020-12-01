@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
-
 public class South extends AppCompatActivity {
 
     @Override
