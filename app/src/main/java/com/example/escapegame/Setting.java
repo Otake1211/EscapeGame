@@ -12,8 +12,7 @@ public class Setting extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        View decor = getWindow().getDecorView();
-        decor.setSystemUiVisibility( View.SYSTEM_UI_FLAG_FULLSCREEN );
+
     }
 
     public void onMain(View view) {

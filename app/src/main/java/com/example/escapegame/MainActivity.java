@@ -11,6 +11,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
+import static android.view.View.SYSTEM_UI_FLAG_FULLSCREEN;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        View decor = getWindow().getDecorView();
-        decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 int yplace = (int)(motionEvent.getY()*2000/screenHeight);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("(X,Y)=("+xplace + ","+yplace+")\ndisplay:"+screenWidth+"×"+screenHeight)
+                builder.setMessage("("+xplace + ","+yplace+")")
                         .setPositiveButton("OK", null).show();
                 break;
 
