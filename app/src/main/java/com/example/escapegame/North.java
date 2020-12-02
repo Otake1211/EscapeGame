@@ -45,8 +45,8 @@ public class North extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
-        float xplace = motionEvent.getX();
-        float yplace = motionEvent.getY();
+        int xplace = (int) motionEvent.getX();
+        int yplace = (int) motionEvent.getY();
 
         switch (motionEvent.getAction()) {
 
