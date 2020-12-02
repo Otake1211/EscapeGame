@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
             case MotionEvent.ACTION_DOWN:
 
-                int xplace = (int) motionEvent.getX();
-                int yplace = (int) motionEvent.getY();
+                int xplace = (int) (motionEvent.getX()*1000/screenWidth);
+                int yplace = (int)(motionEvent.getY()*1000/screenHeight);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("(X,Y)=("+xplace + ","+yplace+")\ndisplay:"+screenWidth+"×"+screenHeight)

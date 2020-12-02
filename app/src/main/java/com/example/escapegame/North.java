@@ -4,19 +4,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 
 public class North extends AppCompatActivity {
+
+    int screenWidth;
+    int screenHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_north);
         View decor = getWindow().getDecorView();
-        decor.setSystemUiVisibility( View.SYSTEM_UI_FLAG_FULLSCREEN );
+        decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+        screenWidth = size.x;
+        screenHeight = size.y;
     }
 
 
@@ -45,8 +58,8 @@ public class North extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
-        int xplace = (int) motionEvent.getX();
-        int yplace = (int) motionEvent.getY();
+        int xplace = (int) (motionEvent.getX()*1000/screenWidth);
+        int yplace = (int)(motionEvent.getY()*1000/screenHeight);
 
         switch (motionEvent.getAction()) {
 
