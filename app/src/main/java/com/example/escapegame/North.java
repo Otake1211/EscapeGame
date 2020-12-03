@@ -65,6 +65,19 @@ public class North extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(xplace + "," + yplace)
                         .setPositiveButton("OK", null).show();
+
+                if(xplace>523&&yplace>977&&yplace<1144){
+                    AlertDialog.Builder north_desk = new AlertDialog.Builder(this);
+                    north_desk.setMessage( "机の上" )
+                            .setPositiveButton("OK", null).show();
+                }
+                if(xplace<252&&yplace>643&&yplace<1196){
+                    AlertDialog.Builder north_jyunbisitu = new AlertDialog.Builder(this);
+                    north_jyunbisitu.setMessage( "準備室" )
+                            .setPositiveButton("OK", null).show();
+                }
+
+
                 break;
 
             case MotionEvent.ACTION_UP:
