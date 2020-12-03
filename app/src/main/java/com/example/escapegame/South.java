@@ -62,24 +62,28 @@ public class South extends AppCompatActivity {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
                 if(xplace>91&&xplace<405&&yplace>746&&yplace<1011){
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("薬品金庫")
+                AlertDialog.Builder south_yakuhinn = new AlertDialog.Builder(this);
+                south_yakuhinn.setMessage("薬品金庫")
                         .setPositiveButton("OK", null).show();
-
-
                 }
 
-
-
-
-
-
-
-
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage(xplace+","+yplace)
+                if(xplace>588&&xplace<886&&yplace>740&&yplace<1004){
+                    AlertDialog.Builder south_shiyaku = new AlertDialog.Builder(this);
+                    south_shiyaku.setMessage("試薬金庫")
                             .setPositiveButton("OK", null).show();
+                }
+
+                if(xplace>308&&xplace<444&&yplace>1064&&yplace<1271){
+                    AlertDialog.Builder south_leftrocker = new AlertDialog.Builder(this);
+                    south_leftrocker.setMessage("ロッカー左")
+                            .setPositiveButton("OK", null).show();
+                }
+
+                if(xplace>555&&xplace<705&&yplace>1067&&yplace<1278){
+                    AlertDialog.Builder south_rightrocker = new AlertDialog.Builder(this);
+                    south_rightrocker.setMessage("ロッカー右")
+                            .setPositiveButton("OK", null).show();
+                }
 
                 break;
 
