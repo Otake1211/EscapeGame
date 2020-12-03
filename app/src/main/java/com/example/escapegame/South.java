@@ -61,7 +61,7 @@ public class South extends AppCompatActivity {
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
-                if(xplace>91&&xplace<405&&yplace>746&&yplace<1011){
+                if(91<xplace&&xplace<405&&746<yplace&&yplace<1011){
                 AlertDialog.Builder south_yakuhinn = new AlertDialog.Builder(this);
                 south_yakuhinn.setMessage("薬品金庫")
                         .setPositiveButton("OK", null).show();
