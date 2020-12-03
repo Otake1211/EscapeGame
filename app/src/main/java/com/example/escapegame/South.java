@@ -57,13 +57,34 @@ public class South extends AppCompatActivity {
         int xplace = (int)(motionEvent.getX()*1000/screenWidth);
         int yplace = (int)(motionEvent.getY()*2000/screenHeight);
 
+
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
+                if(xplace>91&&xplace<405&&yplace>746&&yplace<1011){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(xplace + "," + yplace)
+                builder.setMessage("薬品金庫")
                         .setPositiveButton("OK", null).show();
+
+
+                }
+
+
+
+
+
+
+
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage(xplace+","+yplace)
+                            .setPositiveButton("OK", null).show();
+
                 break;
+
+
+
 
             case MotionEvent.ACTION_UP:
                 // something to do
