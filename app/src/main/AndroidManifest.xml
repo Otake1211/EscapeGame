@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
-        <activity android:name=".West"/>
+        <activity android:name=".East_drawer"></activity>
+        <activity android:name=".East_wave" />
+        <activity android:name=".East_rbbox" />
+        <activity android:name=".East_box" />
+        <activity android:name=".East_door" />
+        <activity android:name=".North_preparationroom" />
+        <activity android:name=".West" />
         <activity android:name=".South" />
         <activity android:name=".East" />
         <activity android:name=".North" />
