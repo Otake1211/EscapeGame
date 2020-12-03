@@ -8,39 +8,51 @@
 
 
     <ImageView
-        android:src="@drawable/face"
-
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/face" />
 
 
     <Button
         android:id="@+id/Setting"
-        android:onClick="onSetting"
-        android:text="⚙"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_alignParentRight="true"
         android:background="#00000000"
-        android:textColor="#000000"
         android:minWidth="0dp"
         android:minHeight="0dp"
+        android:onClick="onSetting"
         android:padding="0dp"
+        android:text="⚙"
+        android:textColor="#000000"
         android:textSize="60sp" />
 
-    <Button
-        android:id="@+id/North"
-        android:onClick="onNorth"
-        android:text="Start"
-
-        android:background="#00000000"
-        android:textColor="#000000"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textSize="50sp" />
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/North"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="#00000000"
+            android:onClick="onNorth"
+            android:text="Start"
+            android:textColor="#000000"
+            android:textSize="50sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="80sp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
 
