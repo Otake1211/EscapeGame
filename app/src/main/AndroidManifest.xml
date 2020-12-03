@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
-        <activity android:name=".East_drawer"></activity>
+        <activity android:name=".West_scale"></activity>
+        <activity android:name=".West_aquarium" />
+        <activity android:name=".West_flask" />
+        <activity android:name=".West_drawerleft" />
+        <activity android:name=".West_drawerright" />
+        <activity android:name=".East_drawer" />
         <activity android:name=".East_wave" />
         <activity android:name=".East_rbbox" />
         <activity android:name=".East_box" />
