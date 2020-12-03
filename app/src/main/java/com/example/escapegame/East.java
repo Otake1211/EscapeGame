@@ -22,7 +22,7 @@ public class East extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_east);
 
-        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
         Point size = new Point();
         disp.getSize(size);
@@ -54,15 +54,39 @@ public class East extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
-        int xplace = (int)(motionEvent.getX()*1000/screenWidth);
-        int yplace = (int)(motionEvent.getY()*2000/screenHeight);
+        int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
+        int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(xplace + "," + yplace)
-                        .setPositiveButton("OK", null).show();
+
+                if (588 < xplace && xplace < 749 && 1133 < yplace && yplace < 1183) {
+                    AlertDialog.Builder east_hikidasi = new AlertDialog.Builder(this);
+                    east_hikidasi.setMessage("引き出し")
+                            .setPositiveButton("OK", null).show();
+                }
+                if (473 < xplace && xplace < 605 && 878 < yplace && yplace < 1057) {
+                    AlertDialog.Builder east_tana = new AlertDialog.Builder(this);
+                    east_tana.setMessage("棚")
+                            .setPositiveButton("OK", null).show();
+                }
+                if (649 < xplace && xplace < 820 && 906 < yplace && yplace < 1068) {
+                    AlertDialog.Builder east_rbtana = new AlertDialog.Builder(this);
+                    east_rbtana.setMessage("青と赤の棚")
+                            .setPositiveButton("OK", null).show();
+                }
+                if (825 < xplace && 914 < yplace && yplace < 1045) {
+                    AlertDialog.Builder east_ = new AlertDialog.Builder(this);
+                    east_.setMessage("電子レンジ")
+                            .setPositiveButton("OK", null).show();
+                }
+                if (xplace < 274 && 591 < yplace && yplace < 1201) {
+                    AlertDialog.Builder east_deguti = new AlertDialog.Builder(this);
+                    east_deguti.setMessage("出口")
+                            .setPositiveButton("OK", null).show();
+                }
+
                 break;
 
             case MotionEvent.ACTION_UP:
