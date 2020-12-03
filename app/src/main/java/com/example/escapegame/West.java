@@ -53,12 +53,12 @@ public class West extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
-        int xplace = (int) (motionEvent.getX()*1000/screenWidth);
+        int xplace = (int)(motionEvent.getX()*1000/screenWidth);
         int yplace = (int)(motionEvent.getY()*2000/screenHeight);
 
         switch (motionEvent.getAction()) {
 
-            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_DOWN: //タップしたとき
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(xplace + "," + yplace)
                         .setPositiveButton("OK", null).show();
