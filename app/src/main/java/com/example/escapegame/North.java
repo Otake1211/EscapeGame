@@ -56,22 +56,26 @@ public class North extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
-        int xplace = (int)(motionEvent.getX()*1000/screenWidth);
-        int yplace = (int)(motionEvent.getY()*2000/screenHeight);
+        int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
+        int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                if(523<xplace&&977<yplace&&yplace<1144){
+                if (523 < xplace && 977 < yplace && yplace < 1144) {
                     AlertDialog.Builder north_desk = new AlertDialog.Builder(this);
-                    north_desk.setMessage( "机の上" )
+                    north_desk.setMessage("机の上")
                             .setPositiveButton("OK", null).show();
                 }
-                if(xplace<252&&643<yplace&&yplace<1196){
+                if (xplace < 252 && 643 < yplace && yplace < 1196) {
                     AlertDialog.Builder north_jyunbisitu = new AlertDialog.Builder(this);
-                    north_jyunbisitu.setMessage( "準備室" )
+                    north_jyunbisitu.setMessage("準備室")
                             .setPositiveButton("OK", null).show();
+
+                    Intent intent = new Intent(this, North_preparationroom.class);
+                    startActivity(intent);
+                    finish();
                 }
 
                 break;

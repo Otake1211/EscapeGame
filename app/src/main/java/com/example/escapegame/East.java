@@ -65,26 +65,50 @@ public class East extends AppCompatActivity {
                     AlertDialog.Builder east_hikidasi = new AlertDialog.Builder(this);
                     east_hikidasi.setMessage("引き出し")
                             .setPositiveButton("OK", null).show();
+
+                    Intent intent = new Intent(this, East_drawer.class);
+                    startActivity(intent);
+                    finish();
                 }
+
                 if (473 < xplace && xplace < 605 && 878 < yplace && yplace < 1057) {
                     AlertDialog.Builder east_tana = new AlertDialog.Builder(this);
                     east_tana.setMessage("棚")
                             .setPositiveButton("OK", null).show();
+
+                    Intent intent = new Intent(this, East_box.class);
+                    startActivity(intent);
+                    finish();
                 }
+
                 if (649 < xplace && xplace < 820 && 906 < yplace && yplace < 1068) {
                     AlertDialog.Builder east_rbtana = new AlertDialog.Builder(this);
                     east_rbtana.setMessage("青と赤の棚")
                             .setPositiveButton("OK", null).show();
+
+                    Intent intent = new Intent(this, East_rbbox.class);
+                    startActivity(intent);
+                    finish();
                 }
+
                 if (825 < xplace && 914 < yplace && yplace < 1045) {
                     AlertDialog.Builder east_ = new AlertDialog.Builder(this);
                     east_.setMessage("電子レンジ")
                             .setPositiveButton("OK", null).show();
+
+                    Intent intent = new Intent(this, East_wave.class);
+                    startActivity(intent);
+                    finish();
                 }
+
                 if (xplace < 274 && 591 < yplace && yplace < 1201) {
                     AlertDialog.Builder east_deguti = new AlertDialog.Builder(this);
                     east_deguti.setMessage("出口")
                             .setPositiveButton("OK", null).show();
+
+                    Intent intent = new Intent(this, East_door.class);
+                    startActivity(intent);
+                    finish();
                 }
 
                 break;
