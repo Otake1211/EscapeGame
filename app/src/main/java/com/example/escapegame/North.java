@@ -32,7 +32,6 @@ public class North extends AppCompatActivity {
 
 
     public void onMain(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
@@ -40,7 +39,6 @@ public class North extends AppCompatActivity {
 
 
     public void onWest(View view) {
-
         Intent intent = new Intent(this, West.class);
         startActivity(intent);
         finish();
@@ -68,11 +66,9 @@ public class North extends AppCompatActivity {
                     north_desk.setMessage("机の上")
                             .setPositiveButton("OK", null).show();
                 }
-                if (xplace < 252 && 643 < yplace && yplace < 1196) {
-                    AlertDialog.Builder north_jyunbisitu = new AlertDialog.Builder(this);
-                    north_jyunbisitu.setMessage("準備室")
-                            .setPositiveButton("OK", null).show();
 
+                if (xplace < 252 && 643 < yplace && yplace < 1196) {
+                    //準備室へ
                     Intent intent = new Intent(this, North_preparationroom.class);
                     startActivity(intent);
                     finish();

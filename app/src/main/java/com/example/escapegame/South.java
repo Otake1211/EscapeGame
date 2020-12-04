@@ -61,42 +61,30 @@ public class South extends AppCompatActivity {
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
-                if (91 < xplace && xplace < 405 && 746 < yplace && yplace < 1011) {
-                    AlertDialog.Builder south_yakuhinn = new AlertDialog.Builder(this);
-                    south_yakuhinn.setMessage("薬品金庫")
-                            .setPositiveButton("OK", null).show();
 
+                if (91 < xplace && xplace < 405 && 746 < yplace && yplace < 1011) {
+                    //薬品金庫へ
                     Intent intent = new Intent(this, South_safeleft.class);
                     startActivity(intent);
                     finish();
                 }
 
                 if (588 < xplace && xplace < 886 && 740 < yplace && yplace < 1004) {
-                    AlertDialog.Builder south_shiyaku = new AlertDialog.Builder(this);
-                    south_shiyaku.setMessage("試薬金庫")
-                            .setPositiveButton("OK", null).show();
-
+                    //試薬金庫へ
                     Intent intent = new Intent(this, South_saferight.class);
                     startActivity(intent);
                     finish();
-
                 }
 
                 if (308 < xplace && xplace < 444 && 1064 < yplace && yplace < 1271) {
-                    AlertDialog.Builder south_leftrocker = new AlertDialog.Builder(this);
-                    south_leftrocker.setMessage("ロッカー左")
-                            .setPositiveButton("OK", null).show();
-
+                    //ロッカー左へ
                     Intent intent = new Intent(this, South_rockerleft.class);
                     startActivity(intent);
                     finish();
                 }
 
                 if (555 < xplace && xplace < 705 && 1067 < yplace && yplace < 1278) {
-                    AlertDialog.Builder south_rightrocker = new AlertDialog.Builder(this);
-                    south_rightrocker.setMessage("ロッカー右")
-                            .setPositiveButton("OK", null).show();
-
+                   //ロッカー右へ
                     Intent intent = new Intent(this, South_saferight.class);
                     startActivity(intent);
                     finish();

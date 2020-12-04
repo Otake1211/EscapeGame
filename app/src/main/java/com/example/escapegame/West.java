@@ -59,6 +59,7 @@ public class West extends AppCompatActivity {
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
+
                 if (41 < xplace && xplace < 122 && 940 < yplace && yplace < 1004) {
                     AlertDialog.Builder west_shiryou = new AlertDialog.Builder(this);
                     west_shiryou.setMessage("資料")
@@ -66,50 +67,35 @@ public class West extends AppCompatActivity {
                 }
 
                 if (252 < xplace && xplace < 353 && 950 < yplace && yplace < 1041) {
-                    AlertDialog.Builder west_hakari = new AlertDialog.Builder(this);
-                    west_hakari.setMessage("はかり")
-                            .setPositiveButton("OK", null).show();
-
+                    //はかりへ
                     Intent intent = new Intent(this, West_scale.class);
                     startActivity(intent);
                     finish();
                 }
 
                 if (477 < xplace && xplace < 552 && 880 < yplace && yplace < 1004) {
-                    AlertDialog.Builder west_furasuko = new AlertDialog.Builder(this);
-                    west_furasuko.setMessage("フラスコ")
-                            .setPositiveButton("OK", null).show();
-
+                    //フラスコへ
                     Intent intent = new Intent(this, West_flask.class);
                     startActivity(intent);
                     finish();
                 }
 
                 if (730 < xplace && xplace < 922 && 783 < yplace && yplace < 944) {
-                    AlertDialog.Builder west_suisou = new AlertDialog.Builder(this);
-                    west_suisou.setMessage("水槽")
-                            .setPositiveButton("OK", null).show();
-
+                    //水槽へ
                     Intent intent = new Intent(this, West_aquarium.class);
                     startActivity(intent);
                     finish();
                 }
 
                 if (236 < xplace && xplace < 352 && 1094 < yplace && yplace < 1148) {
-                    AlertDialog.Builder west_lefthikidashi = new AlertDialog.Builder(this);
-                    west_lefthikidashi.setMessage("引き出し左")
-                            .setPositiveButton("OK", null).show();
-
+                    //引き出し左へ
                     Intent intent = new Intent(this, West_drawerleft.class);
                     startActivity(intent);
                     finish();
                 }
 
                 if (766 < xplace && xplace < 886 && 1091 < yplace && yplace < 1141) {
-                    AlertDialog.Builder west_righthikidashi = new AlertDialog.Builder(this);
-                    west_righthikidashi.setMessage("引き出し右")
-                            .setPositiveButton("OK", null).show();
-
+                    //引き出し右へ
                     Intent intent = new Intent(this, West_drawerright.class);
                     startActivity(intent);
                     finish();
