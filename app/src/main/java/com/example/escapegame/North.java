@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class North extends AppCompatActivity {
@@ -28,6 +31,24 @@ public class North extends AppCompatActivity {
         disp.getSize(size);
         screenWidth = size.x;
         screenHeight = size.y;
+
+        // ファイルの準備
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
+        // データの読込
+        int envcount = lib.getInt("north", 0);
+
+        //背景画像の場合分け
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+        switch (envcount) {
+            case 2:
+                backimage.setImageResource(R.drawable.north);
+                break;
+
+            case 3:
+                backimage.setImageResource(R.drawable.north);
+                break;
+        }
     }
 
 

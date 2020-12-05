@@ -4,18 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 
 public class West extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,23 @@ public class West extends AppCompatActivity {
         disp.getSize(size);
         screenWidth = size.x;
         screenHeight = size.y;
+
+        // ファイルの準備
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        // データの読込
+        int envcount = lib.getInt("west", 0);
+        //背景画像の場合分け
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+        switch (envcount) {
+
+            case 2:
+                backimage.setImageResource(R.drawable.west2);
+                break;
+
+            case 3:
+                backimage.setImageResource(R.drawable.west);
+                break;
+        }
     }
 
 
@@ -61,9 +82,20 @@ public class West extends AppCompatActivity {
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
                 if (41 < xplace && xplace < 122 && 940 < yplace && yplace < 1004) {
-                    AlertDialog.Builder west_shiryou = new AlertDialog.Builder(this);
-                    west_shiryou.setMessage("資料")
-                            .setPositiveButton("OK", null).show();
+                    SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+                    //資料へ
+                    int envcount = lib.getInt("west", 0);
+                    if (envcount==0) {
+                        AlertDialog.Builder west_shiryou = new AlertDialog.Builder(this);
+                        west_shiryou.setMessage("資料")
+                                .setPositiveButton("OK", null).show();
+
+                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+                        backimage.setImageResource(R.drawable.west2);
+
+                        SharedPreferences.Editor editor = lib.edit();
+                        editor.putInt("west", 2).apply();
+                    }
                 }
 
                 if (252 < xplace && xplace < 353 && 950 < yplace && yplace < 1041) {

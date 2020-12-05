@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 public class South extends AppCompatActivity {
 
@@ -28,6 +30,24 @@ public class South extends AppCompatActivity {
         disp.getSize(size);
         screenWidth = size.x;
         screenHeight = size.y;
+
+        // ファイルの準備
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
+        // データの読込
+        int envcount = lib.getInt("south", 0);
+
+        //背景画像の場合分け
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+        switch (envcount) {
+            case 2:
+                backimage.setImageResource(R.drawable.south);
+                break;
+
+            case 3:
+                backimage.setImageResource(R.drawable.south);
+                break;
+        }
     }
 
 
@@ -84,7 +104,7 @@ public class South extends AppCompatActivity {
                 }
 
                 if (555 < xplace && xplace < 705 && 1067 < yplace && yplace < 1278) {
-                   //ロッカー右へ
+                    //ロッカー右へ
                     Intent intent = new Intent(this, South_saferight.class);
                     startActivity(intent);
                     finish();
