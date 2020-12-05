@@ -60,4 +60,3 @@ public class West_drawerright extends AppCompatActivity {
         return false;
     }
 }
-}
