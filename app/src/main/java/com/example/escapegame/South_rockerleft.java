@@ -3,15 +3,28 @@ package com.example.escapegame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 
 public class South_rockerleft extends AppCompatActivity {
+
+    int screenWidth;
+    int screenHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_south_rockerleft);
+
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+        screenWidth = size.x;
+        screenHeight = size.y;
     }
 
     public void onMain(View view) {

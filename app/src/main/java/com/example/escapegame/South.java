@@ -15,7 +15,6 @@ import android.widget.ImageView;
 
 public class South extends AppCompatActivity {
 
-
     int screenWidth;
     int screenHeight;
 
@@ -37,10 +36,8 @@ public class South extends AppCompatActivity {
         int envcount = lib.getInt("south", 0);
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-        switch (envcount) {
-            case 2:
-                backimage.setImageResource(R.drawable.south2);
-                break;
+        if (envcount == 2) {
+            backimage.setImageResource(R.drawable.south2);
         }
     }
 

@@ -40,11 +40,8 @@ public class North extends AppCompatActivity {
 
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-        switch (envcount) {
-            case 2:
-                backimage.setImageResource(R.drawable.north2);
-                break;
-
+        if (envcount == 2) {
+            backimage.setImageResource(R.drawable.north2);
         }
     }
 
