@@ -26,6 +26,7 @@ public class Setting extends AppCompatActivity {
         //データ削除
         SharedPreferences.Editor editor = lib.edit();
         editor.remove("west").apply();
+        editor.remove("north").apply();
     }
 
 

@@ -46,7 +46,7 @@ public class North extends AppCompatActivity {
                 break;
 
             case 3:
-                backimage.setImageResource(R.drawable.north);
+                backimage.setImageResource(R.drawable.north0);
                 break;
         }
     }
@@ -83,9 +83,21 @@ public class North extends AppCompatActivity {
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
                 if (523 < xplace && 977 < yplace && yplace < 1144) {
-                    AlertDialog.Builder north_desk = new AlertDialog.Builder(this);
-                    north_desk.setMessage("机の上")
-                            .setPositiveButton("OK", null).show();
+                    SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+                    //リトマス紙へ
+                    int envcount = lib.getInt("north", 0);
+                    if(envcount==0) {
+                        AlertDialog.Builder north_desk = new AlertDialog.Builder(this);
+                        north_desk.setMessage("リトマス紙(青)")
+                                .setPositiveButton("OK", null).show();
+
+                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+                        backimage.setImageResource(R.drawable.north);
+
+                        SharedPreferences.Editor editor = lib.edit();
+                        editor.putInt("north", 2).apply();
+                    }
+
                 }
 
                 if (xplace < 252 && 643 < yplace && yplace < 1196) {
