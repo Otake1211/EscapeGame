@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".South_rockerright">
+    tools:context=".South_rockerright"
+    tools:ignore="ExtraText">
 
     //背景
 
@@ -14,7 +15,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/south" />
+        android:src="@drawable/south_rockerright" />
 
 
     <Button

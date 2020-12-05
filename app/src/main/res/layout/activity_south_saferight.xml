@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/south" />
+        android:src="@drawable/south_saferight" />
 
 
     <Button
