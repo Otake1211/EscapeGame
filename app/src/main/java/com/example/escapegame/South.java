@@ -105,7 +105,7 @@ public class South extends AppCompatActivity {
 
                 if (555 < xplace && xplace < 705 && 1067 < yplace && yplace < 1278) {
                     //ロッカー右へ
-                    Intent intent = new Intent(this, South_saferight.class);
+                    Intent intent = new Intent(this, South_rockerright.class);
                     startActivity(intent);
                     finish();
                 }
