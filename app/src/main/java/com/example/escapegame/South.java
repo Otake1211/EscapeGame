@@ -73,14 +73,14 @@ public class South extends AppCompatActivity {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                if(850 < xplace && xplace < 940 && 540 < yplace && yplace < 646){
+                if (830 < xplace && xplace < 940 && 520 < yplace && yplace < 646) {
                     // ファイルの準備
                     SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
                     // データの読込
                     int envcount = lib.getInt("south", 0);
                     //背景画像の場合分け
                     //鍵へ
-                    if(envcount==0) {
+                    if (envcount == 0) {
                         AlertDialog.Builder south_key = new AlertDialog.Builder(this);
                         south_key.setMessage("鍵")
                                 .setPositiveButton("OK", null).show();
