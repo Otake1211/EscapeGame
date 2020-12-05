@@ -13,6 +13,7 @@ public class South_saferight extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
+    int touchcount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

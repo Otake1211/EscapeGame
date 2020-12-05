@@ -14,7 +14,7 @@ public class East_drawer extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount;
+    int touchcount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

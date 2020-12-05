@@ -8,6 +8,10 @@ import android.view.View;
 
 public class West_drawerleft extends AppCompatActivity {
 
+    int screenWidth;
+    int screenHeight;
+    int touchcount = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

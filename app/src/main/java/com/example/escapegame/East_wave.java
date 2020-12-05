@@ -8,6 +8,10 @@ import android.view.View;
 
 public class East_wave extends AppCompatActivity {
 
+    int screenWidth;
+    int screenHeight;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

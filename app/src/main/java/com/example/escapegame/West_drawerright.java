@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 public class West_drawerright extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
+    int touchcount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,23 @@ public class West_drawerright extends AppCompatActivity {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
+                ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+                if (touchcount == 0) {
+                    // 開く操作
+                    if (true) {
+                        //アイテムある時の画像
+                        backimage.setImageResource(R.drawable.red);
+                    } else {
+                        //アイテムない時の画像
+                        backimage.setImageResource(R.drawable.green);
+                    }
+                    touchcount = 2;
+                } else {
+                    //開いた後の操作
+                    if (850 < xplace && xplace < 940 && 540 < yplace && yplace < 646) {
+                        //アイテムとった判定
+                    }
+                }
 
                 break;
 
