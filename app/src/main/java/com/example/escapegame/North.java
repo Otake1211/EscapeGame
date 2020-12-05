@@ -42,12 +42,9 @@ public class North extends AppCompatActivity {
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
         switch (envcount) {
             case 2:
-                backimage.setImageResource(R.drawable.north);
+                backimage.setImageResource(R.drawable.north2);
                 break;
 
-            case 3:
-                backimage.setImageResource(R.drawable.north0);
-                break;
         }
     }
 
@@ -92,7 +89,7 @@ public class North extends AppCompatActivity {
                                 .setPositiveButton("OK", null).show();
 
                         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                        backimage.setImageResource(R.drawable.north);
+                        backimage.setImageResource(R.drawable.north2);
 
                         SharedPreferences.Editor editor = lib.edit();
                         editor.putInt("north", 2).apply();

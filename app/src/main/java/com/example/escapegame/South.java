@@ -33,19 +33,13 @@ public class South extends AppCompatActivity {
 
         // ファイルの準備
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-
         // データの読込
         int envcount = lib.getInt("south", 0);
-
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
         switch (envcount) {
             case 2:
-                backimage.setImageResource(R.drawable.south);
-                break;
-
-            case 3:
-                backimage.setImageResource(R.drawable.south);
+                backimage.setImageResource(R.drawable.south2);
                 break;
         }
     }
@@ -81,6 +75,26 @@ public class South extends AppCompatActivity {
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
+
+                if(850 < xplace && xplace < 940 && 540 < yplace && yplace < 646){
+                    // ファイルの準備
+                    SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+                    // データの読込
+                    int envcount = lib.getInt("south", 0);
+                    //背景画像の場合分け
+                    //鍵へ
+                    if(envcount==0) {
+                        AlertDialog.Builder south_key = new AlertDialog.Builder(this);
+                        south_key.setMessage("鍵")
+                                .setPositiveButton("OK", null).show();
+
+                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+                        backimage.setImageResource(R.drawable.south2);
+
+                        SharedPreferences.Editor editor = lib.edit();
+                        editor.putInt("south", 2).apply();
+                    }
+                }
 
                 if (91 < xplace && xplace < 405 && 746 < yplace && yplace < 1011) {
                     //薬品金庫へ
