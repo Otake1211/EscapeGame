@@ -28,6 +28,7 @@ public class Setting extends AppCompatActivity {
         editor.remove("west").apply();
         editor.remove("north").apply();
         editor.remove("south").apply();
+        editor.remove("saferight").apply();
     }
 
 

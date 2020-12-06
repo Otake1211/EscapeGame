@@ -2,7 +2,9 @@ package com.example.escapegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
@@ -15,7 +17,8 @@ public class South_saferight extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount = 0;
+
+    String seleitem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,25 +55,43 @@ public class South_saferight extends AppCompatActivity {
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
+                SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
+                int envcount = lib.getInt("saferight", 0);
 
                 ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                if (touchcount == 0) {
+                if (envcount == 0) {
                     // 開く操作
-                    if (true) {
-                        //アイテムある時の画像
-                        backimage.setImageResource(R.drawable.south_rockerrighton);
-                    } else {
-                        //アイテムない時の画像
-                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                    if (seleitem == "item_siyakukey") {
+                        //効果音
+                    SharedPreferences.Editor editor = lib.edit();
+                    editor.putInt("saferight", 1).apply();
                     }
-                    touchcount = 2;
-                } else {
-                    //開いた後の操作
-                    if (850 < xplace && xplace < 940 && 540 < yplace && yplace < 646) {
-                        //アイテムとった判定
+                    else {
+                        //効果音
                     }
                 }
 
+                if (envcount == 1) {
+                    //アイテム有の画像
+                    backimage.setImageResource(R.drawable.south_rockerrighton);
+                    //効果音
+
+                    if (0 < xplace && 0 < yplace){
+                        AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                                 siyaku.setMessage("試薬")
+                                .setPositiveButton("OK", null).show();
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        SharedPreferences.Editor editor = lib.edit();
+                        editor.putInt("saferight", 2).apply();
+                    }
+                }
+
+                if (envcount == 2){
+                    //アイテムなしの画像
+                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                }
                 break;
 
             case MotionEvent.ACTION_UP:
