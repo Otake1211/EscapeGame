@@ -139,7 +139,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton1);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -154,7 +154,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton2);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -169,7 +169,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton3);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -184,7 +184,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton4);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -199,7 +199,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton5);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -214,7 +214,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton6);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -229,7 +229,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton7);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -244,7 +244,7 @@ public class South_rockerleft extends AppCompatActivity {
         //このボタンを使えないようにする
         ImageButton imageButton = findViewById(R.id.itembutton8);
         imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -279,37 +279,6 @@ public class South_rockerleft extends AppCompatActivity {
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox10", R.color.black);
     }
-
-    public void onitem11(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton11);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox11", R.color.black);
-    }
-
-    public void onitem12(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton12);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox12", R.color.black);
-    }
-
 
     class otherable {
 
@@ -365,5 +334,4 @@ public class South_rockerleft extends AppCompatActivity {
 
         }
     }
-
 }
