@@ -29,6 +29,20 @@ public class Setting extends AppCompatActivity {
         editor.remove("north").apply();
         editor.remove("south").apply();
         editor.remove("saferight").apply();
+        editor.remove("itemboxnum").apply();
+        editor.remove("itembox1").apply();
+        editor.remove("itembox2").apply();
+        editor.remove("itembox3").apply();
+        editor.remove("itembox4").apply();
+        editor.remove("itembox5").apply();
+        editor.remove("itembox6").apply();
+        editor.remove("itembox7").apply();
+        editor.remove("itembox8").apply();
+        editor.remove("itembox9").apply();
+        editor.remove("itembox10").apply();
+        editor.remove("itembox11").apply();
+        editor.remove("itembox12").apply();
+
     }
 
 
