@@ -35,8 +35,10 @@ public class South extends AppCompatActivity {
 
         // ファイルの準備
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
         // データの読込
         int envcount = lib.getInt("south", 0);
+
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
         if (envcount == 2) {
