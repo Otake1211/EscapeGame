@@ -127,7 +127,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton3);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -141,7 +140,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton4);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -155,7 +153,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton5);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -169,7 +166,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton6);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -183,7 +179,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton7);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -197,7 +192,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton8);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -211,7 +205,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton9);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -225,7 +218,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton10);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -239,7 +231,6 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton11);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
@@ -253,61 +244,64 @@ public class South_rockerleft extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.itembutton12);
         imageButton.setEnabled(false);
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
         //選択しているアイテムを変更
 
     }
 
+
+
     class otherable {
 
         public void reable(View view) {
-            ImageButton imageButton1 = findViewById(R.id.itembutton1);
-            imageButton1.setEnabled(true);
-            imageButton1.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
 
-            ImageButton imageButton2 = findViewById(R.id.itembutton1);
-            imageButton2.setEnabled(true);
-            imageButton2.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton1 = findViewById(R.id.itembutton1);
+            reimageButton1.setEnabled(true);
+            reimageButton1.setColorFilter(null);
 
-            ImageButton imageButton3 = findViewById(R.id.itembutton1);
-            imageButton3.setEnabled(true);
-            imageButton3.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton2 = findViewById(R.id.itembutton2);
+            reimageButton2.setEnabled(true);
+            reimageButton2.setColorFilter(null);
 
-            ImageButton imageButton4 = findViewById(R.id.itembutton1);
-            imageButton4.setEnabled(true);
-            imageButton4.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton3 = findViewById(R.id.itembutton3);
+            reimageButton3.setEnabled(true);
+            reimageButton3.setColorFilter(null);
 
-            ImageButton imageButton5 = findViewById(R.id.itembutton1);
-            imageButton5.setEnabled(true);
-            imageButton5.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton4 = findViewById(R.id.itembutton4);
+            reimageButton4.setEnabled(true);
+            reimageButton4.setColorFilter(null);
 
-            ImageButton imageButton6 = findViewById(R.id.itembutton1);
-            imageButton6.setEnabled(true);
-            imageButton6.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton5 = findViewById(R.id.itembutton5);
+            reimageButton5.setEnabled(true);
+            reimageButton5.setColorFilter(null);
 
-            ImageButton imageButton7 = findViewById(R.id.itembutton1);
-            imageButton7.setEnabled(true);
-            imageButton7.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton6 = findViewById(R.id.itembutton6);
+            reimageButton6.setEnabled(true);
+            reimageButton6.setColorFilter(null);
 
-            ImageButton imageButton8 = findViewById(R.id.itembutton1);
-            imageButton8.setEnabled(true);
-            imageButton8.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton7 = findViewById(R.id.itembutton7);
+            reimageButton7.setEnabled(true);
+            reimageButton7.setColorFilter(null);
 
-            ImageButton imageButton9 = findViewById(R.id.itembutton1);
-            imageButton9.setEnabled(true);
-            imageButton9.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton8 = findViewById(R.id.itembutton8);
+            reimageButton8.setEnabled(true);
+            reimageButton8.setColorFilter(null);
 
-            ImageButton imageButton10 = findViewById(R.id.itembutton1);
-            imageButton10.setEnabled(true);
-            imageButton10.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton9 = findViewById(R.id.itembutton9);
+            reimageButton9.setEnabled(true);
+            reimageButton9.setColorFilter(null);
 
-            ImageButton imageButton11 = findViewById(R.id.itembutton1);
-            imageButton11.setEnabled(true);
-            imageButton11.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton10 = findViewById(R.id.itembutton10);
+            reimageButton10.setEnabled(true);
+            reimageButton10.setColorFilter(null);
 
-            ImageButton imageButton12 = findViewById(R.id.itembutton1);
-            imageButton12.setEnabled(true);
-            imageButton12.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+            ImageButton reimageButton11 = findViewById(R.id.itembutton11);
+            reimageButton11.setEnabled(true);
+            reimageButton11.setColorFilter(null);
+
+            ImageButton reimageButton12 = findViewById(R.id.itembutton12);
+            reimageButton12.setEnabled(true);
+            reimageButton12.setColorFilter(null);
+
         }
     }
 
