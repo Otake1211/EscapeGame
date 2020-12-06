@@ -63,12 +63,14 @@ public class South_saferight extends AppCompatActivity {
                 if (envcount == 0) {
                     // 開く操作
                     if (seleitem == "item_siyakukey") {
+
                         //効果音
                     SharedPreferences.Editor editor = lib.edit();
                     editor.putInt("saferight", 1).apply();
                     }
                     else {
                         //効果音
+
                     }
                 }
 
