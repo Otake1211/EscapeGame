@@ -2,7 +2,9 @@ package com.example.escapegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +14,7 @@ public class East_box extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount = 0;
+    int seleitem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +43,49 @@ public class East_box extends AppCompatActivity {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
+                SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+                int envcount = lib.getInt("box", 0);
+
                 ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                if (touchcount == 0) {
+
+                if (envcount == 0) {
                     // 開く操作
-                    if (true) {
-                        //アイテムある時の画像
-                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                    if (seleitem == R.drawable.item_rockerkey) {
+
+                        //開けた効果音
+                        SharedPreferences.Editor editor = lib.edit();
+                        editor.putInt("saferight", 1).apply();
+
                     } else {
-                        //アイテムない時の画像
+                        //ガチャガチャ効果音
+                    }
+                }
+
+                if (envcount == 1) {
+                    //アイテムを取っていない
+                    //アイテム有の画像
+                    backimage.setImageResource(R.drawable.south_rockerrighton);
+                    SharedPreferences.Editor editor = lib.edit();
+                    editor.putInt("saferight", 2).apply();
+                }
+
+                if (envcount == 2) {
+
+                    if (0 < xplace && 0 < yplace) {//試薬の上をタッチ
+                        AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                        siyaku.setMessage("鉛筆")
+                                .setPositiveButton("OK", null).show();
+                        //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                        SharedPreferences.Editor editor = lib.edit();
+                        editor.putInt("saferight", 3).apply();
                     }
-                    touchcount = 2;
-                } else {
-                    //開いた後の操作
-                    if (850 < xplace && xplace < 940 && 540 < yplace && yplace < 646) {
-                        //アイテムとった判定
-                    }
+                }
+
+                if (envcount==3) {
+                    //アイテムなしの画像
+                    backimage.setImageResource(R.drawable.south_rockerrightoff);
                 }
 
                 break;
