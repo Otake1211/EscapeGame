@@ -129,6 +129,10 @@ public class South_rockerleft extends AppCompatActivity {
         imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
         //選択しているアイテムを変更
 
+        int link[] = {R.drawable.item_carbon, R.drawable.item_cutter};
+
+        ImageButton backimage = ((ImageButton) findViewById(R.id.itembutton1));
+        backimage.setImageResource(link[0]);
     }
 
     public void onitem4(View view) {
@@ -247,7 +251,6 @@ public class South_rockerleft extends AppCompatActivity {
         //選択しているアイテムを変更
 
     }
-
 
 
     class otherable {
