@@ -9,8 +9,8 @@
     //背景
 
     <ImageView
-        android:layout_width="match_parent"
         android:id="@+id/backimage"
+        android:layout_width="match_parent"
 
         android:layout_height="match_parent"
         android:contentDescription="@null"
@@ -51,7 +51,6 @@
             android:layout_height="wrap_content">
 
 
-
             <ImageButton
                 android:id="@+id/South_rockerleft"
                 android:layout_width="60sp"
@@ -77,6 +76,90 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80sp"
                 android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/itembutton1"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem1"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton2"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem2"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton3"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem3"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton4"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem4"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton5"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem5"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton6"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem6"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton7"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem7"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton8"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem8"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton9"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem9"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton10"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem10"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton11"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem11"
+                    android:src="@color/black" />
+
+                <ImageButton
+                    android:id="@+id/itembutton12"
+                    android:layout_width="180sp"
+                    android:layout_height="match_parent"
+                    android:onClick="onitem12"
+                    android:src="@color/black" />
 
 
                 //アイテムのボタンを配置する場所
