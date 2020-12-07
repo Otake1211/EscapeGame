@@ -208,13 +208,6 @@
 
         //広告を配置する場所
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="80sp"
-            android:text="広告"
-            android:textColor="#000"
-            android:textSize="50sp" />
-
 
     </LinearLayout>
 </RelativeLayout>

@@ -34,18 +34,18 @@ public class South_rockerleft extends AppCompatActivity {
         screenHeight = size.y;
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int itembox1 = lib.getInt("itembox1", R.color.black);
-        int itembox2 = lib.getInt("itembox2", R.color.black);
-        int itembox3 = lib.getInt("itembox3", R.color.black);
-        int itembox4 = lib.getInt("itembox4", R.color.black);
-        int itembox5 = lib.getInt("itembox5", R.color.black);
-        int itembox6 = lib.getInt("itembox6", R.color.black);
-        int itembox7 = lib.getInt("itembox7", R.color.black);
-        int itembox8 = lib.getInt("itembox8", R.color.black);
-        int itembox9 = lib.getInt("itembox9", R.color.black);
-        int itembox10 = lib.getInt("itembox10", R.color.black);
-        int itembox11 = lib.getInt("itembox11", R.color.black);
-        int itembox12 = lib.getInt("itembox12", R.color.black);
+        int itembox1 = lib.getInt("itembox1", R.drawable.clear);
+        int itembox2 = lib.getInt("itembox2", R.drawable.clear);
+        int itembox3 = lib.getInt("itembox3", R.drawable.clear);
+        int itembox4 = lib.getInt("itembox4", R.drawable.clear);
+        int itembox5 = lib.getInt("itembox5", R.drawable.clear);
+        int itembox6 = lib.getInt("itembox6", R.drawable.clear);
+        int itembox7 = lib.getInt("itembox7", R.drawable.clear);
+        int itembox8 = lib.getInt("itembox8", R.drawable.clear);
+        int itembox9 = lib.getInt("itembox9", R.drawable.clear);
+        int itembox10 = lib.getInt("itembox10", R.drawable.clear);
+        int itembox11 = lib.getInt("itembox11", R.drawable.clear);
+        int itembox12 = lib.getInt("itembox12", R.drawable.clear);
 
         ImageView backimage1 = ((ImageView) findViewById(R.id.itembutton1));
         backimage1.setImageResource(itembox1);
@@ -143,7 +143,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox1", R.color.black);
+        seleitem = lib.getInt("itembox1", R.drawable.clear);
     }
 
     public void onitem2(View view) {
@@ -158,7 +158,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox2", R.color.black);
+        seleitem = lib.getInt("itembox2", R.drawable.clear);
     }
 
     public void onitem3(View view) {
@@ -173,7 +173,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox3", R.color.black);
+        seleitem = lib.getInt("itembox3", R.drawable.clear);
     }
 
     public void onitem4(View view) {
@@ -188,7 +188,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox4", R.color.black);
+        seleitem = lib.getInt("itembox4", R.drawable.clear);
     }
 
     public void onitem5(View view) {
@@ -203,7 +203,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox5", R.color.black);
+        seleitem = lib.getInt("itembox5", R.drawable.clear);
     }
 
     public void onitem6(View view) {
@@ -218,7 +218,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox6", R.color.black);
+        seleitem = lib.getInt("itembox6", R.drawable.clear);
     }
 
     public void onitem7(View view) {
@@ -233,7 +233,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox7", R.color.black);
+        seleitem = lib.getInt("itembox7", R.drawable.clear);
     }
 
     public void onitem8(View view) {
@@ -248,7 +248,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox8", R.color.black);
+        seleitem = lib.getInt("itembox8", R.drawable.clear);
     }
 
     public void onitem9(View view) {
@@ -262,7 +262,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox9", R.color.black);
+        seleitem = lib.getInt("itembox9", R.drawable.clear);
     }
 
     public void onitem10(View view) {
@@ -277,7 +277,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox10", R.color.black);
+        seleitem = lib.getInt("itembox10", R.drawable.clear);
     }
 
     public void onitem11(View view) {
@@ -292,7 +292,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox11", R.color.black);
+        seleitem = lib.getInt("itembox11", R.drawable.clear);
     }
 
     public void onitem12(View view) {
@@ -307,7 +307,7 @@ public class South_rockerleft extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox12", R.color.black);
+        seleitem = lib.getInt("itembox12", R.drawable.clear);
     }
 
     class otherable {
