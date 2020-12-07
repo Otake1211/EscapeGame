@@ -351,6 +351,37 @@ public class North extends AppCompatActivity {
         seleitem = lib.getInt("itembox10", R.color.black);
     }
 
+    public void onitem11(View view) {
+
+        //他のボタンを使えるようにする
+        new otherable().reable(view);
+
+        //このボタンを使えないようにする
+        ImageButton imageButton = findViewById(R.id.itembutton11);
+        imageButton.setEnabled(false);
+        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+
+        //選択しているアイテムを変更
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        seleitem = lib.getInt("itembox11", R.color.black);
+    }
+
+    public void onitem12(View view) {
+
+        //他のボタンを使えるようにする
+        new otherable().reable(view);
+
+        //このボタンを使えないようにする
+        ImageButton imageButton = findViewById(R.id.itembutton12);
+        imageButton.setEnabled(false);
+        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+
+        //選択しているアイテムを変更
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        seleitem = lib.getInt("itembox12", R.color.black);
+    }
+
+
     class otherable {
 
         public void reable(View view) {

@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/east" />
+        android:src="@drawable/east_exit" />
 
 
     <Button
