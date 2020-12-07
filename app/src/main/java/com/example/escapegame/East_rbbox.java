@@ -35,6 +35,14 @@ public class East_rbbox extends AppCompatActivity {
         // ファイルの準備
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
 
+        // データの読込
+        int envcount = lib.getInt("east_rbbox", 0);
+
+        //背景画像の場合分け
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+        if (envcount == 2) {
+            backimage.setImageResource(R.drawable.north2);
+        }
 
         //ボタンの画像読み込み
         int itembox1 = lib.getInt("itembox1", R.drawable.clear);

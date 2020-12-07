@@ -38,7 +38,7 @@ public class East_drawer extends AppCompatActivity {
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
 
         // データの読込
-        int envcount = lib.getInt("north", 0);
+        int envcount = lib.getInt("east_drawer", 0);
 
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));

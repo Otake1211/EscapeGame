@@ -35,7 +35,7 @@ public class North_preparationroom extends AppCompatActivity {
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
 
         // データの読込
-        int envcount = lib.getInt("north", 0);
+        int envcount = lib.getInt("north_preparationroom", 0);
 
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
