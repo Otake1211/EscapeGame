@@ -9,15 +9,15 @@
 
     //背景
 
+
     <ImageView
-        android:layout_width="match_parent"
         android:id="@+id/backimage"
+        android:layout_width="match_parent"
 
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         android:src="@drawable/north" />
-
 
     <Button
         android:id="@+id/Main"
@@ -85,12 +85,16 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingVertical="10sp"
+            android:paddingLeft="10sp"
+            android:background="#555555">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="80sp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/white">
 
 
                 //アイテムのボタンを配置する場所
