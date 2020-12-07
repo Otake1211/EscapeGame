@@ -99,17 +99,17 @@ public class South_saferight extends AppCompatActivity {
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
                 SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-                int envcount = lib.getInt("saferight", 0);
+                int envcount = lib.getInt("south_saferight", 0);
 
                 ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
                 if (envcount == 0) {
                     // 開く操作
-                    if (seleitem == R.drawable.item_siyakukey) {
+                    if (seleitem == R.drawable.item_safekey) {
 
                         //開けた効果音
                         SharedPreferences.Editor editor = lib.edit();
-                        editor.putInt("saferight", 1).apply();
+                        editor.putInt("south_saferight", 1).apply();
 
                     } else {
                         //ガチャガチャ効果音
@@ -121,7 +121,7 @@ public class South_saferight extends AppCompatActivity {
                     //アイテム有の画像
                     backimage.setImageResource(R.drawable.south_rockerrighton);
                     SharedPreferences.Editor editor = lib.edit();
-                    editor.putInt("saferight", 2).apply();
+                    editor.putInt("south_saferight", 2).apply();
                 }
 
                 if (envcount == 2) {
@@ -134,7 +134,7 @@ public class South_saferight extends AppCompatActivity {
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
 
                         SharedPreferences.Editor editor = lib.edit();
-                        editor.putInt("saferight", 3).apply();
+                        editor.putInt("south_saferight", 3).apply();
                     }
                 }
 

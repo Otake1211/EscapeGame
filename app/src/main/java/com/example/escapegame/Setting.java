@@ -23,12 +23,33 @@ public class Setting extends AppCompatActivity {
         // ファイルの準備
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
 
+
         //データ削除
         SharedPreferences.Editor editor = lib.edit();
+
         editor.remove("west").apply();
+        editor.remove("west_aquarium").apply();
+        editor.remove("west_drawerleft").apply();
+        editor.remove("west_drawerright").apply();
+        editor.remove("west_flask").apply();
+        editor.remove("west_scale").apply();
+
         editor.remove("north").apply();
+        editor.remove("north_preparationroom").apply();
+
         editor.remove("south").apply();
-        editor.remove("saferight").apply();
+        editor.remove("south_saferight").apply();
+        editor.remove("south_rockeright").apply();
+        editor.remove("south_rockerleft").apply();
+        editor.remove("south_safeleft").apply();
+
+        editor.remove("east").apply();
+        editor.remove("east_box").apply();
+        editor.remove("east_door").apply();
+        editor.remove("east_drawer").apply();
+        editor.remove("east_rbbox").apply();
+        editor.remove("east_wave").apply();
+
         editor.remove("itemboxnum").apply();
         editor.remove("itembox1").apply();
         editor.remove("itembox2").apply();
