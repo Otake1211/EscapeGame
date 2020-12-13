@@ -136,7 +136,7 @@ public class South extends AppCompatActivity {
                         int itemboxnum = lib.getInt("itemboxnum", 0);
                         itemboxnum++;
                         editor.putInt("itemboxnum", itemboxnum).apply();
-                        editor.putInt("itembox" + itemboxnum, R.drawable.item_rockerkey).apply();
+                        editor.putInt("itembox" + itemboxnum, R.drawable.item_boxkey).apply();
 
                         editor.putInt("south", 2).apply();
 

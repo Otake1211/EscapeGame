@@ -114,7 +114,7 @@ public class East extends AppCompatActivity {
 
                 if (xplace < 274 && 591 < yplace && yplace < 1201) {
                     //出口へ
-                    Intent intent = new Intent(this, East_door.class);
+                    Intent intent = new Intent(this, East_exit.class);
                     startActivity(intent);
                     finish();
                 }

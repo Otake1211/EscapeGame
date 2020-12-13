@@ -45,9 +45,10 @@ public class Setting extends AppCompatActivity {
 
         editor.remove("east").apply();
         editor.remove("east_box").apply();
-        editor.remove("east_door").apply();
+        editor.remove("east_exit").apply();
         editor.remove("east_drawer").apply();
-        editor.remove("east_rbbox").apply();
+        editor.remove("east_rbox").apply();
+        editor.remove("east_bbox").apply();
         editor.remove("east_wave").apply();
 
         editor.remove("itemboxnum").apply();
