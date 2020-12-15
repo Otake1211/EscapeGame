@@ -82,7 +82,7 @@ public class West_scale extends AppCompatActivity {
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int envcount = lib.getInt("east_", 0);
+        int envcount = lib.getInt("west_scale", 0);
         SharedPreferences.Editor editor = lib.edit();
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
