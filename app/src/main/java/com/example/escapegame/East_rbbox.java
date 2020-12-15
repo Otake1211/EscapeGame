@@ -113,7 +113,7 @@ public class East_rbbox extends AppCompatActivity {
                 //アイテムをタッチ
                 if (0 < xplace && 0 < yplace) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("鉛筆")
+                    siyaku.setMessage("リトマス紙(赤)")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
@@ -123,7 +123,7 @@ public class East_rbbox extends AppCompatActivity {
                     int itemboxnum = lib.getInt("itemboxnum", 0);
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_enpitsu).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_exitkey).apply();
                     editor.putInt("east_rbox", 3).apply();
 
                     //ボタンの画像読み込み
@@ -173,7 +173,7 @@ public class East_rbbox extends AppCompatActivity {
                 //アイテムをタッチ
                 if (0 < xplace && 0 < yplace) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("鉛筆")
+                    siyaku.setMessage("出口のカギ")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
@@ -183,7 +183,7 @@ public class East_rbbox extends AppCompatActivity {
                     int itemboxnum = lib.getInt("itemboxnum", 0);
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_enpitsu).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_litmusred).apply();
                     editor.putInt("east_bbox", 3).apply();
 
                     //ボタンの画像読み込み

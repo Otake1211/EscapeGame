@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".North_preparetionroominside">
+
+    //背景
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/backimage"
+
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/north_junbisitu" />
+
+
+    <Button
+        android:id="@+id/Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="0sp"
+        android:background="#00000000"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:onClick="onMain"
+        android:padding="0dp"
+        android:text="⚙"
+        android:textColor="#000000"
+        android:textSize="60sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
+
+
+        //視点移動
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <ImageButton
+                android:id="@+id/North_preparationroom"
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:onClick="onNorth"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrowdown" />
+
+        </RelativeLayout>
+
+
+        //アイテム欄
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#555555"
+            android:paddingVertical="10sp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10sp"
+                android:background="#555555">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="80sp"
+                    android:layout_marginRight="0sp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+
+                    //アイテムのボタンを配置する場所
+
+                    <ImageButton
+                        android:id="@+id/itembutton1"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem1"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton2"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem2"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton3"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem3"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton4"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem4"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton5"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem5"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton6"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem6"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton7"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem7"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton8"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem8"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton9"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem9"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton10"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem10"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton11"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem11"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+
+                    <ImageButton
+                        android:id="@+id/itembutton12"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem12"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+                    android:src="@drawable/clear"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        //広告を配置する場所
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

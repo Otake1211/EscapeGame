@@ -9,47 +9,69 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
-        <activity android:name=".West_scale"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".West_aquarium"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".West_flask"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".West_drawerleft"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".West_drawerright"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".East_drawer"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".East_wave"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".East_rbbox"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".East_box"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".East_door"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".North_preparationroom"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".West"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".South"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".South_rockerleft"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".South_rockerright"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".South_safeleft"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".South_saferight"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".East"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".North"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Setting"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".North_preparetionroominside"></activity>
+        <activity
+            android:name=".West_scale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".West_aquarium"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".West_flask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".West_drawerleft"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".West_drawerright"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".East_drawer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".East_wave"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".East_rbbox"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".East_box"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".East_door"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".North_preparationroom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".West"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".South"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".South_rockerleft"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".South_rockerright"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".South_safeleft"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".South_saferight"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".East"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".North"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Setting"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
