@@ -83,123 +83,136 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#555555"
+            android:paddingVertical="10sp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="80sp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10sp"
+                android:background="#555555">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="80sp"
+                    android:layout_marginRight="0sp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
 
-                //アイテムのボタンを配置する場所
-                <ImageButton
-                    android:id="@+id/itembutton1"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem1"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    //アイテムのボタンを配置する場所
 
-                <ImageButton
-                    android:id="@+id/itembutton2"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem2"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton1"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem1"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton3"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem3"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton2"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem2"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton4"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem4"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton3"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem3"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton5"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem5"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton4"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem4"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton6"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem6"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton5"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem5"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton7"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem7"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton6"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem6"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton8"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem8"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton7"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem7"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton9"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem9"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton8"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem8"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton10"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem10"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton9"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem9"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton11"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem11"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton10"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem10"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
-                <ImageButton
-                    android:id="@+id/itembutton12"
-                    android:layout_width="100sp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:onClick="onitem12"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/clear" />
+                    <ImageButton
+                        android:id="@+id/itembutton11"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem11"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
 
+                    <ImageButton
+                        android:id="@+id/itembutton12"
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:onClick="onitem12"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/clear" />
+                    android:src="@drawable/clear"/>
+                </LinearLayout>
 
             </LinearLayout>
         </HorizontalScrollView>
