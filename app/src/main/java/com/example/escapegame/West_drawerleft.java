@@ -85,7 +85,7 @@ public class West_drawerleft extends AppCompatActivity {
         switch (envcount) {
 
             case 0:
-                    //ガチャガチャ効果音
+                //ガチャガチャ効果音
                 break;
 
             case 1:

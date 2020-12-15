@@ -92,37 +92,21 @@ public class West_aquarium extends AppCompatActivity {
 
         switch (envcount) {
             case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_boxkey) {
-
-                    //開けた効果音
-                    editor.putInt("west_drawerright", 1).apply();
-                }
-                break;
-
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("west_drawerright", 2).apply();
-                break;
-
-            case 2:
-                //アイテムをタッチ
+                // 水槽の背景　白のとき
                 if (0 < xplace && 0 < yplace) {
+
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("カッター")
+                    siyaku.setMessage("白い紙")
                             .setPositiveButton("OK", null).show();
 
-                    //アイテムなしの画像に
+                    //　水槽の背景　灰色に
                     backimage.setImageResource(R.drawable.south_rockerrightoff);
-
                     //アイテム欄に追加と背景変更の保存
                     int itemboxnum = lib.getInt("itemboxnum", 0);
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_cutter).apply();
-                    editor.putInt("west_drawerright", 3).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_whiteaquariumpaper).apply();
+                    editor.putInt("west_aquarium", 1).apply();
 
                     //ボタンの画像読み込み
                     ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));
@@ -137,13 +121,21 @@ public class West_aquarium extends AppCompatActivity {
                     ((ImageView) findViewById(R.id.itembutton10)).setImageResource(lib.getInt("itembox10", R.drawable.clear));
                     ((ImageView) findViewById(R.id.itembutton11)).setImageResource(lib.getInt("itembox11", R.drawable.clear));
                     ((ImageView) findViewById(R.id.itembutton12)).setImageResource(lib.getInt("itembox12", R.drawable.clear));
+
                 }
                 break;
 
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
-                break;
+            case 1:
+                //水槽の背景　灰色の時
+                if(seleitem == R.drawable.item_blackaquariumpaper) {
+
+
+                    //水槽の背景　黒に
+                    backimage.setImageResource(R.drawable.south_rockerrighton);
+                    editor.putInt("west_aquarium", 2).apply();
+                    break;
+
+                }
         }
 
         return false;

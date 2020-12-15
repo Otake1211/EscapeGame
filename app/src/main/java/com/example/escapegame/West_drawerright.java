@@ -84,7 +84,7 @@ public class West_drawerright extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                if (seleitem == R.drawable.item_boxkey) {
+                if (0 < xplace && 0 < yplace) {
 
                     //開けた効果音
                     editor.putInt("west_drawerright", 1).apply();
