@@ -84,7 +84,7 @@ public class West_aquarium extends AppCompatActivity {
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int envcount = lib.getInt("west_drawerright", 0);
+        int envcount = lib.getInt("west_aquarium", 0);
         SharedPreferences.Editor editor = lib.edit();
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
