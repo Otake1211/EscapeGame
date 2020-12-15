@@ -111,7 +111,7 @@ public class West_flask extends AppCompatActivity {
 
             case 2:
                 //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
+                if (seleitem == R.drawable.item_pipette) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
                     siyaku.setMessage("サファイア")
                             .setPositiveButton("OK", null).show();
