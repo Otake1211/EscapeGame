@@ -65,6 +65,7 @@ public class East_exit extends AppCompatActivity {
     }
 
 
+
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
 
@@ -73,7 +74,7 @@ public class East_exit extends AppCompatActivity {
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int envcount = lib.getInt("east_door", 0);
+        int envcount = lib.getInt("east_exit", 0);
         SharedPreferences.Editor editor = lib.edit();
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
@@ -82,14 +83,18 @@ public class East_exit extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                if (seleitem == R.drawable.item_exitkey) {
+                //開けた効果音
+                // 開く操作
+                if (seleitem == R.drawable.item_boxkey) {
 
                     //開けた効果音
-                    editor.putInt("east_exit", 1).apply();
+                    editor.putInt("east_box", 1).apply();
 
                 } else {
                     //ガチャガチャ効果音
                 }
+                editor.putInt("east_exit", 1).apply();
+                backimage.setImageResource(R.drawable.south_rockerrighton);
                 break;
 
             case 1:
@@ -103,7 +108,7 @@ public class East_exit extends AppCompatActivity {
                 //アイテムをタッチ
                 if (0 < xplace && 0 < yplace) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("鉛筆")
+                    siyaku.setMessage("clear")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
@@ -113,7 +118,7 @@ public class East_exit extends AppCompatActivity {
                     int itemboxnum = lib.getInt("itemboxnum", 0);
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_enpitsu).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
                     editor.putInt("east_exit", 3).apply();
 
                     //ボタンの画像読み込み
@@ -376,4 +381,6 @@ public class East_exit extends AppCompatActivity {
 
         }
     }
+
+
 }

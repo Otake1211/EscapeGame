@@ -74,7 +74,7 @@ public class East_drawer extends AppCompatActivity {
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int envcount = lib.getInt("south_saferight", 0);
+        int envcount = lib.getInt("east_drawer", 0);
         SharedPreferences.Editor editor = lib.edit();
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
@@ -84,7 +84,7 @@ public class East_drawer extends AppCompatActivity {
             case 0:
                 // 開く操作
                     //開けた効果音
-                    editor.putInt("south_saferight", 1).apply();
+                    editor.putInt("east_drawer", 1).apply();
                 backimage.setImageResource(R.drawable.south_rockerrighton);
                 break;
 
@@ -92,7 +92,7 @@ public class East_drawer extends AppCompatActivity {
                 //アイテムを取っていない
                 //アイテム有の画像
                 backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("south_saferight", 2).apply();
+                editor.putInt("east_drawer", 2).apply();
                 break;
 
             case 2:
@@ -110,7 +110,7 @@ public class East_drawer extends AppCompatActivity {
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
                     editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
-                    editor.putInt("south_saferight", 3).apply();
+                    editor.putInt("east_drawer", 3).apply();
 
                     //ボタンの画像読み込み
                     ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));

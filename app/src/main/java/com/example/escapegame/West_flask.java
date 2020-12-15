@@ -92,7 +92,7 @@ public class West_flask extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                if (seleitem == R.drawable.item_boxkey) {
+                if (seleitem == R.drawable.item_ammonia) {
 
                     //開けた効果音
                     editor.putInt("west_flask", 1).apply();

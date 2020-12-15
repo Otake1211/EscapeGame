@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".East_exit"
-    tools:ignore="ExtraText">
-
+    tools:context=".East_exit">
 
     //背景
 
@@ -55,7 +53,7 @@
 
 
             <ImageButton
-                android:id="@+id/East_door"
+                android:id="@+id/East_drawer"
                 android:layout_width="60sp"
                 android:layout_height="60sp"
 
