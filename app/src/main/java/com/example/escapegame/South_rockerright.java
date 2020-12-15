@@ -68,47 +68,70 @@ public class South_rockerright extends AppCompatActivity {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
+
+        //タップしたとき
         int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        int envcount = lib.getInt("south_rockerright", 0);
+        SharedPreferences.Editor editor = lib.edit();
 
-        switch (motionEvent.getAction()) {
-
-            case MotionEvent.ACTION_DOWN: //タップしたとき
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
 
-                if (touchcount == 0) {
-                    // 開く操作
-                    ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                    if (true) {
-                        //アイテムある時の画像
-                        backimage.setImageResource(R.drawable.south_rockerrighton);
-                    } else {
-                        //アイテムない時の画像
-                        backimage.setImageResource(R.drawable.south_rockerrightoff);
-                    }
-                    touchcount = 2;
-                } else {
-                    //開いた後の操作
-                    if (850 < xplace && xplace < 940 && 540 < yplace && yplace < 646) {
-                        //アイテムとった判定
-                    }
+        switch (envcount) {
+            case 0:
+                // 開く操作
+                //開けた効果音
+                editor.putInt("south_rockerright", 1).apply();
+                break;
+
+            case 1:
+                //アイテムを取っていない
+                //アイテム有の画像
+                backimage.setImageResource(R.drawable.south_rockerrighton);
+                editor.putInt("south_rockerright", 2).apply();
+                break;
+
+            case 2:
+                //アイテムをタッチ
+                if (0 < xplace && 0 < yplace) {
+                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                    siyaku.setMessage("駒込ピペット")
+                            .setPositiveButton("OK", null).show();
+
+                    //アイテムなしの画像に
+                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                    //アイテム欄に追加と背景変更の保存
+                    int itemboxnum = lib.getInt("itemboxnum", 0);
+                    itemboxnum++;
+                    editor.putInt("itemboxnum", itemboxnum).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_pipette).apply();
+                    editor.putInt("south_rockerright", 3).apply();
+
+                    //ボタンの画像読み込み
+                    ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton2)).setImageResource(lib.getInt("itembox2", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton3)).setImageResource(lib.getInt("itembox3", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton4)).setImageResource(lib.getInt("itembox4", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton5)).setImageResource(lib.getInt("itembox5", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton6)).setImageResource(lib.getInt("itembox6", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton7)).setImageResource(lib.getInt("itembox7", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton8)).setImageResource(lib.getInt("itembox8", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton9)).setImageResource(lib.getInt("itembox9", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton10)).setImageResource(lib.getInt("itembox10", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton11)).setImageResource(lib.getInt("itembox11", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton12)).setImageResource(lib.getInt("itembox12", R.drawable.clear));
                 }
-
                 break;
 
-
-            case MotionEvent.ACTION_UP:
-                // something to do
+            case 3:
+                //アイテムなしの画像
+                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
 
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
-                break;
         }
         return false;
     }

@@ -39,7 +39,7 @@ public class Setting extends AppCompatActivity {
 
         editor.remove("south").apply();
         editor.remove("south_saferight").apply();
-        editor.remove("south_rockeright").apply();
+        editor.remove("south_rockerright").apply();
         editor.remove("south_rockerleft").apply();
         editor.remove("south_safeleft").apply();
 
