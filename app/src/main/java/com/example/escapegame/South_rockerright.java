@@ -19,7 +19,6 @@ public class South_rockerright extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount = 0;
     int seleitem;
 
     @Override
