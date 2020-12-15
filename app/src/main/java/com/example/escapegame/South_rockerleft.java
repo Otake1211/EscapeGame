@@ -82,7 +82,6 @@ public class South_rockerleft extends AppCompatActivity {
                 // 開く操作
                 //開けた効果音
                 editor.putInt("south_rockerleft", 1).apply();
-
                 break;
 
             case 1:
