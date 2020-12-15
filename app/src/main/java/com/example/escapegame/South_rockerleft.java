@@ -96,7 +96,7 @@ public class South_rockerleft extends AppCompatActivity {
                 //アイテムをタッチ
                 if (0 < xplace && 0 < yplace) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("ガムテープでグルグル巻きの瓶")
+                    siyaku.setMessage("金色の塊")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
@@ -106,7 +106,7 @@ public class South_rockerleft extends AppCompatActivity {
                     int itemboxnum = lib.getInt("itemboxnum", 0);
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_rockedousui).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_goldkey).apply();
                     editor.putInt("south_rockerleft", 3).apply();
 
                     //ボタンの画像読み込み
