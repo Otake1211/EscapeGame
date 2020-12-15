@@ -108,7 +108,7 @@ public class West extends AppCompatActivity {
                         int itemboxnum = lib.getInt("itemboxnum", 0);
                         itemboxnum++;
                         editor.putInt("itemboxnum", itemboxnum).apply();
-                        editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
+                        editor.putInt("itembox" + itemboxnum, R.drawable.item_wavedoc).apply();
 
                         editor.putInt("west", 2).apply();
 

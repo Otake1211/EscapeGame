@@ -19,7 +19,6 @@ public class East_drawer extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount = 0;
     int seleitem;
 
     @Override
@@ -36,15 +35,6 @@ public class East_drawer extends AppCompatActivity {
 
         // ファイルの準備
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-
-        // データの読込
-        int envcount = lib.getInt("east_drawer", 0);
-
-        //背景画像の場合分け
-        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-        if (envcount == 2) {
-            backimage.setImageResource(R.drawable.north2);
-        }
 
         //ボタンの画像読み込み
         ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));
@@ -74,56 +64,80 @@ public class East_drawer extends AppCompatActivity {
         finish();
     }
 
-    @Override
+
+
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
+
+        //タップしたとき
         int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
-        switch (motionEvent.getAction()) {
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        int envcount = lib.getInt("south_saferight", 0);
+        SharedPreferences.Editor editor = lib.edit();
 
-            case MotionEvent.ACTION_DOWN: //タップしたとき
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
 
-                if (touchcount == 0) {
-                    // 開く操作
-                    if (true) {
-                        //アイテムある時の画像
-                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                        backimage.setImageResource(R.drawable.east_draweron);
-                    } else {
-                        //アイテムない時の画像
-                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                        backimage.setImageResource(R.drawable.east_draweroff);
-                    }
-                    touchcount = 2;
-                } else {
-                    //開いた後の操作
-                    if (850 < xplace && xplace < 940 && 540 < yplace && yplace < 646) {
-                        AlertDialog.Builder west_shiryou = new AlertDialog.Builder(this);
-                        west_shiryou.setMessage("アイテム")
-                                .setPositiveButton("OK", null).show();//アイテムとった判定
-                    }
+        switch (envcount) {
+            case 0:
+                // 開く操作
+                    //開けた効果音
+                    editor.putInt("south_saferight", 1).apply();
+                backimage.setImageResource(R.drawable.south_rockerrighton);
+                break;
+
+            case 1:
+                //アイテムを取っていない
+                //アイテム有の画像
+                backimage.setImageResource(R.drawable.south_rockerrighton);
+                editor.putInt("south_saferight", 2).apply();
+                break;
+
+            case 2:
+                //アイテムをタッチ
+                if (0 < xplace && 0 < yplace) {
+                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                    siyaku.setMessage("サイクロイド資料")
+                            .setPositiveButton("OK", null).show();
+
+                    //アイテムなしの画像に
+                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                    //アイテム欄に追加と背景変更の保存
+                    int itemboxnum = lib.getInt("itemboxnum", 0);
+                    itemboxnum++;
+                    editor.putInt("itemboxnum", itemboxnum).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
+                    editor.putInt("south_saferight", 3).apply();
+
+                    //ボタンの画像読み込み
+                    ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton2)).setImageResource(lib.getInt("itembox2", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton3)).setImageResource(lib.getInt("itembox3", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton4)).setImageResource(lib.getInt("itembox4", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton5)).setImageResource(lib.getInt("itembox5", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton6)).setImageResource(lib.getInt("itembox6", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton7)).setImageResource(lib.getInt("itembox7", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton8)).setImageResource(lib.getInt("itembox8", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton9)).setImageResource(lib.getInt("itembox9", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton10)).setImageResource(lib.getInt("itembox10", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton11)).setImageResource(lib.getInt("itembox11", R.drawable.clear));
+                    ((ImageView) findViewById(R.id.itembutton12)).setImageResource(lib.getInt("itembox12", R.drawable.clear));
                 }
-
                 break;
 
-            case MotionEvent.ACTION_UP:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
+            case 3:
+                //アイテムなしの画像
+                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
         }
+
         return false;
-
-
     }
+
+
 
     public void onitem1(View view) {
 
