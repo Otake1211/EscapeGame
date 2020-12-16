@@ -19,7 +19,6 @@ public class East_rbbox extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount = 0;
     int seleitem;
     int selenum;
 
@@ -85,6 +84,20 @@ public class East_rbbox extends AppCompatActivity {
                 if (seleitem == R.drawable.item_ruby) {
 
                     //開けた効果音
+
+                    //アイテム削除
+                    for (int i = selenum; i < 12; i++) {
+
+                        //アイテムを一つずらす
+                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
+                    }
+
+                    //手持ちのアイテム数を減らす
+                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                    //ボタンの画像読み込み
+                    new btnload().refresh();
+
                     editor.putInt("east_rbox", 1).apply();
 
                 } else {
@@ -134,6 +147,20 @@ public class East_rbbox extends AppCompatActivity {
                 if (seleitem == R.drawable.item_sapphire) {
 
                     //開けた効果音
+
+                    //アイテム削除
+                    for (int i = selenum; i < 12; i++) {
+
+                        //アイテムを一つずらす
+                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
+                    }
+
+                    //手持ちのアイテム数を減らす
+                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                    //ボタンの画像読み込み
+                    new btnload().refresh();
+
                     editor.putInt("east_bbox", 1).apply();
 
                 } else {
