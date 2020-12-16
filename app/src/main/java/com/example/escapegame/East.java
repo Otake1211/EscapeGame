@@ -134,7 +134,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox1", R.color.black);
+        seleitem = lib.getInt("itembox1", R.drawable.clear);
     }
 
     public void onitem2(View view) {
@@ -149,7 +149,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox2", R.color.black);
+        seleitem = lib.getInt("itembox2", R.drawable.clear);
     }
 
     public void onitem3(View view) {
@@ -164,7 +164,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox3", R.color.black);
+        seleitem = lib.getInt("itembox3", R.drawable.clear);
     }
 
     public void onitem4(View view) {
@@ -179,7 +179,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox4", R.color.black);
+        seleitem = lib.getInt("itembox4", R.drawable.clear);
     }
 
     public void onitem5(View view) {
@@ -194,7 +194,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox5", R.color.black);
+        seleitem = lib.getInt("itembox5", R.drawable.clear);
     }
 
     public void onitem6(View view) {
@@ -209,7 +209,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox6", R.color.black);
+        seleitem = lib.getInt("itembox6", R.drawable.clear);
     }
 
     public void onitem7(View view) {
@@ -224,7 +224,7 @@ public class East extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox7", R.color.black);
+        seleitem = lib.getInt("itembox7", R.drawable.clear);
     }
 
     public void onitem8(View view) {

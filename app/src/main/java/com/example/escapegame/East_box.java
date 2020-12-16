@@ -144,7 +144,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox1", R.color.black);
+        seleitem = lib.getInt("itembox1", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 1;
@@ -162,7 +162,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox2", R.color.black);
+        seleitem = lib.getInt("itembox2", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 2;
@@ -180,7 +180,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox3", R.color.black);
+        seleitem = lib.getInt("itembox3", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 3;
@@ -198,7 +198,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox4", R.color.black);
+        seleitem = lib.getInt("itembox4", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 4;
@@ -216,7 +216,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox5", R.color.black);
+        seleitem = lib.getInt("itembox5", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 5;
@@ -234,7 +234,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox6", R.color.black);
+        seleitem = lib.getInt("itembox6", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 6;
@@ -252,7 +252,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox7", R.color.black);
+        seleitem = lib.getInt("itembox7", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 7;
@@ -270,7 +270,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox8", R.color.black);
+        seleitem = lib.getInt("itembox8", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 8;
@@ -287,7 +287,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox9", R.color.black);
+        seleitem = lib.getInt("itembox9", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 9;
@@ -305,7 +305,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox10", R.color.black);
+        seleitem = lib.getInt("itembox10", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 10;
@@ -323,7 +323,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox11", R.color.black);
+        seleitem = lib.getInt("itembox11", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 11;
@@ -341,7 +341,7 @@ public class East_box extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox12", R.color.black);
+        seleitem = lib.getInt("itembox12", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 12;

@@ -149,7 +149,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox1", R.color.black);
+        seleitem = lib.getInt("itembox1", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 1;
@@ -167,7 +167,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox2", R.color.black);
+        seleitem = lib.getInt("itembox2", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 2;
@@ -185,7 +185,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox3", R.color.black);
+        seleitem = lib.getInt("itembox3", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 3;
@@ -203,7 +203,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox4", R.color.black);
+        seleitem = lib.getInt("itembox4", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 4;
@@ -221,7 +221,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox5", R.color.black);
+        seleitem = lib.getInt("itembox5", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 5;
@@ -239,7 +239,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox6", R.color.black);
+        seleitem = lib.getInt("itembox6", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 6;
@@ -257,7 +257,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox7", R.color.black);
+        seleitem = lib.getInt("itembox7", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 7;
@@ -275,7 +275,7 @@ public class West_aquarium extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox8", R.color.black);
+        seleitem = lib.getInt("itembox8", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 8;

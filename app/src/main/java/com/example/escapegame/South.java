@@ -171,7 +171,7 @@ public class South extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox1", R.color.black);
+        seleitem = lib.getInt("itembox1", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 1;
@@ -189,7 +189,7 @@ public class South extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox2", R.color.black);
+        seleitem = lib.getInt("itembox2", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 2;
@@ -207,7 +207,7 @@ public class South extends AppCompatActivity {
 
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox3", R.color.black);
+        seleitem = lib.getInt("itembox3", R.drawable.clear);
 
         //選択しているボタンを取得
         selenum = 3;
