@@ -41,8 +41,8 @@ public class West_flask extends AppCompatActivity {
 
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-        if (envcount == 2) {
-            backimage.setImageResource(R.drawable.north2);
+        if (envcount == 1) {
+            backimage.setImageResource(R.drawable.south_rockerrighton);
         }
 
         //ボタンの画像読み込み
@@ -90,7 +90,7 @@ public class West_flask extends AppCompatActivity {
                     for (int i = selenum; i < 12; i++) {
 
                         //アイテムを一つずらす
-                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
+                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
                     }
 
                     //手持ちのアイテム数を減らす
@@ -98,6 +98,10 @@ public class West_flask extends AppCompatActivity {
 
                     //ボタンの画像読み込み
                     new btnload().refresh();
+
+                    //アイテムを取っていない,アイテム有の画像
+                    backimage.setImageResource(R.drawable.south_rockerrighton);
+
 
                     editor.putInt("west_flask", 1).apply();
 
@@ -107,21 +111,25 @@ public class West_flask extends AppCompatActivity {
                 break;
 
             case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("west_flask", 2).apply();
-                break;
-
-            case 2:
                 //アイテムをタッチ
                 if (seleitem == R.drawable.item_pipette) {
+
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
                     siyaku.setMessage("サファイア")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
                     backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                    //アイテム削除
+                    for (int i = selenum; i < 12; i++) {
+
+                        //アイテムを一つずらす
+                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                    }
+
+                    //手持ちのアイテム数を減らす
+                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
                     //アイテム欄に追加と背景変更の保存
                     int itemboxnum = lib.getInt("itemboxnum", 0);
@@ -132,10 +140,12 @@ public class West_flask extends AppCompatActivity {
 
                     //ボタンの画像読み込み
                     new btnload().refresh();
+
+                    editor.putInt("west_flask", 2).apply();
                 }
                 break;
 
-            case 3:
+            case 2:
                 //アイテムなしの画像
                 backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;

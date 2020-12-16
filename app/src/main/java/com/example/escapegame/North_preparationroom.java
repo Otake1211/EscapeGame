@@ -79,9 +79,23 @@ public class North_preparationroom extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                if (0 < xplace && 0 < yplace) {
+                if (seleitem == R.drawable.item_litmusblue) {
 
                     //開けた効果音
+
+                    //アイテム削除
+                    for (int i = selenum; i < 12; i++) {
+
+                        //アイテムを一つずらす
+                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
+                    }
+
+                    //手持ちのアイテム数を減らす
+                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                    //ボタンの画像読み込み
+                    new btnload().refresh();
+
                     editor.putInt("north_preparationroom", 1).apply();
 
                 } else {

@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
-        <activity android:name=".North_preparationroominside_rocer"></activity>
-        <activity android:name=".North_experiment" />
+        <activity
+            android:name=".North_experiment"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".North_preparetionroominside"
             android:screenOrientation="portrait" />

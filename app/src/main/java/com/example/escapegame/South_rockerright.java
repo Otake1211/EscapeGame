@@ -326,7 +326,7 @@ public class South_rockerright extends AppCompatActivity {
         selenum = 12;
     }
 
-    class otherable{
+    class otherable {
 
         public void reable(View view) {
 

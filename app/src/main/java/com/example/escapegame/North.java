@@ -87,7 +87,7 @@ public class North extends AppCompatActivity {
                     SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
                     //リトマス紙へ
                     int envcount = lib.getInt("north", 0);
-                    if(envcount==0) {
+                    if (envcount == 0) {
                         AlertDialog.Builder north_desk = new AlertDialog.Builder(this);
                         north_desk.setMessage("リトマス紙(青)")
                                 .setPositiveButton("OK", null).show();
