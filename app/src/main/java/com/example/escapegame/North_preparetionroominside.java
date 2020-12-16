@@ -2,21 +2,35 @@ package com.example.escapegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 
 public class North_preparetionroominside extends AppCompatActivity {
 
     int seleitem;
+    int screenWidth;
+    int screenHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_north_preparetionroominside);
+
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+        screenWidth = size.x;
+        screenHeight = size.y;
     }
 
     public void onMain(View view) {
@@ -29,6 +43,37 @@ public class North_preparetionroominside extends AppCompatActivity {
         Intent intent = new Intent(this, North.class);
         finish();
         startActivity(intent);
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        int xplace = (int)(motionEvent.getX()*1000/screenWidth);
+        int yplace = (int)(motionEvent.getY()*2000/screenHeight);
+
+        switch (motionEvent.getAction()) {
+
+            case MotionEvent.ACTION_DOWN: //タップしたとき
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("("+xplace + ","+yplace+")")
+                        .setPositiveButton("OK", null).show();
+
+
+                break;
+
+            case MotionEvent.ACTION_UP:
+                // something to do
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                // something to do
+                break;
+
+            case MotionEvent.ACTION_CANCEL:
+                // something to do
+                break;
+        }
+        return false;
     }
 
     public void onitem1(View view) {

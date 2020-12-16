@@ -104,7 +104,7 @@ public class North_preparationroom extends AppCompatActivity {
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int envcount = lib.getInt("south_saferight", 0);
+        int envcount = lib.getInt("north_preparationroom", 0);
         SharedPreferences.Editor editor = lib.edit();
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
@@ -113,7 +113,7 @@ public class North_preparationroom extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                if (seleitem == R.drawable.item_junbisitukry) {
+                if (0 < xplace && 0 < yplace) {
 
                     //開けた効果音
                     editor.putInt("north_preparationroom", 1).apply();

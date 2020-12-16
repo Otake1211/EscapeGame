@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/north_junbisitu" />
+        android:src="@drawable/north_jyunbisituinside" />
 
 
     <Button
