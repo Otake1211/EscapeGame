@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
         Point size = new Point();
         disp.getSize(size);
@@ -47,17 +47,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
-        int xplace = (int)(motionEvent.getX()*1000/screenWidth);
-        int yplace = (int)(motionEvent.getY()*2000/screenHeight);
+        int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
+        int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         switch (motionEvent.getAction()) {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("("+xplace + ","+yplace+")")
+                builder.setMessage("(" + xplace + "," + yplace + ")")
                         .setPositiveButton("OK", null).show();
                 break;
 

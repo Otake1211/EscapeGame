@@ -42,7 +42,12 @@ public class West_aquarium extends AppCompatActivity {
 
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+        if (envcount == 1) {
+            //灰色の背景
+            backimage.setImageResource(R.drawable.north2);
+        }
         if (envcount == 2) {
+            //黒色の背景
             backimage.setImageResource(R.drawable.north2);
         }
 
@@ -81,8 +86,9 @@ public class West_aquarium extends AppCompatActivity {
 
 
         switch (envcount) {
-            case 0:
-                // 水槽の背景　白のとき
+
+            case 0:// 水槽の背景　白のとき
+
                 if (0 < xplace && 0 < yplace) {
 
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
@@ -91,6 +97,7 @@ public class West_aquarium extends AppCompatActivity {
 
                     //　水槽の背景　灰色に
                     backimage.setImageResource(R.drawable.south_rockerrightoff);
+
                     //アイテム欄に追加と背景変更の保存
                     int itemboxnum = lib.getInt("itemboxnum", 0);
                     itemboxnum++;
@@ -100,20 +107,30 @@ public class West_aquarium extends AppCompatActivity {
 
                     //ボタンの画像読み込み
                     new btnload().refresh();
-
                 }
                 break;
 
-            case 1:
-                //水槽の背景　灰色の時
-                if(seleitem == R.drawable.item_blackaquariumpaper) {
-
+            case 1://水槽の背景　灰色の時
+                if (seleitem == R.drawable.item_blackaquariumpaper) {
 
                     //水槽の背景　黒に
                     backimage.setImageResource(R.drawable.south_rockerrighton);
+
+                    //アイテム削除
+                    for (int i = selenum; i < 12; i++) {
+
+                        //アイテムを一つずらす
+                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                    }
+
+                    //手持ちのアイテム数を減らす
+                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                    //ボタンの画像読み込み
+                    new btnload().refresh();
+
                     editor.putInt("west_aquarium", 2).apply();
                     break;
-
                 }
         }
 

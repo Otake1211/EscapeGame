@@ -89,7 +89,7 @@ public class East_rbbox extends AppCompatActivity {
                     for (int i = selenum; i < 12; i++) {
 
                         //アイテムを一つずらす
-                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
+                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
                     }
 
                     //手持ちのアイテム数を減らす
@@ -152,7 +152,7 @@ public class East_rbbox extends AppCompatActivity {
                     for (int i = selenum; i < 12; i++) {
 
                         //アイテムを一つずらす
-                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
+                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
                     }
 
                     //手持ちのアイテム数を減らす
