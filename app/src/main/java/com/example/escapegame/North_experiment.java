@@ -2,6 +2,7 @@ package com.example.escapegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -238,6 +239,18 @@ public class North_experiment extends AppCompatActivity {
 
         //選択しているボタンを取得
         selenum = 12;
+    }
+
+    public void onMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onNorth(View view) {
+        Intent intent = new Intent(this, North.class);
+        finish();
+        startActivity(intent);
     }
 
     class otherable {
