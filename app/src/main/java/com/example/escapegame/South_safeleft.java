@@ -21,6 +21,7 @@ public class South_safeleft extends AppCompatActivity {
     int screenHeight;
     int touchcount=0;
     int seleitem;
+    int selenum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +129,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox1", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 1;
     }
 
     public void onitem2(View view) {
@@ -143,6 +147,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox2", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 2;
     }
 
     public void onitem3(View view) {
@@ -158,6 +165,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox3", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 3;
     }
 
     public void onitem4(View view) {
@@ -173,6 +183,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox4", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 4;
     }
 
     public void onitem5(View view) {
@@ -188,6 +201,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox5", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 5;
     }
 
     public void onitem6(View view) {
@@ -203,6 +219,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox6", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 6;
     }
 
     public void onitem7(View view) {
@@ -218,6 +237,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox7", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 7;
     }
 
     public void onitem8(View view) {
@@ -233,6 +255,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox8", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 8;
     }
 
     public void onitem9(View view) {
@@ -247,6 +272,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox9", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 9;
     }
 
     public void onitem10(View view) {
@@ -262,6 +290,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox10", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 10;
     }
 
     public void onitem11(View view) {
@@ -277,6 +308,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox11", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 11;
     }
 
     public void onitem12(View view) {
@@ -292,6 +326,9 @@ public class South_safeleft extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox12", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 12;
     }
 
 
