@@ -13,12 +13,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class North_preparetionroominside extends AppCompatActivity {
 
     int seleitem;
     int screenWidth;
     int screenHeight;
+    int selenum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         disp.getSize(size);
         screenWidth = size.x;
         screenHeight = size.y;
+
+        //ボタンの画像読み込み
+        new btnload().refresh();
     }
 
     public void onMain(View view) {
@@ -89,6 +94,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox1", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 1;
     }
 
     public void onitem2(View view) {
@@ -104,6 +112,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox2", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 2;
     }
 
     public void onitem3(View view) {
@@ -119,6 +130,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox3", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 3;
     }
 
     public void onitem4(View view) {
@@ -134,6 +148,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox4", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 4;
     }
 
     public void onitem5(View view) {
@@ -149,6 +166,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox5", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 5;
     }
 
     public void onitem6(View view) {
@@ -164,6 +184,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox6", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 6;
     }
 
     public void onitem7(View view) {
@@ -179,6 +202,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox7", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 7;
     }
 
     public void onitem8(View view) {
@@ -194,6 +220,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox8", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 8;
     }
 
     public void onitem9(View view) {
@@ -208,6 +237,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox9", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 9;
     }
 
     public void onitem10(View view) {
@@ -223,6 +255,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox10", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 10;
     }
 
     public void onitem11(View view) {
@@ -238,6 +273,9 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox11", R.color.black);
+
+        //選択しているボタンを取得
+        selenum = 11;
     }
 
     public void onitem12(View view) {
@@ -253,8 +291,10 @@ public class North_preparetionroominside extends AppCompatActivity {
         //選択しているアイテムを変更
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
         seleitem = lib.getInt("itembox12", R.color.black);
-    }
 
+        //選択しているボタンを取得
+        selenum = 12;
+    }
 
 
 
@@ -314,7 +354,30 @@ public class North_preparetionroominside extends AppCompatActivity {
         }
     }
 
+    class btnload {
 
+        public void refresh() {
+
+            // ファイルの準備
+            SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
+            //ボタンの画像読み込み
+            ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton2)).setImageResource(lib.getInt("itembox2", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton3)).setImageResource(lib.getInt("itembox3", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton4)).setImageResource(lib.getInt("itembox4", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton5)).setImageResource(lib.getInt("itembox5", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton6)).setImageResource(lib.getInt("itembox6", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton7)).setImageResource(lib.getInt("itembox7", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton8)).setImageResource(lib.getInt("itembox8", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton9)).setImageResource(lib.getInt("itembox9", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton10)).setImageResource(lib.getInt("itembox10", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton11)).setImageResource(lib.getInt("itembox11", R.drawable.clear));
+            ((ImageView) findViewById(R.id.itembutton12)).setImageResource(lib.getInt("itembox12", R.drawable.clear));
+
+
+        }
+    }
 
 
 }
