@@ -22,9 +22,184 @@ public class North_experiment extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        //ボタンの画像読み込み
+        ((ImageView) findViewById(R.id.rightbutton)).setImageResource(lib.getInt("rightbutton",R.color.black));
+        ((ImageView) findViewById(R.id.leftbutton)).setImageResource(lib.getInt("leftbutton",R.color.black));
+
     }
 
 
+    public void onMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onNorth(View view) {
+        Intent intent = new Intent(this, North.class);
+        finish();
+        startActivity(intent);
+    }
+
+
+    public void onRight(View view) {
+
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = lib.edit();
+
+
+        if (lib.getInt("rightbutton", R.color.black) == R.color.black) {
+
+            if (0 != seleitem) {
+                //代入
+                editor.putInt("rightbutton", seleitem).apply();
+
+                //ボタンの画像読み込み
+                ((ImageView) findViewById(R.id.rightbutton)).setImageResource(seleitem);
+
+                //アイテム削除
+                for (int i = selenum; i < 12; i++) {
+                    editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                }
+                editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                //他のボタンを使えるようにする
+                new otherable().reable(view);
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+                seleitem = 0;
+            }
+
+        } else {
+
+            if (seleitem == 0) {
+                //アイテム欄に元のアイテムを追加
+                int itemboxnum = lib.getInt("itemboxnum", 0);
+                itemboxnum++;
+                editor.putInt("itemboxnum", itemboxnum).apply();
+                editor.putInt("itembox" + itemboxnum, lib.getInt("rightbutton", 0)).apply();
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+                //ボタンの画像読み込み
+                ((ImageView) findViewById(R.id.rightbutton)).setImageResource(R.color.black);
+                editor.putInt("rightbutton", R.color.black).apply();
+
+
+            } else {
+
+                //アイテム欄に元のアイテムを追加
+                editor.putInt("itembox" + (lib.getInt("itemboxnum", 0) + 1), lib.getInt("rightbutton", 0)).apply();
+
+
+                //ボタンの画像読み込み
+                ((ImageView) findViewById(R.id.rightbutton)).setImageResource(R.color.black);
+                editor.putInt("rightbutton", R.color.black).apply();
+
+                //アイテム削除
+                for (int i = selenum; i < 12; i++) {
+                    editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                }
+
+                //他のボタンを使えるようにする
+                new otherable().reable(view);
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+                seleitem = 0;
+            }
+
+        }
+    }
+
+
+    public void onLeft(View view) {
+
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = lib.edit();
+
+
+        if (lib.getInt("leftbutton", R.color.black) == R.color.black) {
+
+            if (0 != seleitem) {
+                //代入
+                editor.putInt("leftbutton", seleitem).apply();
+
+                //ボタンの画像読み込み
+                ((ImageView) findViewById(R.id.leftbutton)).setImageResource(seleitem);
+
+                //アイテム削除
+                for (int i = selenum; i < 12; i++) {
+                    editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                }
+                editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                //他のボタンを使えるようにする
+                new otherable().reable(view);
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+                seleitem = 0;
+            }
+
+        } else {
+
+            if (seleitem == 0) {
+                //アイテム欄に元のアイテムを追加
+                int itemboxnum = lib.getInt("itemboxnum", 0);
+                itemboxnum++;
+                editor.putInt("itemboxnum", itemboxnum).apply();
+                editor.putInt("itembox" + itemboxnum, lib.getInt("leftbutton", R.color.black)).apply();
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+                //ボタンの画像読み込み
+                ((ImageView) findViewById(R.id.leftbutton)).setImageResource(R.color.black);
+                editor.putInt("leftbutton", R.color.black).apply();
+
+
+            } else {
+
+                //アイテム欄に元のアイテムを追加
+                editor.putInt("itembox" + (lib.getInt("itemboxnum", 0) + 1), lib.getInt("leftbutton", 0)).apply();
+
+
+                //ボタンの画像読み込み
+                ((ImageView) findViewById(R.id.leftbutton)).setImageResource(R.color.black);
+                editor.putInt("leftbutton", R.color.black).apply();
+
+                //アイテム削除
+                for (int i = selenum; i < 12; i++) {
+                    editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                }
+
+                //他のボタンを使えるようにする
+                new otherable().reable(view);
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+                seleitem = 0;
+            }
+
+        }
+
+
+    }
+
+
+    public void onMake(View view) {
+
+
+    }
 
     public void onitem1(View view) {
 
@@ -239,18 +414,6 @@ public class North_experiment extends AppCompatActivity {
 
         //選択しているボタンを取得
         selenum = 12;
-    }
-
-    public void onMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void onNorth(View view) {
-        Intent intent = new Intent(this, North.class);
-        finish();
-        startActivity(intent);
     }
 
     class otherable {

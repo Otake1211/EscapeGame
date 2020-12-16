@@ -27,6 +27,9 @@ public class Setting extends AppCompatActivity {
         //データ削除
         SharedPreferences.Editor editor = lib.edit();
 
+        editor.remove("rightbutton").apply();
+        editor.remove("leftbutton").apply();
+
         editor.remove("west").apply();
         editor.remove("west_aquarium").apply();
         editor.remove("west_drawerleft").apply();

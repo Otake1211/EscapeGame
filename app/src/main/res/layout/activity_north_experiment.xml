@@ -33,14 +33,6 @@
         android:textSize="60sp" />
 
 
-
-
-
-
-
-
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,10 +52,12 @@
                 android:scaleType="centerInside">
 
                 <ImageButton
+                    android:id="@+id/leftbutton"
                     android:layout_width="150sp"
                     android:layout_height="150sp"
                     android:layout_margin="5sp"
                     android:background="#666666"
+                    android:onClick="onLeft"
                     android:scaleType="centerInside"
                     android:src="@drawable/clear" />
 
@@ -77,10 +71,12 @@
                 android:scaleType="centerInside">
 
                 <ImageButton
+                    android:id="@+id/rightbutton"
                     android:layout_width="150sp"
                     android:layout_height="150sp"
                     android:layout_margin="5sp"
                     android:background="#666666"
+                    android:onClick="onRight"
                     android:scaleType="centerInside"
                     android:src="@drawable/clear" />
 
@@ -94,23 +90,13 @@
             <ImageButton
                 android:layout_width="200sp"
                 android:layout_height="100sp"
+                android:onClick="onMake"
                 android:layout_centerInParent="true"
                 android:layout_marginVertical="80sp"
                 android:scaleType="centerInside" />
 
         </RelativeLayout>
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
 
 
     <LinearLayout
