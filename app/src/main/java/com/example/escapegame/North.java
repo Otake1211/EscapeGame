@@ -83,7 +83,7 @@ public class North extends AppCompatActivity {
 
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                if (523 < xplace && 977 < yplace && yplace < 1144) {
+                if (523 < xplace && xplace < 730 && 977 < yplace && yplace < 1144) {
                     SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
                     //リトマス紙へ
                     int envcount = lib.getInt("north", 0);
@@ -111,6 +111,13 @@ public class North extends AppCompatActivity {
                 if (xplace < 252 && 643 < yplace && yplace < 1196) {
                     //準備室へ
                     Intent intent = new Intent(this, North_preparationroom.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+                if (781 < xplace && 977 < yplace && yplace < 1144) {
+                    //作業台へ
+                    Intent intent = new Intent(this, North_experiment.class);
                     startActivity(intent);
                     finish();
                 }
