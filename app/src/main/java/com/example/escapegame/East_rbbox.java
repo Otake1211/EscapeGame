@@ -113,7 +113,7 @@ public class East_rbbox extends AppCompatActivity {
                 //アイテムをタッチ
                 if (0 < xplace && 0 < yplace) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("リトマス紙(赤)")
+                    siyaku.setMessage("出口の鍵")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
@@ -173,7 +173,7 @@ public class East_rbbox extends AppCompatActivity {
                 //アイテムをタッチ
                 if (0 < xplace && 0 < yplace) {
                     AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("出口のカギ")
+                    siyaku.setMessage("リトマス紙（赤）")
                             .setPositiveButton("OK", null).show();
 
                     //アイテムなしの画像に
