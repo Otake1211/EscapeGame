@@ -70,19 +70,15 @@ public class East_box extends AppCompatActivity {
                 if (seleitem == R.drawable.item_boxkey) {
 
                     //開けた効果音
+
+
                     editor.putInt("east_box", 1).apply();
 
-
                     //アイテム削除
-
                     for (int i = selenum; i < 12; i++) {
 
                         //アイテムを一つずらす
                         editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
-
-
-
-
                     }
 
                     //手持ちのアイテム数を減らす
