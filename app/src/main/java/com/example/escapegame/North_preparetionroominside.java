@@ -64,6 +64,30 @@ public class North_preparetionroominside extends AppCompatActivity {
                         .setPositiveButton("OK", null).show();
 
 
+                if (73 < xplace && xplace < 114 && 1121 < yplace && yplace < 1178) {
+                    SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+                    //ケーブルを取得
+                    int envcount = lib.getInt("north_preparationroominside", 0);
+                    if (envcount == 0) {
+                        AlertDialog.Builder west_shiryou = new AlertDialog.Builder(this);
+                        west_shiryou.setMessage("ケーブル")
+                                .setPositiveButton("OK", null).show();
+
+                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+                        backimage.setImageResource(R.drawable.north_jyunbisituinside2);
+
+                        SharedPreferences.Editor editor = lib.edit();
+                        int itemboxnum = lib.getInt("itemboxnum", 0);
+                        itemboxnum++;
+                        editor.putInt("itemboxnum", itemboxnum).apply();
+                        editor.putInt("itembox" + itemboxnum, R.drawable.item_cable).apply();
+
+                        editor.putInt("north_preparationroominside", 2).apply();
+
+                        //ボタンの画像読み込み
+                        new btnload().refresh();
+                    }
+                }
                 break;
 
             case MotionEvent.ACTION_UP:
