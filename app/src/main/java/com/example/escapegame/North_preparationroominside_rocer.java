@@ -15,7 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class North_preparetionroominside extends AppCompatActivity {
+public class North_preparationroominside_rocer extends AppCompatActivity {
 
     int seleitem;
     int screenWidth;
@@ -25,7 +25,7 @@ public class North_preparetionroominside extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_north_preparetionroominside);
+        setContentView(R.layout.activity_north_preparationroominside_rocer);
 
         WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
@@ -38,12 +38,12 @@ public class North_preparetionroominside extends AppCompatActivity {
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
 
         // データの読込
-        int envcount = lib.getInt("north_preparationroominside", 0);
+        int envcount = lib.getInt("north_preparationroominside_rocker", 0);
 
         //背景画像の場合分け
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-        if (envcount == 2) {
-            backimage.setImageResource(R.drawable.north_jyunbisituinside2);
+        if (envcount == 1) {
+            backimage.setImageResource(R.drawable.north_jyunbisiturocker2);
         }
 
         //ボタンの画像読み込み
@@ -56,69 +56,77 @@ public class North_preparetionroominside extends AppCompatActivity {
         finish();
     }
 
-    public void onNorth(View view) {
-        Intent intent = new Intent(this, North.class);
+    public void onPreparationroom(View view) {
+        Intent intent = new Intent(this, North_preparetionroominside.class);
         finish();
         startActivity(intent);
     }
 
-
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        int xplace = (int)(motionEvent.getX()*1000/screenWidth);
-        int yplace = (int)(motionEvent.getY()*2000/screenHeight);
 
-        switch (motionEvent.getAction()) {
+        //タップしたとき
+        int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
+        int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
-            case MotionEvent.ACTION_DOWN: //タップしたとき
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        int envcount = lib.getInt("north_preparationroominside_rocker", 0);
+        SharedPreferences.Editor editor = lib.edit();
 
-                if (73 < xplace && xplace < 114 && 1121 < yplace && yplace < 1178) {
-                    SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-                    //ケーブルを取得
-                    int envcount = lib.getInt("north_preparationroominside", 0);
-                    if (envcount == 0) {
-                        AlertDialog.Builder west_shiryou = new AlertDialog.Builder(this);
-                        west_shiryou.setMessage("ケーブル")
-                                .setPositiveButton("OK", null).show();
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
-                        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
-                        backimage.setImageResource(R.drawable.north_jyunbisituinside2);
 
-                        SharedPreferences.Editor editor = lib.edit();
-                        int itemboxnum = lib.getInt("itemboxnum", 0);
-                        itemboxnum++;
-                        editor.putInt("itemboxnum", itemboxnum).apply();
-                        editor.putInt("itembox" + itemboxnum, R.drawable.item_cable).apply();
+        switch (envcount) {
 
-                        editor.putInt("north_preparationroominside", 2).apply();
-                        editor.putInt("north_preparationroominside_rocker",1).apply();
+            case 0:
+                // ガチャガチャ効果音
 
-                        //ボタンの画像読み込み
-                        new btnload().refresh();
-                    }
-                }
-
-                if(635 < xplace && xplace < 979 && 404 < yplace && yplace < 1299){
-                    //ロッカーへ
-                    Intent intent = new Intent(this, North_preparationroominside_rocer.class);
-                    startActivity(intent);
-                    finish();
-                }
                 break;
 
-            case MotionEvent.ACTION_UP:
-                // something to do
+            case 1:
+                    //開ける操作
+                    //開いた音
+                    editor.putInt("north_preparationroominside_rocker", 2).apply();
+                    break;
+
+            case 2:
+                //アイテムを取っていない
+                //アイテム有の画像
+                backimage.setImageResource(R.drawable.south_rockerrighton);
+                editor.putInt("north_preparationroominside_rocker", 3).apply();
+
                 break;
 
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
+            case 3:
+        //アイテムをタッチ
+        if (0 < xplace && 0 < yplace) {
+            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+            siyaku.setMessage("粉")
+                    .setPositiveButton("OK", null).show();
 
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
-                break;
+            //アイテムなしの画像に
+            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+            //アイテム欄に追加と背景変更の保存
+            int itemboxnum = lib.getInt("itemboxnum", 0);
+            itemboxnum++;
+            editor.putInt("itemboxnum", itemboxnum).apply();
+            editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
+            editor.putInt("north_preparationroominside_rocker", 4).apply();
+
+            //ボタンの画像読み込み
+            new btnload().refresh();
+        }
+
+        break;
+
+            case 4:
+                //アイテムなしの画像
+                backimage.setImageResource(R.drawable.south_rockerrightoff);
         }
         return false;
+
+
     }
 
     public void onitem1(View view) {
@@ -418,6 +426,4 @@ public class North_preparetionroominside extends AppCompatActivity {
 
         }
     }
-
-
 }

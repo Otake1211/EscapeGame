@@ -37,6 +37,7 @@ public class Setting extends AppCompatActivity {
         editor.remove("north").apply();
         editor.remove("north_preparationroom").apply();
         editor.remove("north_preparationroominside").apply();
+        editor.remove("north_preparationroominside_rocker").apply();
 
         editor.remove("south").apply();
         editor.remove("south_saferight").apply();
