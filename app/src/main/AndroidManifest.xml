@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
+        <activity android:name=".North_experiment"></activity>
         <activity
             android:name=".North_preparetionroominside"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".West_scale"
             android:screenOrientation="portrait" />
