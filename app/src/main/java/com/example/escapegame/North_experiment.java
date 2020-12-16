@@ -201,6 +201,7 @@ public class North_experiment extends AppCompatActivity {
 
     }
 
+
     public void onitem1(View view) {
 
         //他のボタンを使えるようにする
