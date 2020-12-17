@@ -46,7 +46,7 @@
             android:background="#00000000"
             android:onClick="onNorth"
             android:text="Start"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="50sp" />
 
         <Space
