@@ -16,6 +16,9 @@
             android:name=".North_preparetionroominside"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".North_preparationroominside_rocer"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".West_scale"
             android:screenOrientation="portrait" />
         <activity

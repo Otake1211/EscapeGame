@@ -79,7 +79,7 @@ public class North_preparationroom extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                if (seleitem == R.drawable.item_litmusblue) {
+                if (seleitem == R.drawable.item_junbisitukry) {
 
                     //開けた効果音
 
