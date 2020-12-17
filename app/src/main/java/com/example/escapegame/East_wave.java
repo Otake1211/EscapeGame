@@ -52,6 +52,10 @@ public class East_wave extends AppCompatActivity {
         if (envcount == 3) {//ルビーあり
             backimage.setImageResource(R.drawable.north2);
         }
+        if (envcount == 4) {//ケーブルあり
+            backimage.setImageResource(R.drawable.north2);
+        }
+
 
         //ボタンの画像読み込み
         new btnload().refresh();
