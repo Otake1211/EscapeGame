@@ -87,13 +87,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
+            <Button
                 android:layout_width="200sp"
                 android:layout_height="100sp"
-                android:onClick="onMake"
                 android:layout_centerInParent="true"
                 android:layout_marginVertical="80sp"
-                android:scaleType="centerInside" />
+                android:background="#44000000"
+                android:onClick="onMake"
+                android:scaleType="centerInside"
+                android:text="アイテム\n合成"
+                android:textSize="30sp" />
 
         </RelativeLayout>
     </LinearLayout>
