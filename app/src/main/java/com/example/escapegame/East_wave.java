@@ -47,13 +47,11 @@ public class East_wave extends AppCompatActivity {
             backimage.setImageResource(R.drawable.north2);
         }
         if (envcount == 2) {//材料入れた後
-            backimage.setImageResource(R.drawable.north2);
+            backimage.setImageResource(R.drawable.north);
         }
         if (envcount == 3) {//ルビーあり
             backimage.setImageResource(R.drawable.north2);
         }
-
-
 
         //ボタンの画像読み込み
         new btnload().refresh();
@@ -88,6 +86,7 @@ public class East_wave extends AppCompatActivity {
 
 
         switch (envcount) {
+
             case 0:
                 // 開く操作
                 if (seleitem == R.drawable.item_cable) {
@@ -110,7 +109,7 @@ public class East_wave extends AppCompatActivity {
 
                     //開けた効果音
 
-                    editor.putInt("south_saferight", 1).apply();
+                    editor.putInt("east_wave", 1).apply();
                 }
                 break;
 
@@ -132,7 +131,7 @@ public class East_wave extends AppCompatActivity {
                     //ボタンの画像読み込み
                     new btnload().refresh();
 
-                    editor.putInt("south_saferight", 2).apply();
+                    editor.putInt("east_wave", 2).apply();
                 }
                 break;
 
@@ -140,7 +139,7 @@ public class East_wave extends AppCompatActivity {
             case 2:
                 if (0 < xplace && 0 < yplace) {
                     //レンジの音
-                    editor.putInt("south_saferight", 3).apply();
+                    editor.putInt("east_wave", 3).apply();
                     //ルビーの画像
                 }
                 break;
@@ -161,7 +160,7 @@ public class East_wave extends AppCompatActivity {
                     itemboxnum++;
                     editor.putInt("itemboxnum", itemboxnum).apply();
                     editor.putInt("itembox" + itemboxnum, R.drawable.item_ruby).apply();
-                    editor.putInt("south_saferight", 4).apply();
+                    editor.putInt("east_wave", 4).apply();
 
                     //アイテムなしの画像
                     backimage.setImageResource(R.drawable.south_rockerrightoff);
