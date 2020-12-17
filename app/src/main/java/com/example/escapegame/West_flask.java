@@ -86,19 +86,6 @@ public class West_flask extends AppCompatActivity {
 
                     //開けた効果音
 
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
-
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
-
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-
                     //アイテムを取っていない,アイテム有の画像
                     backimage.setImageResource(R.drawable.south_rockerrighton);
 
