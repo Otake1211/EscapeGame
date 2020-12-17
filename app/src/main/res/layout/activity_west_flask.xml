@@ -71,7 +71,7 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#555555"
+            android:background="@color/border"
             android:paddingVertical="10sp">
 
             <LinearLayout
@@ -79,13 +79,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingHorizontal="10sp"
-                android:background="#555555">
+                android:background="@color/border">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="80sp"
                     android:layout_marginRight="0sp"
-                    android:background="@color/white"
+                    android:background="@color/box"
                     android:orientation="horizontal">
 
 
