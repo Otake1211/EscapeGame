@@ -2,13 +2,16 @@ package com.example.escapegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
 
 public class North_experiment extends AppCompatActivity {
 
@@ -24,9 +27,10 @@ public class North_experiment extends AppCompatActivity {
         new btnload().refresh();
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
         //ボタンの画像読み込み
-        ((ImageView) findViewById(R.id.rightbutton)).setImageResource(lib.getInt("rightbutton",R.drawable.clear));
-        ((ImageView) findViewById(R.id.leftbutton)).setImageResource(lib.getInt("leftbutton",R.drawable.clear));
+        ((ImageView) findViewById(R.id.rightbutton)).setImageResource(lib.getInt("rightbutton", R.drawable.clear));
+        ((ImageView) findViewById(R.id.leftbutton)).setImageResource(lib.getInt("leftbutton", R.drawable.clear));
 
     }
 
@@ -125,7 +129,7 @@ public class North_experiment extends AppCompatActivity {
         SharedPreferences.Editor editor = lib.edit();
 
 
-        if (lib.getInt("leftbutton",R.drawable.clear) ==R.drawable.clear) {
+        if (lib.getInt("leftbutton", R.drawable.clear) == R.drawable.clear) {
 
             if (0 != seleitem) {
                 //代入
@@ -198,7 +202,61 @@ public class North_experiment extends AppCompatActivity {
 
     public void onMake(View view) {
 
+        //鉛筆と白い紙　黒い紙
+        new maker().make(R.drawable.item_enpitsu, R.drawable.item_whiteaquariumpaper, R.drawable.item_blackaquariumpaper, "黒い紙", R.drawable.clear, R.drawable.item_enpitsu);
 
+        //王水と金の鍵　準備室の鍵
+        new maker().make(R.drawable.item_ousui, R.drawable.item_goldkey, R.drawable.item_junbisitukry, "準備室の鍵", R.drawable.clear, R.drawable.item_ousui);
+
+        //アンモニアと赤いリトマス紙　金庫の暗号
+        new maker().make(R.drawable.item_ammonia, R.drawable.item_litmusred, R.drawable.item_safecode, "金庫の暗号", R.drawable.clear, R.drawable.clear);
+
+        //王水と青いリトマス紙　ロッカーの暗号
+        new maker().make(R.drawable.item_ousui, R.drawable.item_litmusblue, R.drawable.item_rockercode, "ロッカーの暗号", R.drawable.clear, R.drawable.item_ousui);
+
+        //鉛筆とカッター　黒鉛
+        new maker().make(R.drawable.item_enpitsu, R.drawable.item_cutter, R.drawable.item_carbon, "黒鉛", R.drawable.clear, R.drawable.item_cutter);
+
+        //瓶とカッター　王水
+        new maker().make(R.drawable.item_cutter, R.drawable.item_rockedousui, R.drawable.item_ousui, "王水", R.drawable.clear, R.drawable.item_cutter);
+
+    }
+
+
+    public class maker {
+
+        public void make(int itemA, int itemB, int product, String proname, int rightchange, int leftchange) {
+
+            SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+            SharedPreferences.Editor editor = lib.edit();
+            int rightitem = lib.getInt("rightbutton", R.drawable.clear);
+            int leftitem = lib.getInt("leftbutton", R.drawable.clear);
+
+
+            //アイテム判定
+            if ((rightitem == itemA && leftitem == itemB) || (rightitem == itemB && leftitem == itemA)) {
+
+                //得たアイテム表示
+                new AlertDialog.Builder(North_experiment.this).setMessage(proname).setPositiveButton("OK", null).show();
+
+                //使ったアイテムを使用後に変更
+                editor.putInt("rightbutton", rightchange).apply();
+                editor.putInt("leftbutton", leftchange).apply();
+
+                ((ImageView) findViewById(R.id.rightbutton)).setImageResource(lib.getInt("rightbutton", R.drawable.clear));
+                ((ImageView) findViewById(R.id.leftbutton)).setImageResource(lib.getInt("leftbutton", R.drawable.clear));
+
+                //作ったアイテムをアイテム欄に追加
+                int itemboxnum = lib.getInt("itemboxnum", 0);
+                itemboxnum++;
+                editor.putInt("itemboxnum", itemboxnum).apply();
+                editor.putInt("itembox" + itemboxnum, product).apply();
+
+                //アイテム欄の画像読み込み
+                new btnload().refresh();
+
+            }
+        }
     }
 
 
