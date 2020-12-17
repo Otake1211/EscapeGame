@@ -1,11 +1,3 @@
 <resources>
     <string name="app_name">EscapeGame</string>
-    <string name="buttonsizew">100sp</string>
-    <string name="buttonsizeh">80sp</string>
-    <string name="itmbxbrdrsizew">3sp</string>
-    <string name="itmbxbrdrsizeh">3sp</string>
-    <string name="itmbxbrdrcolor">#555555</string>
-    <string name="itmbxcolor">#cccccc</string>
-    <string name="arrowsize">60sp</string>
-
 </resources>
