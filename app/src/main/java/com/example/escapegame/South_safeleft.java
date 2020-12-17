@@ -53,6 +53,30 @@ public class South_safeleft extends AppCompatActivity {
         finish();
     }
 
+    public void onPush1(View view) {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
 
