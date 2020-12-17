@@ -202,6 +202,14 @@ public class North_experiment extends AppCompatActivity {
 
     public void onMake(View view) {
 
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+        int rightitem = lib.getInt("rightbutton", R.drawable.clear);
+        int leftitem = lib.getInt("leftbutton", R.drawable.clear);
+
+        if ((rightitem == R.drawable.clear ) || (leftitem == R.drawable.clear )) {
+            new AlertDialog.Builder(North_experiment.this).setMessage("上の欄にアイテムを入れてね。\nアイテムを選択した後、四角をタップするとアイテムが入るよ。").setPositiveButton("OK", null).show();
+        }
+
         //鉛筆と白い紙　黒い紙
         new maker().make(R.drawable.item_enpitsu, R.drawable.item_whiteaquariumpaper, R.drawable.item_blackaquariumpaper, "黒い紙", R.drawable.clear, R.drawable.item_enpitsu);
 
