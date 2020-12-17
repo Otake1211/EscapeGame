@@ -118,8 +118,8 @@
 
             <ImageButton
                 android:id="@+id/East_rbbox"
-                android:layout_width="@string/arrowsize"
-                android:layout_height="@string/arrowsize"
+                android:layout_width="60sp"
+                android:layout_height="60sp"
 
                 android:layout_centerHorizontal="true"
                 android:background="@null"
@@ -136,19 +136,19 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@string/itmbxbrdrcolor"
+            android:background="#555555"
             android:paddingVertical="3sp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@string/itmbxbrdrcolor"
+                android:background="#555555"
                 android:orientation="horizontal"
                 android:paddingHorizontal="4sp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="@string/buttonsizeh"
+                    android:layout_height="80sp"
                     android:layout_marginRight="0sp"
                     android:background="#cccccc"
                     android:orientation="horizontal">
@@ -158,7 +158,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton1"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem1"
@@ -167,7 +167,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton2"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem2"
@@ -176,7 +176,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton3"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem3"
@@ -185,7 +185,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton4"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem4"
@@ -194,7 +194,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton5"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem5"

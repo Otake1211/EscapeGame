@@ -51,34 +51,18 @@
             android:layout_height="wrap_content">
 
 
-            <ImageButton
-                android:id="@+id/South"
-                android:layout_width="@string/arrowsize"
-                android:layout_height="@string/arrowsize"
-
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:contentDescription="@null"
-                android:onClick="onSouth"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrowright" />
-
 
             <ImageButton
-                android:id="@+id/North"
-                android:layout_width="@string/arrowsize"
-                android:layout_height="@string/arrowsize"
+                android:id="@+id/North_preparationroom"
+                android:layout_width="60sp"
+                android:layout_height="60sp"
 
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
                 android:background="@null"
                 android:contentDescription="@null"
                 android:onClick="onNorth"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrowleft" />
+                android:src="@drawable/arrowdown" />
 
         </RelativeLayout>
 
@@ -88,20 +72,21 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@string/itmbxbrdrcolor"
-            android:paddingVertical="@string/itmbxbrdrsizeh">
+            android:background="#555555"
+            android:paddingVertical="10sp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingHorizontal="@string/itmbxbrdrsizew"
-                android:background="itmbxbrdrcolor">
+                android:paddingHorizontal="10sp"
+                android:background="#555555">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="@string/buttonsizeh"
-                    android:background="@string/itmbxcolor"
+                    android:layout_height="80sp"
+                    android:layout_marginRight="0sp"
+                    android:background="@color/white"
                     android:orientation="horizontal">
 
 
@@ -109,7 +94,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton1"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem1"
@@ -118,7 +103,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton2"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem2"
@@ -127,7 +112,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton3"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem3"
@@ -136,7 +121,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton4"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem4"
@@ -145,7 +130,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton5"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem5"
@@ -154,7 +139,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton6"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem6"
@@ -163,7 +148,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton7"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem7"
@@ -172,7 +157,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton8"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem8"
@@ -181,7 +166,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton9"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem9"
@@ -190,7 +175,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton10"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem10"
@@ -199,7 +184,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton11"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem11"
@@ -208,7 +193,7 @@
 
                     <ImageButton
                         android:id="@+id/itembutton12"
-                        android:layout_width="@string/buttonsizew"
+                        android:layout_width="100sp"
                         android:layout_height="match_parent"
                         android:background="@null"
                         android:onClick="onitem12"
@@ -224,4 +209,8 @@
         //広告を配置する場所
 
     </LinearLayout>
+
+
+
+
 </RelativeLayout>
