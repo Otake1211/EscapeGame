@@ -34,6 +34,139 @@
         android:textColor="#000000"
         android:textSize="60sp" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/passview"
+            android:layout_width="250sp"
+            android:layout_height="100sp"
+            android:layout_marginLeft="25sp"
+            android:background="#001900"
+            android:paddingHorizontal="25sp"
+            android:text=""
+            android:textColor="#009900"
+            android:textSize="70sp" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginVertical="20sp">
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/pass1"
+                    android:onClick="onPush1"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/pass2"
+                    android:onClick="onPush2"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="2"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/pass3"
+                    android:onClick="onPush3"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/pass4"
+                    android:onClick="onPush4"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/pass5"
+                    android:onClick="onPush5"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/pass6"
+                    android:onClick="onPush6"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="6"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/pass7"
+                    android:onClick="onPush7"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="7"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/pass8"
+                    android:onClick="onPush8"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="8"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+
+                <Button
+                    android:id="@+id/pass9"
+                    android:onClick="onPush9"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_marginHorizontal="6sp"
+                    android:backgroundTint="#00000000"
+                    android:text="9"
+                    android:textColor="@color/black"
+                    android:textSize="45sp" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class North_preparationroominside_rocer extends AppCompatActivity {
 
@@ -21,13 +22,14 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
     int screenWidth;
     int screenHeight;
     int selenum;
+    int touchcount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_north_preparationroominside_rocer);
 
-        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
         Point size = new Point();
         disp.getSize(size);
@@ -62,6 +64,59 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void onPush1(View view) {
+        new pushpass().pushdown("1");
+    }
+
+    public void onPush2(View view) {
+        new pushpass().pushdown("2");
+    }
+
+    public void onPush3(View view) {
+        new pushpass().pushdown("3");
+    }
+
+    public void onPush4(View view) {
+        new pushpass().pushdown("4");
+    }
+
+    public void onPush5(View view) {
+        new pushpass().pushdown("5");
+    }
+
+    public void onPush6(View view) {
+        new pushpass().pushdown("6");
+    }
+
+    public void onPush7(View view) {
+        new pushpass().pushdown("7");
+    }
+
+    public void onPush8(View view) {
+        new pushpass().pushdown("8");
+    }
+
+    public void onPush9(View view) {
+        new pushpass().pushdown("9");
+    }
+
+    class pushpass {
+
+        public void pushdown(String prsnum) {
+            if (touchcount < 5) {
+
+                ((TextView) findViewById(R.id.passview)).setText(((TextView) findViewById(R.id.passview)).getText() + prsnum);
+                touchcount++;
+            } else {
+                ((TextView) findViewById(R.id.passview)).setText(prsnum);
+
+                touchcount = 0;
+            }
+        }
+    }
+
+
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
@@ -84,10 +139,10 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                 break;
 
             case 1:
-                    //開ける操作
-                    //開いた音
-                    editor.putInt("north_preparationroominside_rocker", 2).apply();
-                    break;
+                //開ける操作
+                //開いた音
+                editor.putInt("north_preparationroominside_rocker", 2).apply();
+                break;
 
             case 2:
                 //アイテムを取っていない
@@ -98,27 +153,27 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                 break;
 
             case 3:
-        //アイテムをタッチ
-        if (0 < xplace && 0 < yplace) {
-            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-            siyaku.setMessage("粉")
-                    .setPositiveButton("OK", null).show();
+                //アイテムをタッチ
+                if (0 < xplace && 0 < yplace) {
+                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                    siyaku.setMessage("粉")
+                            .setPositiveButton("OK", null).show();
 
-            //アイテムなしの画像に
-            backimage.setImageResource(R.drawable.south_rockerrightoff);
+                    //アイテムなしの画像に
+                    backimage.setImageResource(R.drawable.south_rockerrightoff);
 
-            //アイテム欄に追加と背景変更の保存
-            int itemboxnum = lib.getInt("itemboxnum", 0);
-            itemboxnum++;
-            editor.putInt("itemboxnum", itemboxnum).apply();
-            editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
-            editor.putInt("north_preparationroominside_rocker", 4).apply();
+                    //アイテム欄に追加と背景変更の保存
+                    int itemboxnum = lib.getInt("itemboxnum", 0);
+                    itemboxnum++;
+                    editor.putInt("itemboxnum", itemboxnum).apply();
+                    editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
+                    editor.putInt("north_preparationroominside_rocker", 4).apply();
 
-            //ボタンの画像読み込み
-            new btnload().refresh();
-        }
+                    //ボタンの画像読み込み
+                    new btnload().refresh();
+                }
 
-        break;
+                break;
 
             case 4:
                 //アイテムなしの画像
@@ -343,8 +398,6 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         //選択しているボタンを取得
         selenum = 12;
     }
-
-
 
 
     class otherable {
