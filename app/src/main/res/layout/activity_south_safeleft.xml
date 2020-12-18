@@ -11,18 +11,15 @@
     <ImageView
         android:id="@+id/backimage"
         android:layout_width="match_parent"
-
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         android:src="@drawable/south_safeleft" />
 
-
     <Button
         android:id="@+id/Main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="0sp"
@@ -34,7 +31,6 @@
         android:text="⚙"
         android:textColor="#000000"
         android:textSize="60sp" />
-
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -64,33 +60,33 @@
 
                 <Button
                     android:id="@+id/pass1"
-                    android:onClick="onPush1"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush1"
                     android:text="1"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
 
                 <Button
                     android:id="@+id/pass2"
-                    android:onClick="onPush2"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush2"
                     android:text="2"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
 
                 <Button
                     android:id="@+id/pass3"
-                    android:onClick="onPush3"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush3"
                     android:text="3"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
@@ -100,33 +96,33 @@
 
                 <Button
                     android:id="@+id/pass4"
-                    android:onClick="onPush4"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush4"
                     android:text="4"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
 
                 <Button
                     android:id="@+id/pass5"
-                    android:onClick="onPush5"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush5"
                     android:text="5"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
 
                 <Button
                     android:id="@+id/pass6"
-                    android:onClick="onPush6"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush6"
                     android:text="6"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
@@ -136,33 +132,33 @@
 
                 <Button
                     android:id="@+id/pass7"
-                    android:onClick="onPush7"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush7"
                     android:text="7"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
 
                 <Button
                     android:id="@+id/pass8"
-                    android:onClick="onPush8"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush8"
                     android:text="8"
                     android:textColor="@color/black"
                     android:textSize="45sp" />
 
                 <Button
                     android:id="@+id/pass9"
-                    android:onClick="onPush9"
                     android:layout_width="80sp"
                     android:layout_height="80sp"
                     android:layout_marginHorizontal="3sp"
                     android:backgroundTint="@color/keybutton"
+                    android:onClick="onPush9"
                     android:text="9"
                     android:textColor="@color/black"
                     android:textSize="45sp" />

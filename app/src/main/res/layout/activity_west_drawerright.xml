@@ -9,19 +9,17 @@
     //背景
 
     <ImageView
-        android:layout_width="match_parent"
         android:id="@+id/backimage"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         android:src="@drawable/west_drawerright" />
 
-
     <Button
         android:id="@+id/Main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="0sp"
@@ -34,6 +32,93 @@
         android:textColor="#000000"
         android:textSize="60sp" />
 
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginVertical="20sp"
+        android:paddingTop="200sp">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/lfplusbtn"
+                android:layout_width="70sp"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="10sp"
+                android:backgroundTint="@color/keybutton"
+                android:onClick="onLfplusbtn"
+                android:text="+"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/riplusbtn"
+                android:layout_width="70sp"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="10sp"
+                android:backgroundTint="@color/keybutton"
+                android:onClick="onRiplusbtn"
+                android:text="+"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/lfnum"
+                android:layout_width="70sp"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="10sp"
+                android:paddingLeft="10sp"
+                android:text="30"
+                android:textSize="45sp"
+                android:textColor="#FF4444"/>
+
+            <TextView
+                android:id="@+id/rinum"
+                android:layout_width="70sp"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="10sp"
+                android:paddingLeft="10sp"
+                android:text="30"
+                android:textSize="45sp"
+                android:textColor="#666666"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/lfminusbtn"
+                android:layout_width="70sp"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="10sp"
+                android:backgroundTint="@color/keybutton"
+                android:onClick="onLfminusbtn"
+                android:text="－"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/riminusbtn"
+                android:layout_width="70sp"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="10sp"
+                android:backgroundTint="@color/keybutton"
+                android:onClick="onRiminusbtn"
+                android:text="－"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+    </TableLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +133,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
 
             <ImageButton
@@ -77,9 +161,9 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/border"
                 android:orientation="horizontal"
-                android:paddingHorizontal="4sp"
-                android:background="@color/border">
+                android:paddingHorizontal="4sp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"

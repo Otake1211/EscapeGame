@@ -14,14 +14,16 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class West_drawerright extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount = 0;
     int seleitem;
     int selenum;
+    int lfnum = 0;
+    int rinum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,10 @@ public class West_drawerright extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        //数字表示
+        ((TextView) findViewById(R.id.lfnum)).setText("0");
+        ((TextView) findViewById(R.id.rinum)).setText("0");
     }
 
     public void onMain(View view) {
@@ -53,6 +59,41 @@ public class West_drawerright extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+    public void onLfplusbtn(View view) {
+        lfnum++;
+        new pushpass().pushdown(R.id.lfnum, lfnum);
+    }
+
+    public void onRiplusbtn(View view) {
+        rinum++;
+        new pushpass().pushdown(R.id.rinum, rinum);
+    }
+
+    public void onLfminusbtn(View view) {
+        if (lfnum > 0) {
+            lfnum--;
+        }
+        new pushpass().pushdown(R.id.lfnum, lfnum);
+    }
+
+    public void onRiminusbtn(View view) {
+        if (rinum > 0) {
+            rinum--;
+        }
+        new pushpass().pushdown(R.id.rinum, rinum);
+    }
+
+    class pushpass {
+
+        public void pushdown(int prskey, int num) {
+
+            ((TextView) findViewById(prskey)).setText("" + num);
+
+        }
+    }
+
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
