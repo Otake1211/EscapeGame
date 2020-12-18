@@ -52,7 +52,7 @@
 
 
             <ImageButton
-                android:id="@+id/West_drawerright"
+                android:id="@+id/West_drawerleft"
                 android:layout_width="60sp"
                 android:layout_height="60sp"
 
