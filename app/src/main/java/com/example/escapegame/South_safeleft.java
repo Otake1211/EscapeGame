@@ -102,7 +102,7 @@ public class South_safeleft extends AppCompatActivity {
             } else {
                 ((TextView) findViewById(R.id.passview)).setText(prsnum);
 
-                touchcount = 0;
+                touchcount = 1;
             }
         }
     }

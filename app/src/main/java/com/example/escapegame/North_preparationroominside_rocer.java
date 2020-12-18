@@ -104,14 +104,14 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
     class pushpass {
 
         public void pushdown(String prsnum) {
-            if (touchcount < 5) {
+            if (touchcount < 4) {
 
                 ((TextView) findViewById(R.id.passview)).setText(((TextView) findViewById(R.id.passview)).getText() + prsnum);
                 touchcount++;
             } else {
                 ((TextView) findViewById(R.id.passview)).setText(prsnum);
 
-                touchcount = 0;
+                touchcount = 1;
             }
         }
     }
