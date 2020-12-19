@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Point;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.media.SoundPool;
 
 import static android.view.View.SYSTEM_UI_FLAG_FULLSCREEN;
 
@@ -21,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     int screenHeight;
 
     MediaPlayer p;
+
+    SoundPool soundPool;
+
+    int se1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +50,23 @@ public class MainActivity extends AppCompatActivity {
         disp.getSize(size);
         screenWidth = size.x;
         screenHeight = size.y;
+
+
+        //効果音再生準備
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        } else {
+            AudioAttributes attr = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setAudioAttributes(attr)
+                    .setMaxStreams(5)
+                    .build();
+        }
+
+        se1 = soundPool.load(this,R.raw.decision2,1);
     }
 
     @Override
@@ -74,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        soundPool.play(se1,1.0f,1.0f,0,0,1.0f);
     }
 
 
@@ -83,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        soundPool.play(se1,1.0f,1.0f,0,0,1.0f);
     }
 
 
