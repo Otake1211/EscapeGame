@@ -7,6 +7,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -22,6 +26,11 @@ public class West extends AppCompatActivity {
     int screenHeight;
     int seleitem;
     int selenum;
+
+    SoundPool soundPool;
+
+    int se1;
+    int se2;
 
 
     @Override
@@ -49,6 +58,23 @@ public class West extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        //効果音再生準備
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        } else {
+            AudioAttributes attr = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setAudioAttributes(attr)
+                    .setMaxStreams(5)
+                    .build();
+        }
+
+        se1 = soundPool.load(this,R.raw.decision33,1);
+        se2 = soundPool.load(this,R.raw.foot,1);
     }
 
 
@@ -59,6 +85,8 @@ public class West extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        soundPool.play(se1,1.0f,1.0f,0,0,1.0f);
     }
 
 
@@ -69,6 +97,8 @@ public class West extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
     }
 
 
@@ -79,6 +109,8 @@ public class West extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
     }
 
 
@@ -124,6 +156,8 @@ public class West extends AppCompatActivity {
 
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
                 }
 
                 if (477 < xplace && xplace < 552 && 880 < yplace && yplace < 1004) {
@@ -134,6 +168,8 @@ public class West extends AppCompatActivity {
 
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
                 }
 
                 if (730 < xplace && xplace < 922 && 783 < yplace && yplace < 944) {
@@ -144,6 +180,8 @@ public class West extends AppCompatActivity {
 
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
                 }
 
                 if (236 < xplace && xplace < 352 && 1094 < yplace && yplace < 1148) {
@@ -154,6 +192,8 @@ public class West extends AppCompatActivity {
 
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
                 }
 
                 if (766 < xplace && xplace < 886 && 1091 < yplace && yplace < 1141) {
@@ -164,6 +204,8 @@ public class West extends AppCompatActivity {
 
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
                 }
 
                 break;

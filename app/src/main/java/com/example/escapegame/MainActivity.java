@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     .build();
         }
 
-        se1 = soundPool.load(this,R.raw.decision2,1);
+        se1 = soundPool.load(this,R.raw.decision33,1);
     }
 
     @Override
