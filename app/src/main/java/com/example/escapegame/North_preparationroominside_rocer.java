@@ -138,7 +138,7 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
 
                     case 0:
                         // ガチャガチャ効果音
-
+                        editor.putInt("north_preparationroominside_rocker", 1).apply();
                         break;
 
                     case 1:

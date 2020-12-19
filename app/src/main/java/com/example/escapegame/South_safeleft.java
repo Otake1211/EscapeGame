@@ -127,17 +127,18 @@ public class South_safeleft extends AppCompatActivity {
 
                 switch (envcount) {
                     case 0:
+
                         // 開く操作
-                        //開けた効果音
-                        AlertDialog.Builder siyakua = new AlertDialog.Builder(this);
-                        siyakua.setMessage(((TextView) findViewById(R.id.passview)).getText())
-                                .setPositiveButton("OK", null).show();
-                        //editor.putInt("south_safeleft", 1).apply();
+                        if (((TextView) findViewById(R.id.passview)).getText().toString()+"" == "00000") {
+                            editor.putInt("south_safeleft", 1).apply();
+                            //開けた効果音
+                        }else {
+                            //ガチャガチャ音
+                        }
                         break;
 
                     case 1:
-                        //アイテムを取っていない
-                        //アイテム有の画像
+                        //取っていないアイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
                         editor.putInt("south_safeleft", 2).apply();
                         break;
