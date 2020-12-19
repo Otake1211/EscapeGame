@@ -65,68 +65,72 @@ public class South_saferight extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
-            case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_safekey) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
+                switch (envcount) {
+                    case 0:
+                        // 開く操作
+                        if (seleitem == R.drawable.item_safekey) {
 
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
 
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
-                    //開けた効果音
-                    editor.putInt("south_saferight", 1).apply();
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
 
-                } else {
-                    //ガチャガチャ効果音
+                            //開けた効果音
+                            editor.putInt("south_saferight", 1).apply();
+
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        break;
+
+                    case 1:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("south_saferight", 2).apply();
+                        break;
+
+                    case 2:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("アンモニア")
+                                    .setPositiveButton("OK", null).show();
+
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_ammonia).apply();
+                            editor.putInt("south_saferight", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 3:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
                 }
-                break;
-
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("south_saferight", 2).apply();
-                break;
-
-            case 2:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("アンモニア")
-                            .setPositiveButton("OK", null).show();
-
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
-
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_ammonia).apply();
-                    editor.putInt("south_saferight", 3).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-                }
-                break;
-
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
         }
-
         return false;
     }
 

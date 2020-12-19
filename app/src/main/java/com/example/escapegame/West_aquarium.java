@@ -84,61 +84,65 @@ public class West_aquarium extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-            case 0:// 水槽の背景　白のとき
+                switch (envcount) {
 
-                if (0 < xplace && 0 < yplace) {
+                    case 0:// 水槽の背景　白のとき
 
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("白い紙")
-                            .setPositiveButton("OK", null).show();
+                        if (0 < xplace && 0 < yplace) {
 
-                    //　水槽の背景　灰色に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("白い紙")
+                                    .setPositiveButton("OK", null).show();
 
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_whiteaquariumpaper).apply();
-                    editor.putInt("west_aquarium", 1).apply();
+                            //　水槽の背景　灰色に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_whiteaquariumpaper).apply();
+                            editor.putInt("west_aquarium", 1).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 1://水槽の背景　灰色の時
+                        if (seleitem == R.drawable.item_blackaquariumpaper) {
+
+                            //水槽の背景　黒に
+                            backimage.setImageResource(R.drawable.south_rockerrighton);
+
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
+
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
+
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+
+                            //ボタンを使えるようにする
+                            ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton" + selenum));
+                            reimageButton.setEnabled(true);
+                            reimageButton.setColorFilter(null);
+
+                            editor.putInt("west_aquarium", 2).apply();
+                            break;
+                        }
                 }
                 break;
-
-            case 1://水槽の背景　灰色の時
-                if (seleitem == R.drawable.item_blackaquariumpaper) {
-
-                    //水槽の背景　黒に
-                    backimage.setImageResource(R.drawable.south_rockerrighton);
-
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
-
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
-
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-
-                    //ボタンを使えるようにする
-                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
-                    reimageButton.setEnabled(true);
-                    reimageButton.setColorFilter(null);
-
-                    editor.putInt("west_aquarium", 2).apply();
-                    break;
-                }
         }
-
         return false;
     }
 

@@ -123,18 +123,6 @@ public class North extends AppCompatActivity {
                 }
 
                 break;
-
-            case MotionEvent.ACTION_UP:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
-                break;
         }
         return false;
     }

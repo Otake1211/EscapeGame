@@ -77,145 +77,148 @@ public class East_rbbox extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (renvcount) {
-            case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_ruby) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                    //開けた効果音
+                switch (renvcount) {
+                    case 0:
+                        // 開く操作
+                        if (seleitem == R.drawable.item_ruby) {
 
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
+                            //開けた効果音
 
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
 
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
-                    //ボタンを使えるようにする
-                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
-                    reimageButton.setEnabled(true);
-                    reimageButton.setColorFilter(null);
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
 
-                    editor.putInt("east_rbox", 1).apply();
+                            //ボタンを使えるようにする
+                            ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton" + selenum));
+                            reimageButton.setEnabled(true);
+                            reimageButton.setColorFilter(null);
 
-                } else {
-                    //ガチャガチャ効果音
+                            editor.putInt("east_rbox", 1).apply();
+
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        break;
+
+                    case 1:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("east_rbox", 2).apply();
+                        break;
+
+                    case 2:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("出口の鍵")
+                                    .setPositiveButton("OK", null).show();
+
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_exitkey).apply();
+                            editor.putInt("east_rbox", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 3:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
                 }
-                break;
 
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("east_rbox", 2).apply();
-                break;
 
-            case 2:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("出口の鍵")
-                            .setPositiveButton("OK", null).show();
+                switch (benvcount) {
+                    case 0:
+                        // 開く操作
+                        if (seleitem == R.drawable.item_sapphire) {
 
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                            //開けた効果音
 
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_exitkey).apply();
-                    editor.putInt("east_rbox", 3).apply();
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
+
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+
+                            //ボタンを使えるようにする
+                            ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton" + selenum));
+                            reimageButton.setEnabled(true);
+                            reimageButton.setColorFilter(null);
+
+                            editor.putInt("east_bbox", 1).apply();
+
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        break;
+
+                    case 1:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("east_bbox", 2).apply();
+                        break;
+
+                    case 2:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("リトマス紙（赤）")
+                                    .setPositiveButton("OK", null).show();
+
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_litmusred).apply();
+                            editor.putInt("east_bbox", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 3:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
                 }
-                break;
-
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
         }
-
-
-        switch (benvcount) {
-            case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_sapphire) {
-
-                    //開けた効果音
-
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
-
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
-
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-
-                    //ボタンを使えるようにする
-                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
-                    reimageButton.setEnabled(true);
-                    reimageButton.setColorFilter(null);
-
-                    editor.putInt("east_bbox", 1).apply();
-
-                } else {
-                    //ガチャガチャ効果音
-                }
-                break;
-
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("east_bbox", 2).apply();
-                break;
-
-            case 2:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("リトマス紙（赤）")
-                            .setPositiveButton("OK", null).show();
-
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
-
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_litmusred).apply();
-                    editor.putInt("east_bbox", 3).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-                }
-                break;
-
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
-                break;
-        }
-
         return false;
     }
-
 
     public void onitem1(View view) {
 

@@ -130,58 +130,61 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-            case 0:
-                // ガチャガチャ効果音
+                switch (envcount) {
 
-                break;
+                    case 0:
+                        // ガチャガチャ効果音
 
-            case 1:
-                //開ける操作
-                //開いた音
-                editor.putInt("north_preparationroominside_rocker", 2).apply();
-                break;
+                        break;
 
-            case 2:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("north_preparationroominside_rocker", 3).apply();
+                    case 1:
+                        //開ける操作
+                        //開いた音
+                        editor.putInt("north_preparationroominside_rocker", 2).apply();
+                        break;
 
-                break;
+                    case 2:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("north_preparationroominside_rocker", 3).apply();
 
-            case 3:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("粉")
-                            .setPositiveButton("OK", null).show();
+                        break;
 
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                    case 3:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("粉")
+                                    .setPositiveButton("OK", null).show();
 
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
-                    editor.putInt("north_preparationroominside_rocker", 4).apply();
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
+                            editor.putInt("north_preparationroominside_rocker", 4).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+
+                        break;
+
+                    case 4:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
                 }
-
                 break;
-
-            case 4:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
         }
         return false;
-
-
     }
 
     public void onitem1(View view) {

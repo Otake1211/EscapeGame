@@ -75,52 +75,55 @@ public class North_preparationroom extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
-            case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_junbisitukry) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                    //開けた効果音
+                switch (envcount) {
+                    case 0:
+                        // 開く操作
+                        if (seleitem == R.drawable.item_junbisitukry) {
 
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
+                            //開けた効果音
 
-                        //アイテムを一つずらす
-                        editor.putInt("itembox"+i, lib.getInt("itembox"+(i+1), 0)).apply();
-                    }
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
 
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
-                    //ボタンを使えるようにする
-                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
-                    reimageButton.setEnabled(true);
-                    reimageButton.setColorFilter(null);
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
 
-                    editor.putInt("north_preparationroom", 1).apply();
+                            //ボタンを使えるようにする
+                            ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton" + selenum));
+                            reimageButton.setEnabled(true);
+                            reimageButton.setColorFilter(null);
 
-                } else {
-                    //ガチャガチャ効果音
-                }
-                break;
+                            editor.putInt("north_preparationroom", 1).apply();
 
-            case 1:
-                //準備室内に移動
-                if(0 < xplace && 0 < yplace){
-                    Intent intent = new Intent(this, North_preparetionroominside.class);
-                    finish();
-                    startActivity(intent);
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        break;
+
+                    case 1:
+                        //準備室内に移動
+                        if (0 < xplace && 0 < yplace) {
+                            Intent intent = new Intent(this, North_preparetionroominside.class);
+                            finish();
+                            startActivity(intent);
+                        }
+                        break;
                 }
                 break;
         }
-
         return false;
     }
-
 
 
     public void onitem1(View view) {
@@ -337,9 +340,6 @@ public class North_preparationroom extends AppCompatActivity {
         //選択しているボタンを取得
         selenum = 12;
     }
-
-
-
 
 
     class otherable {

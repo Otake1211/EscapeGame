@@ -65,48 +65,53 @@ public class South_rockerleft extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
-            case 0:
-                // 開く操作
-                //開けた効果音
-                editor.putInt("south_rockerleft", 1).apply();
-                break;
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("south_rockerleft", 2).apply();
-                break;
+                switch (envcount) {
+                    case 0:
+                        // 開く操作
+                        //開けた効果音
+                        editor.putInt("south_rockerleft", 1).apply();
+                        break;
 
-            case 2:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("金色の塊")
-                            .setPositiveButton("OK", null).show();
+                    case 1:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("south_rockerleft", 2).apply();
+                        break;
 
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                    case 2:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("金色の塊")
+                                    .setPositiveButton("OK", null).show();
 
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_goldkey).apply();
-                    editor.putInt("south_rockerleft", 3).apply();
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_goldkey).apply();
+                            editor.putInt("south_rockerleft", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 3:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
+
                 }
                 break;
-
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
-                break;
-
         }
         return false;
     }

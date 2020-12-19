@@ -78,71 +78,75 @@ public class West_flask extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
-            case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_ammonia) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                    //開けた効果音
+                switch (envcount) {
+                    case 0:
+                        // 開く操作
+                        if (seleitem == R.drawable.item_ammonia) {
 
-                    //アイテムを取っていない,アイテム有の画像
-                    backimage.setImageResource(R.drawable.south_rockerrighton);
+                            //開けた効果音
+
+                            //アイテムを取っていない,アイテム有の画像
+                            backimage.setImageResource(R.drawable.south_rockerrighton);
 
 
-                    editor.putInt("west_flask", 1).apply();
+                            editor.putInt("west_flask", 1).apply();
 
-                } else {
-                    //ガチャガチャ効果音
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        break;
+
+                    case 1:
+                        //アイテムをタッチ
+                        if (seleitem == R.drawable.item_pipette) {
+
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("サファイア")
+                                    .setPositiveButton("OK", null).show();
+
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
+
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
+
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_sapphire).apply();
+                            editor.putInt("west_flask", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+
+                            //ボタンを使えるようにする
+                            ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton" + selenum));
+                            reimageButton.setEnabled(true);
+                            reimageButton.setColorFilter(null);
+
+                            editor.putInt("west_flask", 2).apply();
+                        }
+                        break;
+
+                    case 2:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
                 }
-                break;
-
-            case 1:
-                //アイテムをタッチ
-                if (seleitem == R.drawable.item_pipette) {
-
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("サファイア")
-                            .setPositiveButton("OK", null).show();
-
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
-
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
-
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
-
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
-
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_sapphire).apply();
-                    editor.putInt("west_flask", 3).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-
-                    //ボタンを使えるようにする
-                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
-                    reimageButton.setEnabled(true);
-                    reimageButton.setColorFilter(null);
-
-                    editor.putInt("west_flask", 2).apply();
-                }
-                break;
-
-            case 2:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
         }
-
         return false;
     }
 

@@ -52,7 +52,6 @@ public class East_exit extends AppCompatActivity {
     }
 
 
-
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
 
@@ -66,62 +65,65 @@ public class East_exit extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
-            case 0:
-                // 開く操作
-                //開けた効果音
-                // 開く操作
-                if (seleitem == R.drawable.item_boxkey) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                    //開けた効果音
-                    editor.putInt("east_box", 1).apply();
+                switch (envcount) {
+                    case 0:
+                        // 開く操作
+                        //開けた効果音
+                        // 開く操作
+                        if (seleitem == R.drawable.item_boxkey) {
 
-                } else {
-                    //ガチャガチャ効果音
+                            //開けた効果音
+                            editor.putInt("east_box", 1).apply();
+
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        editor.putInt("east_exit", 1).apply();
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        break;
+
+                    case 1:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("east_exit", 2).apply();
+                        break;
+
+                    case 2:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("clear")
+                                    .setPositiveButton("OK", null).show();
+
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
+                            editor.putInt("east_exit", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 3:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
                 }
-                editor.putInt("east_exit", 1).apply();
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                break;
-
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("east_exit", 2).apply();
-                break;
-
-            case 2:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("clear")
-                            .setPositiveButton("OK", null).show();
-
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
-
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
-                    editor.putInt("east_exit", 3).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-                }
-                break;
-
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
         }
-
         return false;
     }
-
 
 
     public void onitem1(View view) {
