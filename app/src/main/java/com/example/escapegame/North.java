@@ -57,6 +57,9 @@ public class North extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -64,6 +67,9 @@ public class North extends AppCompatActivity {
         Intent intent = new Intent(this, West.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -71,6 +77,9 @@ public class North extends AppCompatActivity {
         Intent intent = new Intent(this, East.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -113,6 +122,9 @@ public class North extends AppCompatActivity {
                     Intent intent = new Intent(this, North_preparationroom.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (781 < xplace && 977 < yplace && yplace < 1144) {
@@ -120,20 +132,11 @@ public class North extends AppCompatActivity {
                     Intent intent = new Intent(this, North_experiment.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
-                break;
-
-            case MotionEvent.ACTION_UP:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
                 break;
         }
         return false;

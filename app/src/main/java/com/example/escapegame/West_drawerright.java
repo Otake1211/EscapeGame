@@ -46,34 +46,49 @@ public class West_drawerright extends AppCompatActivity {
     }
 
     public void onMain(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onWest(View view) {
-
         Intent intent = new Intent(this, West.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onLfplusbtn(View view) {
-        lfnum++;
+        if (lfnum < 99) {
+            lfnum++;
+        } else {
+            lfnum = 0;
+        }
         new pushpass().pushdown(R.id.lfnum, lfnum);
     }
 
     public void onRiplusbtn(View view) {
-        rinum++;
+        if (rinum < 99) {
+            rinum++;
+        } else {
+            rinum = 0;
+        }
         new pushpass().pushdown(R.id.rinum, rinum);
+
     }
 
     public void onLfminusbtn(View view) {
         if (lfnum > 0) {
             lfnum--;
+        } else {
+            lfnum = 99;
         }
         new pushpass().pushdown(R.id.lfnum, lfnum);
     }
@@ -81,6 +96,8 @@ public class West_drawerright extends AppCompatActivity {
     public void onRiminusbtn(View view) {
         if (rinum > 0) {
             rinum--;
+        } else {
+            rinum = 99;
         }
         new pushpass().pushdown(R.id.rinum, rinum);
     }
@@ -108,55 +125,59 @@ public class West_drawerright extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
-            case 0:
-                // 開く操作
-                if (0 < xplace && 0 < yplace) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-                    //開けた効果音
-                    editor.putInt("west_drawerright", 1).apply();
+                switch (envcount) {
+                    case 0:
+                        // 開く操作
+                        if (0 < xplace && 0 < yplace) {
 
-                } else {
-                    //ガチャガチャ効果音
+                            //開けた効果音
+                            editor.putInt("west_drawerright", 1).apply();
+
+                        } else {
+                            //ガチャガチャ効果音
+                        }
+                        break;
+
+                    case 1:
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("west_drawerright", 2).apply();
+                        break;
+
+                    case 2:
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("カッター")
+                                    .setPositiveButton("OK", null).show();
+
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_cutter).apply();
+                            editor.putInt("west_drawerright", 3).apply();
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
+
+                    case 3:
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        break;
                 }
-                break;
-
-            case 1:
-                //アイテムを取っていない
-                //アイテム有の画像
-                backimage.setImageResource(R.drawable.south_rockerrighton);
-                editor.putInt("west_drawerright", 2).apply();
-                break;
-
-            case 2:
-                //アイテムをタッチ
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("カッター")
-                            .setPositiveButton("OK", null).show();
-
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
-
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_cutter).apply();
-                    editor.putInt("west_drawerright", 3).apply();
-
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
-                }
-                break;
-
-            case 3:
-                //アイテムなしの画像
-                backimage.setImageResource(R.drawable.south_rockerrightoff);
                 break;
         }
-
         return false;
     }
 

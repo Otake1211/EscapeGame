@@ -56,7 +56,6 @@ public class East_wave extends AppCompatActivity {
             backimage.setImageResource(R.drawable.north2);
         }
 
-
         //ボタンの画像読み込み
         new btnload().refresh();
     }
@@ -65,6 +64,9 @@ public class East_wave extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -72,6 +74,9 @@ public class East_wave extends AppCompatActivity {
         Intent intent = new Intent(this, East.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -88,93 +93,97 @@ public class East_wave extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        switch (envcount) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-            case 0:
-                // 開く操作
-                if (seleitem == R.drawable.item_cable) {
+                switch (envcount) {
 
-                    //ケーブル付き画像に
-                    backimage.setImageResource(R.drawable.south_rockerrighton);
+                    case 0:
+                        // 開く操作
+                        if (seleitem == R.drawable.item_cable) {
 
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
+                            //ケーブル付き画像に
+                            backimage.setImageResource(R.drawable.south_rockerrighton);
 
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
 
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
-                    //開けた効果音
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
 
-                    editor.putInt("east_wave", 1).apply();
-                }
-                break;
+                            //開けた効果音
 
-            case 1:
-                if (seleitem == R.drawable.item_rubymaterial) {
+                            editor.putInt("east_wave", 1).apply();
+                        }
+                        break;
 
-                    backimage.setImageResource(R.drawable.south_rockerrighton);
+                    case 1:
+                        if (seleitem == R.drawable.item_rubymaterial) {
 
-                    //アイテム削除
-                    for (int i = selenum; i < 12; i++) {
+                            backimage.setImageResource(R.drawable.south_rockerrighton);
 
-                        //アイテムを一つずらす
-                        editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
-                    }
+                            //アイテム削除
+                            for (int i = selenum; i < 12; i++) {
 
-                    //手持ちのアイテム数を減らす
-                    editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
+                                //アイテムを一つずらす
+                                editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
+                            }
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //手持ちのアイテム数を減らす
+                            editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
-                    editor.putInt("east_wave", 2).apply();
-                }
-                break;
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
 
-
-            case 2:
-                if (0 < xplace && 0 < yplace) {
-                    //レンジの音
-                    editor.putInt("east_wave", 3).apply();
-                    //ルビーの画像
-                }
-                break;
+                            editor.putInt("east_wave", 2).apply();
+                        }
+                        break;
 
 
-            case 3://アイテムをタッチ
+                    case 2:
+                        if (0 < xplace && 0 < yplace) {
+                            //レンジの音
+                            editor.putInt("east_wave", 3).apply();
+                            //ルビーの画像
+                        }
+                        break;
 
-                if (0 < xplace && 0 < yplace) {
-                    AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                    siyaku.setMessage("ルビー")
-                            .setPositiveButton("OK", null).show();
 
-                    //アイテムなしの画像に
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                    case 3://アイテムをタッチ
 
-                    //アイテム欄に追加と背景変更の保存
-                    int itemboxnum = lib.getInt("itemboxnum", 0);
-                    itemboxnum++;
-                    editor.putInt("itemboxnum", itemboxnum).apply();
-                    editor.putInt("itembox" + itemboxnum, R.drawable.item_ruby).apply();
-                    editor.putInt("east_wave", 4).apply();
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("ルビー")
+                                    .setPositiveButton("OK", null).show();
 
-                    //アイテムなしの画像
-                    backimage.setImageResource(R.drawable.south_rockerrightoff);
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
 
-                    //ボタンの画像読み込み
-                    new btnload().refresh();
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_ruby).apply();
+                            editor.putInt("east_wave", 4).apply();
+
+                            //アイテムなしの画像
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //ボタンの画像読み込み
+                            new btnload().refresh();
+                        }
+                        break;
                 }
                 break;
         }
-
         return false;
     }
 

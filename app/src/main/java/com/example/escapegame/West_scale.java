@@ -50,18 +50,22 @@ public class West_scale extends AppCompatActivity {
     }
 
     public void onMain(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onWest(View view) {
-
         Intent intent = new Intent(this, West.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -77,13 +81,18 @@ public class West_scale extends AppCompatActivity {
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
 
+        switch (motionEvent.getAction()) {
 
-        // 開く操作
-        if (envcount == 0 && seleitem == R.drawable.item_goldkey) {
+            case MotionEvent.ACTION_DOWN: //タップしたとき
 
-            //効果音と画像
-            editor.putInt("west_drawerleft", 1).apply();
+                // 開く操作
+                if (envcount == 0 && seleitem == R.drawable.item_goldkey) {
 
+                    //効果音と画像
+                    editor.putInt("west_drawerleft", 1).apply();
+
+                }
+                break;
         }
         return false;
     }

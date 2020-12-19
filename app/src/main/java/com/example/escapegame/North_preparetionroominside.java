@@ -54,12 +54,18 @@ public class North_preparetionroominside extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
     public void onNorth(View view) {
         Intent intent = new Intent(this, North.class);
-        finish();
         startActivity(intent);
+        finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -104,18 +110,6 @@ public class North_preparetionroominside extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-                break;
-
-            case MotionEvent.ACTION_UP:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
                 break;
         }
         return false;

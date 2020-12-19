@@ -34,23 +34,8 @@ public class East extends AppCompatActivity {
         screenWidth = size.x;
         screenHeight = size.y;
 
-        // ファイルの準備
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-
         //ボタンの画像読み込み
-        ((ImageView) findViewById(R.id.itembutton1)).setImageResource(lib.getInt("itembox1", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton2)).setImageResource(lib.getInt("itembox2", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton3)).setImageResource(lib.getInt("itembox3", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton4)).setImageResource(lib.getInt("itembox4", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton5)).setImageResource(lib.getInt("itembox5", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton6)).setImageResource(lib.getInt("itembox6", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton7)).setImageResource(lib.getInt("itembox7", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton8)).setImageResource(lib.getInt("itembox8", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton9)).setImageResource(lib.getInt("itembox9", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton10)).setImageResource(lib.getInt("itembox10", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton11)).setImageResource(lib.getInt("itembox11", R.drawable.clear));
-        ((ImageView) findViewById(R.id.itembutton12)).setImageResource(lib.getInt("itembox12", R.drawable.clear));
-
+        new btnload().refresh();
     }
 
 
@@ -58,20 +43,29 @@ public class East extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onNorth(View view) {
         Intent intent = new Intent(this, North.class);
-        finish();
         startActivity(intent);
+        finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onSouth(View view) {
         Intent intent = new Intent(this, South.class);
-        finish();
         startActivity(intent);
+        finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -81,43 +75,61 @@ public class East extends AppCompatActivity {
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
 
-        //タップしたとき
+        switch (motionEvent.getAction()) {
 
-        if (588 < xplace && xplace < 749 && 1133 < yplace && yplace < 1220) {
-            //引き出しへ
-            Intent intent = new Intent(this, East_drawer.class);
-            startActivity(intent);
-            finish();
+            case MotionEvent.ACTION_DOWN: //タップしたとき
+
+                if (588 < xplace && xplace < 749 && 1133 < yplace && yplace < 1220) {
+                    //引き出しへ
+                    Intent intent = new Intent(this, East_drawer.class);
+                    startActivity(intent);
+                    finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                }
+
+                if (473 < xplace && xplace < 605 && 878 < yplace && yplace < 1057) {
+                    //棚へ
+                    Intent intent = new Intent(this, East_box.class);
+                    startActivity(intent);
+                    finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                }
+
+                if (649 < xplace && xplace < 820 && 906 < yplace && yplace < 1068) {
+                    //青と赤の棚へ
+                    Intent intent = new Intent(this, East_rbbox.class);
+                    startActivity(intent);
+                    finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                }
+
+                if (825 < xplace && 914 < yplace && yplace < 1045) {
+                    //電子レンジへ
+                    Intent intent = new Intent(this, East_wave.class);
+                    startActivity(intent);
+                    finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                }
+
+                if (xplace < 274 && 591 < yplace && yplace < 1201) {
+                    //出口へ
+                    Intent intent = new Intent(this, East_exit.class);
+                    startActivity(intent);
+                    finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                }
+                break;
         }
-
-        if (473 < xplace && xplace < 605 && 878 < yplace && yplace < 1057) {
-            //棚へ
-            Intent intent = new Intent(this, East_box.class);
-            startActivity(intent);
-            finish();
-        }
-
-        if (649 < xplace && xplace < 820 && 906 < yplace && yplace < 1068) {
-            //青と赤の棚へ
-            Intent intent = new Intent(this, East_rbbox.class);
-            startActivity(intent);
-            finish();
-        }
-
-        if (825 < xplace && 914 < yplace && yplace < 1045) {
-            //電子レンジへ
-            Intent intent = new Intent(this, East_wave.class);
-            startActivity(intent);
-            finish();
-        }
-
-        if (xplace < 274 && 591 < yplace && yplace < 1201) {
-            //出口へ
-            Intent intent = new Intent(this, East_exit.class);
-            startActivity(intent);
-            finish();
-        }
-
         return false;
     }
 
