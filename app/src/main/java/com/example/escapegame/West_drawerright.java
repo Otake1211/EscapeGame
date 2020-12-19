@@ -64,29 +64,38 @@ public class West_drawerright extends AppCompatActivity {
     public void onLfplusbtn(View view) {
         if (lfnum < 99) {
             lfnum++;
-            new pushpass().pushdown(R.id.lfnum, lfnum);
+        } else {
+            lfnum = 0;
         }
+        new pushpass().pushdown(R.id.lfnum, lfnum);
     }
 
     public void onRiplusbtn(View view) {
         if (rinum < 99) {
             rinum++;
-            new pushpass().pushdown(R.id.rinum, rinum);
+        } else {
+            rinum = 0;
         }
+        new pushpass().pushdown(R.id.rinum, rinum);
+
     }
 
     public void onLfminusbtn(View view) {
         if (lfnum > 0) {
             lfnum--;
-            new pushpass().pushdown(R.id.lfnum, lfnum);
+        } else {
+            lfnum = 99;
         }
+        new pushpass().pushdown(R.id.lfnum, lfnum);
     }
 
     public void onRiminusbtn(View view) {
         if (rinum > 0) {
             rinum--;
-            new pushpass().pushdown(R.id.rinum, rinum);
+        } else {
+            rinum = 99;
         }
+        new pushpass().pushdown(R.id.rinum, rinum);
     }
 
     class pushpass {
