@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
+
+    MediaPlayer p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,30 @@ public class MainActivity extends AppCompatActivity {
         screenHeight = size.y;
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        p = MediaPlayer.create(getApplicationContext(),R.raw.mainbgm);
+        p.start();
+        p.setLooping(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        p.pause();
+        p.reset();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        p.release();
+        p=null;
+    }
 
     public void onSetting(View view) {
         Intent intent = new Intent(this, Setting.class);
