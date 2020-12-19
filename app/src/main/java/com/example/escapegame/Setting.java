@@ -17,12 +17,6 @@ public class Setting extends AppCompatActivity {
     }
 
     public void onMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
-
-        //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
         // ファイルの準備
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
@@ -73,5 +67,12 @@ public class Setting extends AppCompatActivity {
         editor.remove("itembox11").apply();
         editor.remove("itembox12").apply();
 
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 }

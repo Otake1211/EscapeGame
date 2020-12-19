@@ -77,8 +77,8 @@ public class West extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        //アクティビティ遷移右から左にスライド
-        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -121,6 +121,9 @@ public class West extends AppCompatActivity {
                     Intent intent = new Intent(this, West_scale.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (477 < xplace && xplace < 552 && 880 < yplace && yplace < 1004) {
@@ -128,6 +131,9 @@ public class West extends AppCompatActivity {
                     Intent intent = new Intent(this, West_flask.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (730 < xplace && xplace < 922 && 783 < yplace && yplace < 944) {
@@ -135,6 +141,9 @@ public class West extends AppCompatActivity {
                     Intent intent = new Intent(this, West_aquarium.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (236 < xplace && xplace < 352 && 1094 < yplace && yplace < 1148) {
@@ -142,6 +151,9 @@ public class West extends AppCompatActivity {
                     Intent intent = new Intent(this, West_drawerleft.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (766 < xplace && xplace < 886 && 1091 < yplace && yplace < 1141) {
@@ -149,6 +161,9 @@ public class West extends AppCompatActivity {
                     Intent intent = new Intent(this, West_drawerright.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 break;

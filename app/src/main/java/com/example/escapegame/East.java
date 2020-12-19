@@ -64,8 +64,8 @@ public class East extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        //アクティビティ遷移右から左にスライド
-        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -84,6 +84,9 @@ public class East extends AppCompatActivity {
                     Intent intent = new Intent(this, East_drawer.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (473 < xplace && xplace < 605 && 878 < yplace && yplace < 1057) {
@@ -91,6 +94,9 @@ public class East extends AppCompatActivity {
                     Intent intent = new Intent(this, East_box.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (649 < xplace && xplace < 820 && 906 < yplace && yplace < 1068) {
@@ -98,6 +104,9 @@ public class East extends AppCompatActivity {
                     Intent intent = new Intent(this, East_rbbox.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (825 < xplace && 914 < yplace && yplace < 1045) {
@@ -105,6 +114,9 @@ public class East extends AppCompatActivity {
                     Intent intent = new Intent(this, East_wave.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (xplace < 274 && 591 < yplace && yplace < 1201) {
@@ -112,6 +124,9 @@ public class East extends AppCompatActivity {
                     Intent intent = new Intent(this, East_exit.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
                 break;
         }

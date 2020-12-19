@@ -78,8 +78,8 @@ public class North extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        //アクティビティ遷移右から左にスライド
-        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -122,6 +122,9 @@ public class North extends AppCompatActivity {
                     Intent intent = new Intent(this, North_preparationroom.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (781 < xplace && 977 < yplace && yplace < 1144) {
@@ -129,6 +132,9 @@ public class North extends AppCompatActivity {
                     Intent intent = new Intent(this, North_experiment.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 break;

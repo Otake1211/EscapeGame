@@ -76,8 +76,8 @@ public class South extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        //アクティビティ遷移右から左にスライド
-        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -125,6 +125,9 @@ public class South extends AppCompatActivity {
                     Intent intent = new Intent(this, South_safeleft.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (588 < xplace && xplace < 886 && 740 < yplace && yplace < 1004) {
@@ -132,6 +135,9 @@ public class South extends AppCompatActivity {
                     Intent intent = new Intent(this, South_saferight.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (308 < xplace && xplace < 444 && 1064 < yplace && yplace < 1271) {
@@ -139,6 +145,9 @@ public class South extends AppCompatActivity {
                     Intent intent = new Intent(this, South_rockerleft.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 if (555 < xplace && xplace < 705 && 1067 < yplace && yplace < 1278) {
@@ -146,6 +155,9 @@ public class South extends AppCompatActivity {
                     Intent intent = new Intent(this, South_rockerright.class);
                     startActivity(intent);
                     finish();
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                 break;
