@@ -98,6 +98,11 @@ public class East_rbbox extends AppCompatActivity {
                     //ボタンの画像読み込み
                     new btnload().refresh();
 
+                    //ボタンを使えるようにする
+                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
+                    reimageButton.setEnabled(true);
+                    reimageButton.setColorFilter(null);
+
                     editor.putInt("east_rbox", 1).apply();
 
                 } else {
@@ -160,6 +165,11 @@ public class East_rbbox extends AppCompatActivity {
 
                     //ボタンの画像読み込み
                     new btnload().refresh();
+
+                    //ボタンを使えるようにする
+                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
+                    reimageButton.setEnabled(true);
+                    reimageButton.setColorFilter(null);
 
                     editor.putInt("east_bbox", 1).apply();
 

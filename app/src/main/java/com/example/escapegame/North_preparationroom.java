@@ -96,6 +96,11 @@ public class North_preparationroom extends AppCompatActivity {
                     //ボタンの画像読み込み
                     new btnload().refresh();
 
+                    //ボタンを使えるようにする
+                    ImageButton reimageButton = findViewById(Integer.parseInt("R.id.itembutton"+selenum));
+                    reimageButton.setEnabled(true);
+                    reimageButton.setColorFilter(null);
+
                     editor.putInt("north_preparationroom", 1).apply();
 
                 } else {

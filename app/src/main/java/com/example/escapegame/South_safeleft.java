@@ -12,14 +12,16 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class South_safeleft extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-    int touchcount=0;
+    int touchcount = 0;
     int seleitem;
     int selenum;
 
@@ -53,6 +55,59 @@ public class South_safeleft extends AppCompatActivity {
         finish();
     }
 
+
+    public void onPush1(View view) {
+        new pushpass().pushdown("1");
+    }
+
+    public void onPush2(View view) {
+        new pushpass().pushdown("2");
+    }
+
+    public void onPush3(View view) {
+        new pushpass().pushdown("3");
+    }
+
+    public void onPush4(View view) {
+        new pushpass().pushdown("4");
+    }
+
+    public void onPush5(View view) {
+        new pushpass().pushdown("5");
+    }
+
+    public void onPush6(View view) {
+        new pushpass().pushdown("6");
+    }
+
+    public void onPush7(View view) {
+        new pushpass().pushdown("7");
+    }
+
+    public void onPush8(View view) {
+        new pushpass().pushdown("8");
+    }
+
+    public void onPush9(View view) {
+        new pushpass().pushdown("9");
+    }
+
+    class pushpass {
+
+        public void pushdown(String prsnum) {
+            if (touchcount < 5) {
+
+                ((TextView) findViewById(R.id.passview)).setText(((TextView) findViewById(R.id.passview)).getText() + prsnum);
+                touchcount++;
+            } else {
+                ((TextView) findViewById(R.id.passview)).setText(prsnum);
+
+                touchcount = 1;
+            }
+        }
+    }
+
+
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
 
@@ -70,8 +125,8 @@ public class South_safeleft extends AppCompatActivity {
         switch (envcount) {
             case 0:
                 // 開く操作
-                    //開けた効果音
-                    editor.putInt("south_safeleft", 1).apply();
+                //開けた効果音
+                editor.putInt("south_safeleft", 1).apply();
 
                 break;
 
@@ -112,8 +167,6 @@ public class South_safeleft extends AppCompatActivity {
         }
         return false;
     }
-
-
 
 
     public void onitem1(View view) {
