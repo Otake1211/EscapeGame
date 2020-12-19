@@ -57,6 +57,9 @@ public class North extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -64,6 +67,9 @@ public class North extends AppCompatActivity {
         Intent intent = new Intent(this, West.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -71,6 +77,9 @@ public class North extends AppCompatActivity {
         Intent intent = new Intent(this, East.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移右から左にスライド
+        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
     }
 
 

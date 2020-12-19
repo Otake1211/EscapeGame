@@ -40,18 +40,22 @@ public class West_drawerleft extends AppCompatActivity {
     }
 
     public void onMain(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onWest(View view) {
-
         Intent intent = new Intent(this, West.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 

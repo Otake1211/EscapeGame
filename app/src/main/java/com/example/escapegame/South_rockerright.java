@@ -42,6 +42,9 @@ public class South_rockerright extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -49,6 +52,9 @@ public class South_rockerright extends AppCompatActivity {
         Intent intent = new Intent(this, South.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {

@@ -39,12 +39,18 @@ public class North_experiment extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
     public void onNorth(View view) {
         Intent intent = new Intent(this, North.class);
-        finish();
         startActivity(intent);
+        finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 

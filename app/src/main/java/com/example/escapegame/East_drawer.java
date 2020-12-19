@@ -42,6 +42,9 @@ public class East_drawer extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
@@ -49,6 +52,9 @@ public class East_drawer extends AppCompatActivity {
         Intent intent = new Intent(this, East.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 

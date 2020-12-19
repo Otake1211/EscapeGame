@@ -42,16 +42,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onSetting(View view) {
-
         Intent intent = new Intent(this, Setting.class);
         startActivity(intent);
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
     public void onNorth(View view) {
-
         Intent intent = new Intent(this, North.class);
         startActivity(intent);
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 

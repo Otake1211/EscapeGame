@@ -56,12 +56,18 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
     public void onPreparationroom(View view) {
         Intent intent = new Intent(this, North_preparetionroominside.class);
-        finish();
         startActivity(intent);
+        finish();
+
+        //アクティビティ遷移フェードイン
+        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
     }
 
 
