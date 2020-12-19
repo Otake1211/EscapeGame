@@ -76,7 +76,7 @@
                 android:layout_height="60sp"
                 android:layout_marginHorizontal="10sp"
                 android:paddingLeft="10sp"
-                android:text="30"
+                android:text="0"
                 android:textSize="45sp"
                 android:textColor="#FF4444"/>
 
@@ -86,7 +86,7 @@
                 android:layout_height="60sp"
                 android:layout_marginHorizontal="10sp"
                 android:paddingLeft="10sp"
-                android:text="30"
+                android:text="0"
                 android:textSize="45sp"
                 android:textColor="#666666"/>
 
@@ -139,7 +139,6 @@
                 android:id="@+id/West_drawerleft"
                 android:layout_width="60sp"
                 android:layout_height="60sp"
-
                 android:layout_centerHorizontal="true"
                 android:background="@null"
                 android:contentDescription="@null"
@@ -282,9 +281,8 @@
                         android:onClick="onitem12"
                         android:scaleType="centerInside"
                         android:src="@drawable/clear" />
-                    android:src="@drawable/clear"/>
-                </LinearLayout>
 
+                </LinearLayout>
             </LinearLayout>
         </HorizontalScrollView>
 
