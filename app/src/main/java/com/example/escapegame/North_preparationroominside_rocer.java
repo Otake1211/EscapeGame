@@ -23,6 +23,7 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
     int screenHeight;
     int selenum;
     int touchcount = 0;
+    int passcode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void onPreparationroom(View view) {
@@ -67,56 +68,59 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 
     public void onPush1(View view) {
-        new pushpass().pushdown("1");
+        new pushpass().pushdown(1);
     }
 
     public void onPush2(View view) {
-        new pushpass().pushdown("2");
+        new pushpass().pushdown(2);
     }
 
     public void onPush3(View view) {
-        new pushpass().pushdown("3");
+        new pushpass().pushdown(3);
     }
 
     public void onPush4(View view) {
-        new pushpass().pushdown("4");
+        new pushpass().pushdown(4);
     }
 
     public void onPush5(View view) {
-        new pushpass().pushdown("5");
+        new pushpass().pushdown(5);
     }
 
     public void onPush6(View view) {
-        new pushpass().pushdown("6");
+        new pushpass().pushdown(6);
     }
 
     public void onPush7(View view) {
-        new pushpass().pushdown("7");
+        new pushpass().pushdown(7);
     }
 
     public void onPush8(View view) {
-        new pushpass().pushdown("8");
+        new pushpass().pushdown(8);
     }
 
     public void onPush9(View view) {
-        new pushpass().pushdown("9");
+        new pushpass().pushdown(9);
     }
 
     class pushpass {
 
-        public void pushdown(String prsnum) {
-            if (touchcount < 4) {
+        public void pushdown(int prsnum) {
+            if (touchcount < 5) {
 
-                ((TextView) findViewById(R.id.passview)).setText(((TextView) findViewById(R.id.passview)).getText() + prsnum);
+                passcode = passcode * 10 + prsnum;
+                ((TextView) findViewById(R.id.passview)).setText(passcode + "");
                 touchcount++;
-            } else {
-                ((TextView) findViewById(R.id.passview)).setText(prsnum);
 
+            } else {
+
+                ((TextView) findViewById(R.id.passview)).setText(prsnum+ "");
+                passcode = prsnum;
                 touchcount = 1;
             }
         }
@@ -143,13 +147,14 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                 switch (envcount) {
 
                     case 0:
-                        // ガチャガチャ効果音
-                        editor.putInt("north_preparationroominside_rocker", 1).apply();
+                        if (passcode == 11111) {
+                            //開いた音
+                            editor.putInt("north_preparationroominside_rocker", 1).apply();
+                        }
                         break;
 
                     case 1:
                         //開ける操作
-                        //開いた音
                         editor.putInt("north_preparationroominside_rocker", 2).apply();
                         break;
 

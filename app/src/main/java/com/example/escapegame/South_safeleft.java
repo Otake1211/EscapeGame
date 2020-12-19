@@ -24,6 +24,7 @@ public class South_safeleft extends AppCompatActivity {
     int touchcount = 0;
     int seleitem;
     int selenum;
+    int passcode = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,6 @@ public class South_safeleft extends AppCompatActivity {
         screenWidth = size.x;
         screenHeight = size.y;
 
-
         //ボタンの画像読み込み
         new btnload().refresh();
     }
@@ -48,7 +48,7 @@ public class South_safeleft extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 
@@ -58,56 +58,59 @@ public class South_safeleft extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 
     public void onPush1(View view) {
-        new pushpass().pushdown("1");
+        new pushpass().pushdown(1);
     }
 
     public void onPush2(View view) {
-        new pushpass().pushdown("2");
+        new pushpass().pushdown(2);
     }
 
     public void onPush3(View view) {
-        new pushpass().pushdown("3");
+        new pushpass().pushdown(3);
     }
 
     public void onPush4(View view) {
-        new pushpass().pushdown("4");
+        new pushpass().pushdown(4);
     }
 
     public void onPush5(View view) {
-        new pushpass().pushdown("5");
+        new pushpass().pushdown(5);
     }
 
     public void onPush6(View view) {
-        new pushpass().pushdown("6");
+        new pushpass().pushdown(6);
     }
 
     public void onPush7(View view) {
-        new pushpass().pushdown("7");
+        new pushpass().pushdown(7);
     }
 
     public void onPush8(View view) {
-        new pushpass().pushdown("8");
+        new pushpass().pushdown(8);
     }
 
     public void onPush9(View view) {
-        new pushpass().pushdown("9");
+        new pushpass().pushdown(9);
     }
 
     class pushpass {
 
-        public void pushdown(String prsnum) {
+        public void pushdown(int prsnum) {
             if (touchcount < 5) {
 
-                ((TextView) findViewById(R.id.passview)).setText(((TextView) findViewById(R.id.passview)).getText() + prsnum);
+                passcode = passcode * 10 + prsnum;
+                ((TextView) findViewById(R.id.passview)).setText(passcode+"");
                 touchcount++;
-            } else {
-                ((TextView) findViewById(R.id.passview)).setText(prsnum);
 
+            } else {
+
+                ((TextView) findViewById(R.id.passview)).setText(prsnum+"");
+                passcode = prsnum;
                 touchcount = 1;
             }
         }
@@ -135,10 +138,10 @@ public class South_safeleft extends AppCompatActivity {
                     case 0:
 
                         // 開く操作
-                        if (((TextView) findViewById(R.id.passview)).getText().toString()+"" == "00000") {
+                        if (passcode == 11111) {
                             editor.putInt("south_safeleft", 1).apply();
                             //開けた効果音
-                        }else {
+                        } else {
                             //ガチャガチャ音
                         }
                         break;

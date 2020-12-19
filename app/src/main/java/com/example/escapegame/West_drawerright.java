@@ -51,7 +51,7 @@ public class West_drawerright extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 
@@ -61,7 +61,7 @@ public class West_drawerright extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 
@@ -132,7 +132,7 @@ public class West_drawerright extends AppCompatActivity {
                 switch (envcount) {
                     case 0:
                         // 開く操作
-                        if (0 < xplace && 0 < yplace) {
+                        if ((rinum == 1) && (lfnum == 1)) {
 
                             //開けた効果音
                             editor.putInt("west_drawerright", 1).apply();
