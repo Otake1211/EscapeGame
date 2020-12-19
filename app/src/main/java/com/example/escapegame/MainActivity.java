@@ -22,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // ここで1秒間スリープし、スプラッシュを表示させたままにする。
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+        // スプラッシュthemeを通常themeに変更する
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
 
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
