@@ -7,9 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Display;
@@ -22,15 +19,13 @@ import android.widget.ImageView;
 
 public class East extends AppCompatActivity {
 
+    MyMedia m = new MyMedia();
+
     int screenWidth;
     int screenHeight;
     int seleitem;
     int selenum;
 
-    SoundPool soundPool;
-
-    int se1;
-    int se2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +42,7 @@ public class East extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
-        //効果音再生準備
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
-        } else {
-            AudioAttributes attr = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_MEDIA)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                    .build();
-            soundPool = new SoundPool.Builder()
-                    .setAudioAttributes(attr)
-                    .setMaxStreams(5)
-                    .build();
-        }
-
-        se1 = soundPool.load(this,R.raw.decision33,1);
-        se2 = soundPool.load(this,R.raw.foot,1);
+        m.onCreate(this,R.raw.mainbgm);
     }
 
 
@@ -74,7 +54,7 @@ public class East extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-        soundPool.play(se1,1.0f,1.0f,0,0,1.0f);
+        m.onSe1();
     }
 
 
@@ -86,7 +66,7 @@ public class East extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-        soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+        m.onSe2();
     }
 
 
@@ -98,7 +78,7 @@ public class East extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-        soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+        m.onSe2();
     }
 
 
@@ -121,7 +101,7 @@ public class East extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
                 }
 
                 if (473 < xplace && xplace < 605 && 878 < yplace && yplace < 1057) {
@@ -133,7 +113,7 @@ public class East extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
                 }
 
                 if (649 < xplace && xplace < 820 && 906 < yplace && yplace < 1068) {
@@ -145,7 +125,7 @@ public class East extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
                 }
 
                 if (825 < xplace && 914 < yplace && yplace < 1045) {
@@ -157,7 +137,7 @@ public class East extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
                 }
 
                 if (xplace < 274 && 591 < yplace && yplace < 1201) {
@@ -169,7 +149,7 @@ public class East extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
                 }
                 break;
         }

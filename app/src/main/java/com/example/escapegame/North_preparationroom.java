@@ -22,6 +22,8 @@ public class North_preparationroom extends AppCompatActivity {
     int screenHeight;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public class North_preparationroom extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -57,6 +61,8 @@ public class North_preparationroom extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
     public void onNorth(View view) {
@@ -66,6 +72,8 @@ public class North_preparationroom extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
     @Override
@@ -91,6 +99,7 @@ public class North_preparationroom extends AppCompatActivity {
                         if (seleitem == R.drawable.item_junbisitukry) {
 
                             //開けた効果音
+                            m.onSe6();
 
                             //アイテム削除
                             for (int i = selenum; i < 12; i++) {
@@ -114,6 +123,7 @@ public class North_preparationroom extends AppCompatActivity {
 
                         } else {
                             //ガチャガチャ効果音
+                            m.onSe4();
                         }
                         break;
 
@@ -123,6 +133,8 @@ public class North_preparationroom extends AppCompatActivity {
                             Intent intent = new Intent(this, North_preparetionroominside.class);
                             finish();
                             startActivity(intent);
+
+                            m.onSe5();
                         }
                         break;
                 }

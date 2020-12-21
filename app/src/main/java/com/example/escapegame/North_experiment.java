@@ -18,6 +18,8 @@ public class North_experiment extends AppCompatActivity {
     int selenum;
     int seleitem;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class North_experiment extends AppCompatActivity {
         ((ImageView) findViewById(R.id.rightbutton)).setImageResource(lib.getInt("rightbutton", R.drawable.clear));
         ((ImageView) findViewById(R.id.leftbutton)).setImageResource(lib.getInt("leftbutton", R.drawable.clear));
 
+        m.onCreate(this,R.raw.mainbgm);
     }
 
 
@@ -42,6 +45,8 @@ public class North_experiment extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
     public void onNorth(View view) {
@@ -51,6 +56,8 @@ public class North_experiment extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -82,6 +89,8 @@ public class North_experiment extends AppCompatActivity {
                 new btnload().refresh();
 
                 seleitem = 0;
+
+                m.onSe3();
             }
 
         } else {
@@ -100,6 +109,7 @@ public class North_experiment extends AppCompatActivity {
                 ((ImageView) findViewById(R.id.rightbutton)).setImageResource(R.drawable.clear);
                 editor.putInt("rightbutton", R.drawable.clear).apply();
 
+                m.onSe3();
 
             } else {
 
@@ -123,6 +133,8 @@ public class North_experiment extends AppCompatActivity {
                 new btnload().refresh();
 
                 seleitem = 0;
+
+                m.onSe3();
             }
 
         }
@@ -157,6 +169,8 @@ public class North_experiment extends AppCompatActivity {
                 new btnload().refresh();
 
                 seleitem = 0;
+
+                m.onSe3();
             }
 
         } else {
@@ -175,6 +189,8 @@ public class North_experiment extends AppCompatActivity {
                 ((ImageView) findViewById(R.id.leftbutton)).setImageResource(R.drawable.clear);
                 editor.putInt("leftbutton", R.drawable.clear).apply();
 
+
+                m.onSe3();
 
             } else {
 
@@ -198,6 +214,8 @@ public class North_experiment extends AppCompatActivity {
                 new btnload().refresh();
 
                 seleitem = 0;
+
+                m.onSe3();
             }
 
         }
@@ -265,6 +283,8 @@ public class North_experiment extends AppCompatActivity {
                 itemboxnum++;
                 editor.putInt("itemboxnum", itemboxnum).apply();
                 editor.putInt("itembox" + itemboxnum, product).apply();
+
+                m.onSe3();
 
                 //アイテム欄の画像読み込み
                 new btnload().refresh();

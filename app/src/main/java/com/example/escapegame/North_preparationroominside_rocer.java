@@ -25,6 +25,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
     int touchcount = 0;
     int passcode;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -60,6 +64,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
     public void onPreparationroom(View view) {
@@ -69,6 +75,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -150,12 +158,21 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                         if (passcode == 11111) {
                             //開いた音
                             editor.putInt("north_preparationroominside_rocker", 1).apply();
+
+                            m.onSe9();
+
+                        }else{
+
+                            m.onSe7();
                         }
                         break;
 
                     case 1:
                         //開ける操作
                         editor.putInt("north_preparationroominside_rocker", 2).apply();
+
+                            m.onSe8();
+
                         break;
 
                     case 2:
@@ -182,6 +199,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                             editor.putInt("itemboxnum", itemboxnum).apply();
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
                             editor.putInt("north_preparationroominside_rocker", 4).apply();
+
+                            m.onSe3();
 
                             //ボタンの画像読み込み
                             new btnload().refresh();

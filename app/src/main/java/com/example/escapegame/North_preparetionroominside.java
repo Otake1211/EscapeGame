@@ -22,6 +22,8 @@ public class North_preparetionroominside extends AppCompatActivity {
     int screenHeight;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public class North_preparetionroominside extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -57,6 +61,8 @@ public class North_preparetionroominside extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
     public void onNorth(View view) {
@@ -66,6 +72,8 @@ public class North_preparetionroominside extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -99,6 +107,8 @@ public class North_preparetionroominside extends AppCompatActivity {
                         editor.putInt("north_preparationroominside", 2).apply();
                         editor.putInt("north_preparationroominside_rocker",1).apply();
 
+                        m.onSe3();
+
                         //ボタンの画像読み込み
                         new btnload().refresh();
                     }
@@ -109,6 +119,8 @@ public class North_preparetionroominside extends AppCompatActivity {
                     Intent intent = new Intent(this, North_preparationroominside_rocer.class);
                     startActivity(intent);
                     finish();
+
+                    m.onSe2();
                 }
                 break;
         }

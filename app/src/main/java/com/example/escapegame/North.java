@@ -7,9 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Display;
@@ -23,15 +20,13 @@ import android.widget.TextView;
 
 public class North extends AppCompatActivity {
 
+    MyMedia m = new MyMedia();
+
     int screenWidth;
     int screenHeight;
     int seleitem;
     int selenum;
 
-    SoundPool soundPool;
-
-    int se1;
-    int se2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,22 +55,8 @@ public class North extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
-        //効果音再生準備
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
-        } else {
-            AudioAttributes attr = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_MEDIA)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                    .build();
-            soundPool = new SoundPool.Builder()
-                    .setAudioAttributes(attr)
-                    .setMaxStreams(5)
-                    .build();
-        }
-
-        se1 = soundPool.load(this,R.raw.decision33,1);
-        se2 = soundPool.load(this,R.raw.foot,1);
+        m.onCreate(this,R.raw.mainbgm);
+        ///////////////////////////////↑流したいBGM
     }
 
 
@@ -87,7 +68,8 @@ public class North extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-        soundPool.play(se1,1.0f,1.0f,0,0,1.0f);
+        m.onSe1();
+
     }
 
 
@@ -99,7 +81,8 @@ public class North extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-        soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+        m.onSe2();
+
     }
 
 
@@ -111,7 +94,7 @@ public class North extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-        soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+        m.onSe2();
     }
 
 
@@ -144,6 +127,8 @@ public class North extends AppCompatActivity {
                         editor.putInt("itemboxnum", itemboxnum).apply();
                         editor.putInt("itembox" + itemboxnum, R.drawable.item_litmusblue).apply();
 
+                        m.onSe3();
+
                         //ボタンの画像読み込み
                         new btnload().refresh();
                     }
@@ -158,7 +143,8 @@ public class North extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
+
                 }
 
                 if (781 < xplace && 977 < yplace && yplace < 1144) {
@@ -170,7 +156,7 @@ public class North extends AppCompatActivity {
                     //アクティビティ遷移フェードイン
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    soundPool.play(se2,1.0f,1.0f,0,0,1.0f);
+                    m.onSe2();
                 }
 
                 break;
