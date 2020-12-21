@@ -145,219 +145,74 @@ public class West_aquarium extends AppCompatActivity {
         return false;
     }
 
+
     public void onitem1(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton1);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox1", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 1;
+        new itemsele().itemselefun(view,R.id.itembutton1,"itembox1",1);
     }
 
     public void onitem2(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton2);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox2", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 2;
+        new itemsele().itemselefun(view,R.id.itembutton2,"itembox2",2);
     }
 
     public void onitem3(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton3);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox3", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 3;
+        new itemsele().itemselefun(view,R.id.itembutton3,"itembox3",3);
     }
 
     public void onitem4(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton4);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox4", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 4;
+        new itemsele().itemselefun(view,R.id.itembutton4,"itembox4",4);
     }
 
     public void onitem5(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton5);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox5", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 5;
+        new itemsele().itemselefun(view,R.id.itembutton5,"itembox5",5);
     }
 
     public void onitem6(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton6);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox6", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 6;
+        new itemsele().itemselefun(view,R.id.itembutton6,"itembox6",6);
     }
 
     public void onitem7(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton7);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox7", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 7;
+        new itemsele().itemselefun(view,R.id.itembutton7,"itembox7",7);
     }
 
     public void onitem8(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton8);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox8", R.drawable.clear);
-
-        //選択しているボタンを取得
-        selenum = 8;
+        new itemsele().itemselefun(view,R.id.itembutton8,"itembox8",8);
     }
 
     public void onitem9(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton9);
-        imageButton.setEnabled(false);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox9", R.color.black);
-
-        //選択しているボタンを取得
-        selenum = 9;
+        new itemsele().itemselefun(view,R.id.itembutton9,"itembox9",9);
     }
 
     public void onitem10(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton10);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox10", R.color.black);
-
-        //選択しているボタンを取得
-        selenum = 10;
+        new itemsele().itemselefun(view,R.id.itembutton10,"itembox10",10);
     }
 
     public void onitem11(View view) {
-
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
-
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton11);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
-
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox11", R.color.black);
-
-        //選択しているボタンを取得
-        selenum = 11;
+        new itemsele().itemselefun(view,R.id.itembutton11,"itembox11",11);
     }
 
     public void onitem12(View view) {
+        new itemsele().itemselefun(view,R.id.itembutton12,"itembox12",12);
+    }
 
-        //他のボタンを使えるようにする
-        new otherable().reable(view);
 
-        //このボタンを使えないようにする
-        ImageButton imageButton = findViewById(R.id.itembutton12);
-        imageButton.setEnabled(false);
-        imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+    class itemsele {
+        public void itemselefun (View view, int seleId, String selebox, int slnum) {
 
-        //選択しているアイテムを変更
-        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        seleitem = lib.getInt("itembox12", R.color.black);
+            //他のボタンを使えるようにする
+            new otherable().reable(view);
 
-        //選択しているボタンを取得
-        selenum = 12;
+            //このボタンを使えないようにする
+            ImageButton imageButton = findViewById(seleId);
+            imageButton.setEnabled(false);
+            imageButton.setColorFilter(0x88888888, PorterDuff.Mode.SRC_ATOP);
+
+            //選択しているアイテムを変更
+            SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+            seleitem = lib.getInt(selebox, R.drawable.clear);
+
+            //選択しているボタンを取得
+            selenum = slnum;
+        }
     }
 
     class otherable {
