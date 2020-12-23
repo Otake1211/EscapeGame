@@ -13,7 +13,9 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import static android.view.View.SYSTEM_UI_FLAG_FULLSCREEN;
 
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
         // スプラッシュthemeを通常themeに変更する
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
 
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
