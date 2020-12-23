@@ -22,6 +22,8 @@ public class East_drawer extends AppCompatActivity {
     int seleitem;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,8 @@ public class East_drawer extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -45,6 +49,8 @@ public class East_drawer extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -55,6 +61,8 @@ public class East_drawer extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -78,20 +86,15 @@ public class East_drawer extends AppCompatActivity {
 
                 switch (envcount) {
                     case 0:
-                        // 開く操作
-                        //開けた効果音
+                        m.onSe12();
+
+                        //アイテムを取っていない
+                        //アイテム有の画像
                         editor.putInt("east_drawer", 1).apply();
                         backimage.setImageResource(R.drawable.south_rockerrighton);
                         break;
 
                     case 1:
-                        //アイテムを取っていない
-                        //アイテム有の画像
-                        backimage.setImageResource(R.drawable.south_rockerrighton);
-                        editor.putInt("east_drawer", 2).apply();
-                        break;
-
-                    case 2:
                         //アイテムをタッチ
                         if (0 < xplace && 0 < yplace) {
                             AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
@@ -106,17 +109,22 @@ public class East_drawer extends AppCompatActivity {
                             itemboxnum++;
                             editor.putInt("itemboxnum", itemboxnum).apply();
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
-                            editor.putInt("east_drawer", 3).apply();
+                            editor.putInt("east_drawer", 2).apply();
+
+                            m.onSe3();
 
                             //ボタンの画像読み込み
                             new btnload().refresh();
                         }
                         break;
 
-                    case 3:
+                    case 2:
+                        m.onSe12();
+
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;
+
                 }
                 break;
         }

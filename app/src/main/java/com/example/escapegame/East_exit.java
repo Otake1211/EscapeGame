@@ -22,6 +22,8 @@ public class East_exit extends AppCompatActivity {
     int seleitem;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,8 @@ public class East_exit extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -45,6 +49,8 @@ public class East_exit extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -55,6 +61,8 @@ public class East_exit extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -78,53 +86,40 @@ public class East_exit extends AppCompatActivity {
                 switch (envcount) {
                     case 0:
                         // 開く操作
-                        //開けた効果音
-                        // 開く操作
                         if (seleitem == R.drawable.item_boxkey) {
 
                             //開けた効果音
+                            m.onSe6();
                             editor.putInt("east_box", 1).apply();
-
+                            backimage.setImageResource(R.drawable.south_rockerrighton);
                         } else {
                             //ガチャガチャ効果音
+                            m.onSe4();
                         }
-                        editor.putInt("east_exit", 1).apply();
-                        backimage.setImageResource(R.drawable.south_rockerrighton);
+
                         break;
 
                     case 1:
-                        //アイテムを取っていない
-                        //アイテム有の画像
-                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        //ドアを開ける
+                        m.onSe13();
+                        //ドアを開けた画像
+
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
                         editor.putInt("east_exit", 2).apply();
                         break;
 
                     case 2:
-                        //アイテムをタッチ
-                        if (0 < xplace && 0 < yplace) {
-                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
-                            siyaku.setMessage("clear")
-                                    .setPositiveButton("OK", null).show();
+                        //脱出成功！！
+                        m.onSe2();
+                        m.onSe14();
 
-                            //アイテムなしの画像に
-                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+                        Intent intent = new Intent(this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
 
-                            //アイテム欄に追加と背景変更の保存
-                            int itemboxnum = lib.getInt("itemboxnum", 0);
-                            itemboxnum++;
-                            editor.putInt("itemboxnum", itemboxnum).apply();
-                            editor.putInt("itembox" + itemboxnum, R.drawable.item_cycloiddcument).apply();
-                            editor.putInt("east_exit", 3).apply();
+                        //アクティビティ遷移フェードイン
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                            //ボタンの画像読み込み
-                            new btnload().refresh();
-                        }
-                        break;
-
-                    case 3:
-                        //アイテムなしの画像
-                        backimage.setImageResource(R.drawable.south_rockerrightoff);
-                        break;
                 }
                 break;
         }

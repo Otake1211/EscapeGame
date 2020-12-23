@@ -22,6 +22,8 @@ public class East_rbbox extends AppCompatActivity {
     int seleitem;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public class East_rbbox extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -57,6 +61,8 @@ public class East_rbbox extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -67,6 +73,8 @@ public class East_rbbox extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -93,6 +101,7 @@ public class East_rbbox extends AppCompatActivity {
                         if (seleitem == R.drawable.item_ruby) {
 
                             //開けた効果音
+                            m.onSe11();
 
                             //アイテム削除
                             for (int i = selenum; i < 12; i++) {
@@ -116,10 +125,12 @@ public class East_rbbox extends AppCompatActivity {
 
                         } else {
                             //ガチャガチャ効果音
+                            m.onSe7();
                         }
                         break;
 
                     case 1:
+                        m.onSe12();
                         //アイテムを取っていない
                         //アイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -143,12 +154,15 @@ public class East_rbbox extends AppCompatActivity {
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_exitkey).apply();
                             editor.putInt("east_rbox", 3).apply();
 
+                            m.onSe3();
+
                             //ボタンの画像読み込み
                             new btnload().refresh();
                         }
                         break;
 
                     case 3:
+                        m.onSe12();
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;
@@ -161,7 +175,7 @@ public class East_rbbox extends AppCompatActivity {
                         if (seleitem == R.drawable.item_sapphire) {
 
                             //開けた効果音
-
+                            m.onSe11();
                             //アイテム削除
                             for (int i = selenum; i < 12; i++) {
 
@@ -184,10 +198,12 @@ public class East_rbbox extends AppCompatActivity {
 
                         } else {
                             //ガチャガチャ効果音
+                            m.onSe7();
                         }
                         break;
 
                     case 1:
+                        m.onSe12();
                         //アイテムを取っていない
                         //アイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -211,12 +227,14 @@ public class East_rbbox extends AppCompatActivity {
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_litmusred).apply();
                             editor.putInt("east_bbox", 3).apply();
 
+                            m.onSe3();
                             //ボタンの画像読み込み
                             new btnload().refresh();
                         }
                         break;
 
                     case 3:
+                        m.onSe12();
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;

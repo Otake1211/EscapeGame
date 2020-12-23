@@ -76,7 +76,7 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-        m.onSe2();
+        m.onSe5();
     }
 
 
@@ -176,6 +176,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                         break;
 
                     case 2:
+
+                        m.onSe8();
                         //アイテムを取っていない
                         //アイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -209,6 +211,8 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                         break;
 
                     case 4:
+
+                        m.onSe8();
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                 }
