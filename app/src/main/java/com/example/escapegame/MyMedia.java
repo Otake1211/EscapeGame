@@ -21,6 +21,12 @@ public class MyMedia {
     int se7;
     int se8;
     int se9;
+    int se10;
+    int se11;
+    int se12;
+    int se13;
+    int se14;
+
 
     public void onCreate(Context context, int id) {
         mediaPlayer = MediaPlayer.create(context, id);
@@ -50,6 +56,14 @@ public class MyMedia {
         se7 = soundPool.load(context,R.raw.closeddrawer,1);
         se8 = soundPool.load(context,R.raw.rocker,1);
         se9 = soundPool.load(context,R.raw.key,1);
+        se10 = soundPool.load(context,R.raw.tin,1);
+        se11 = soundPool.load(context,R.raw.fit,1);
+        se12 = soundPool.load(context,R.raw.drawer,1);
+        se13 = soundPool.load(context,R.raw.slidedoor,1);
+        se14 = soundPool.load(context,R.raw.bomb2,2);
+
+
+
 
     }
 
@@ -62,6 +76,12 @@ public class MyMedia {
     public void onSe7(){soundPool.play(se7,1.0f,1.0f,0,0,1.0f);}
     public void onSe8(){soundPool.play(se8,1.0f,1.0f,0,0,1.0f);}
     public void onSe9(){soundPool.play(se9,1.0f,1.0f,0,0,1.0f);}
+    public void onSe10(){soundPool.play(se10,1.0f,1.0f,0,0,1.0f);}
+    public void onSe11(){soundPool.play(se11,1.0f,1.0f,0,0,1.0f);}
+    public void onSe12(){soundPool.play(se12,1.0f,1.0f,0,0,1.0f);}
+    public void onSe13(){soundPool.play(se13,1.0f,1.0f,0,0,1.0f);}
+    public void onSe14(){soundPool.play(se14,1.0f,1.0f,0,0,1.0f);}
+
 
     public void onResume() {
         mediaPlayer.start();

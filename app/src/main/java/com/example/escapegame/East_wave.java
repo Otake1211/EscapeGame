@@ -22,6 +22,8 @@ public class East_wave extends AppCompatActivity {
     int seleitem;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,8 @@ public class East_wave extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -67,6 +71,8 @@ public class East_wave extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -77,6 +83,8 @@ public class East_wave extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -106,6 +114,8 @@ public class East_wave extends AppCompatActivity {
                             //ケーブル付き画像に
                             backimage.setImageResource(R.drawable.south_rockerrighton);
 
+                            m.onSe7();
+
                             //アイテム削除
                             for (int i = selenum; i < 12; i++) {
 
@@ -118,8 +128,6 @@ public class East_wave extends AppCompatActivity {
 
                             //ボタンの画像読み込み
                             new btnload().refresh();
-
-                            //開けた効果音
 
                             editor.putInt("east_wave", 1).apply();
                         }
@@ -137,6 +145,8 @@ public class East_wave extends AppCompatActivity {
                                 editor.putInt("itembox" + i, lib.getInt("itembox" + (i + 1), 0)).apply();
                             }
 
+                            m.onSe7();
+
                             //手持ちのアイテム数を減らす
                             editor.putInt("itemboxnum", lib.getInt("itemboxnum", 0) - 1).apply();
 
@@ -151,6 +161,8 @@ public class East_wave extends AppCompatActivity {
                     case 2:
                         if (0 < xplace && 0 < yplace) {
                             //レンジの音
+                            m.onSe10();
+
                             editor.putInt("east_wave", 3).apply();
                             //ルビーの画像
                         }
@@ -176,6 +188,8 @@ public class East_wave extends AppCompatActivity {
 
                             //アイテムなしの画像
                             backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            m.onSe3();
 
                             //ボタンの画像読み込み
                             new btnload().refresh();
