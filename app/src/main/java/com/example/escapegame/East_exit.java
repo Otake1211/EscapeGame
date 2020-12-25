@@ -87,14 +87,7 @@ public class East_exit extends AppCompatActivity {
 
                 switch (envcount) {
                     case 0:
-                        Intent intent = new Intent(this, Endrool.class);
-                        startActivity(intent);
-                        finish();
 
-                        //アクティビティ遷移フェードイン
-                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-
-                        /*
                         // 開く操作
                         if (seleitem == R.drawable.item_boxkey) {
 
@@ -106,7 +99,7 @@ public class East_exit extends AppCompatActivity {
                             //ガチャガチャ効果音
                             m.onSe4();
                         }
-                         */
+
                         break;
 
                     case 1:
@@ -122,6 +115,13 @@ public class East_exit extends AppCompatActivity {
                         //脱出成功！！
                         m.onSe2();
                         m.onSe14();
+
+                        Intent intent = new Intent(this, Endrool.class);
+                        startActivity(intent);
+                        finish();
+
+                        //アクティビティ遷移フェードイン
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
                 break;
         }

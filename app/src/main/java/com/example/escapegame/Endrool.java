@@ -2,6 +2,7 @@ package com.example.escapegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -27,20 +28,25 @@ public class Endrool extends AppCompatActivity {
     ///    アニメーションリスナの登録
     private Animation.AnimationListener animationListener_endrool =
             new Animation.AnimationListener() {
-                @Override
+
+                @Override//アニメーションの開始時
                 public void onAnimationStart(Animation animation) {
-                    //    アニメーションの開始時
                 }
 
-                @Override
+                @Override//アニメーションの繰り返し時
                 public void onAnimationRepeat(Animation animation) {
-                    //    アニメーションの繰り返し時
                 }
 
-                @Override
+                @Override//アニメーションの終了時
                 public void onAnimationEnd(Animation animation) {
-                    //    アニメーションの終了時
-                    finish(); // スケジュールされるだけ
+
+                    Intent intent = new Intent(Endrool.this, MainActivity.class);
+                    startActivity(intent);
+
+                    //アクティビティ遷移フェードイン
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+                    finish();
                 }
             };
 }
