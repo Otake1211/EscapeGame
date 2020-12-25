@@ -16,21 +16,19 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class North_preparationroominside_rocer extends AppCompatActivity {
+public class North_prerockerin extends AppCompatActivity {
 
     int seleitem;
     int screenWidth;
     int screenHeight;
     int selenum;
-    int touchcount = 0;
-    int passcode;
 
     MyMedia m = new MyMedia();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_north_preparationroominside_rocer);
+        setContentView(R.layout.activity_north_prerockerin);
 
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
@@ -52,9 +50,9 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
         }
 
         //ボタンの画像読み込み
-        new btnload().refresh();
+        new  btnload().refresh();
 
-        m.onCreate(this, R.raw.mainbgm);
+        m.onCreate(this,R.raw.mainbgm);
     }
 
     public void onMain(View view) {
@@ -80,61 +78,6 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
     }
 
 
-    public void onPush1(View view) {
-        new pushpass().pushdown(1);
-    }
-
-    public void onPush2(View view) {
-        new pushpass().pushdown(2);
-    }
-
-    public void onPush3(View view) {
-        new pushpass().pushdown(3);
-    }
-
-    public void onPush4(View view) {
-        new pushpass().pushdown(4);
-    }
-
-    public void onPush5(View view) {
-        new pushpass().pushdown(5);
-    }
-
-    public void onPush6(View view) {
-        new pushpass().pushdown(6);
-    }
-
-    public void onPush7(View view) {
-        new pushpass().pushdown(7);
-    }
-
-    public void onPush8(View view) {
-        new pushpass().pushdown(8);
-    }
-
-    public void onPush9(View view) {
-        new pushpass().pushdown(9);
-    }
-
-    class pushpass {
-
-        public void pushdown(int prsnum) {
-            if (touchcount < 5) {
-
-                passcode = passcode * 10 + prsnum;
-                ((TextView) findViewById(R.id.passview)).setText(passcode + "");
-                touchcount++;
-
-            } else {
-
-                ((TextView) findViewById(R.id.passview)).setText(prsnum + "");
-                passcode = prsnum;
-                touchcount = 1;
-            }
-        }
-    }
-
-
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
 
@@ -155,33 +98,45 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
                 switch (envcount) {
 
                     case 0:
-                        if (passcode == 11111) {
 
-                            //開いた音
-                            editor.putInt("north_preparationroominside_rocker", 1).apply();
+                        m.onSe8();
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("north_preparationroominside_rocker", 1).apply();
 
-                            Intent intent = new Intent(this, North_prerockerin.class);
-                            startActivity(intent);
-                            finish();
-
-                            //アクティビティ遷移フェードイン
-                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
-                            m.onSe9();
-                        } else {
-                            m.onSe7();
-                        }
                         break;
 
                     case 1:
-                        //開ける操作
-                        Intent intent = new Intent(this, North_prerockerin.class);
-                        startActivity(intent);
-                        finish();
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("粉")
+                                    .setPositiveButton("OK", null).show();
 
-                        //アクティビティ遷移フェードイン
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
+                            editor.putInt("north_preparationroominside_rocker", 2).apply();
+
+                            m.onSe3();
+
+                            //ボタンの画像読み込み
+                            new  btnload().refresh();
+                        }
+
                         break;
+
+                    case 2:
+
+                        m.onSe8();
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
                 }
                 break;
         }
@@ -190,59 +145,59 @@ public class North_preparationroominside_rocer extends AppCompatActivity {
 
 
     public void onitem1(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton1, "itembox1", 1);
+        new  itemsele().itemselefun(view,R.id.itembutton1,"itembox1",1);
     }
 
     public void onitem2(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton2, "itembox2", 2);
+        new  itemsele().itemselefun(view,R.id.itembutton2,"itembox2",2);
     }
 
     public void onitem3(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton3, "itembox3", 3);
+        new  itemsele().itemselefun(view,R.id.itembutton3,"itembox3",3);
     }
 
     public void onitem4(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton4, "itembox4", 4);
+        new  itemsele().itemselefun(view,R.id.itembutton4,"itembox4",4);
     }
 
     public void onitem5(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton5, "itembox5", 5);
+        new  itemsele().itemselefun(view,R.id.itembutton5,"itembox5",5);
     }
 
     public void onitem6(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton6, "itembox6", 6);
+        new  itemsele().itemselefun(view,R.id.itembutton6,"itembox6",6);
     }
 
     public void onitem7(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton7, "itembox7", 7);
+        new  itemsele().itemselefun(view,R.id.itembutton7,"itembox7",7);
     }
 
     public void onitem8(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton8, "itembox8", 8);
+        new  itemsele().itemselefun(view,R.id.itembutton8,"itembox8",8);
     }
 
     public void onitem9(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton9, "itembox9", 9);
+        new  itemsele().itemselefun(view,R.id.itembutton9,"itembox9",9);
     }
 
     public void onitem10(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton10, "itembox10", 10);
+        new  itemsele().itemselefun(view,R.id.itembutton10,"itembox10",10);
     }
 
     public void onitem11(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton11, "itembox11", 11);
+        new  itemsele().itemselefun(view,R.id.itembutton11,"itembox11",11);
     }
 
     public void onitem12(View view) {
-        new itemsele().itemselefun(view, R.id.itembutton12, "itembox12", 12);
+        new  itemsele().itemselefun(view,R.id.itembutton12,"itembox12",12);
     }
 
 
     class itemsele {
-        public void itemselefun(View view, int seleId, String selebox, int slnum) {
+        public void itemselefun (View view, int seleId, String selebox, int slnum) {
 
             //他のボタンを使えるようにする
-            new otherable().reable(view);
+            new  otherable().reable(view);
 
             //このボタンを使えないようにする
             ImageButton imageButton = findViewById(seleId);
