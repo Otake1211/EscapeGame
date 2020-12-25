@@ -13,6 +13,7 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -21,9 +22,6 @@ import static android.view.View.SYSTEM_UI_FLAG_FULLSCREEN;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    int screenWidth;
-    int screenHeight;
 
     MyMedia m = new MyMedia();
 
@@ -36,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
         }
+
         // スプラッシュthemeを通常themeに変更する
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
@@ -46,15 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
-        Display disp = wm.getDefaultDisplay();
-        Point size = new Point();
-        disp.getSize(size);
-        screenWidth = size.x;
-        screenHeight = size.y;
-
-        m.onCreate(this,R.raw.mainbgm);
+        m.onCreate(this, R.raw.mainbgm);
     }
 
     @Override
@@ -83,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         m.onSe1();
     }
@@ -94,39 +85,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         m.onSe1();
-
     }
-
-
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-
-        int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
-        int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
-
-        switch (motionEvent.getAction()) {
-
-            case MotionEvent.ACTION_DOWN: //タップしたとき
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("(" + xplace + "," + yplace + ")")
-                        .setPositiveButton("OK", null).show();
-                break;
-
-            case MotionEvent.ACTION_UP:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                // something to do
-                break;
-
-            case MotionEvent.ACTION_CANCEL:
-                // something to do
-                break;
-        }
-        return false;
-    }
-
 }

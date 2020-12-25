@@ -12,16 +12,15 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class East_exit extends AppCompatActivity {
+public class North_prerockerin extends AppCompatActivity {
 
+    int seleitem;
     int screenWidth;
     int screenHeight;
-    int seleitem;
     int selenum;
 
     MyMedia m = new MyMedia();
@@ -29,7 +28,7 @@ public class East_exit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_east_exit);
+        setContentView(R.layout.activity_north_prerockerin);
 
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
@@ -38,8 +37,20 @@ public class East_exit extends AppCompatActivity {
         screenWidth = size.x;
         screenHeight = size.y;
 
+        // ファイルの準備
+        SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
+
+        // データの読込
+        int envcount = lib.getInt("north_preparationroominside_rocker", 0);
+
+        //背景画像の場合分け
+        ImageView backimage = ((ImageView) findViewById(R.id.backimage));
+        if (envcount == 1) {
+            backimage.setImageResource(R.drawable.north_jyunbisiturocker2);
+        }
+
         //ボタンの画像読み込み
-        new btnload().refresh();
+        new  btnload().refresh();
 
         m.onCreate(this,R.raw.mainbgm);
     }
@@ -50,33 +61,32 @@ public class East_exit extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         m.onSe1();
     }
 
-
-    public void onEast(View view) {
-        Intent intent = new Intent(this, East.class);
+    public void onPreparationroom(View view) {
+        Intent intent = new Intent(this, North_preparetionroominside.class);
         startActivity(intent);
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-        m.onSe2();
+        m.onSe5();
     }
 
 
+    @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
-
 
         //タップしたとき
         int xplace = (int) (motionEvent.getX() * 1000 / screenWidth);
         int yplace = (int) (motionEvent.getY() * 2000 / screenHeight);
 
         SharedPreferences lib = getSharedPreferences("game_data", MODE_PRIVATE);
-        int envcount = lib.getInt("east_exit", 0);
+        int envcount = lib.getInt("north_preparationroominside_rocker", 0);
         SharedPreferences.Editor editor = lib.edit();
 
         ImageView backimage = ((ImageView) findViewById(R.id.backimage));
@@ -86,42 +96,47 @@ public class East_exit extends AppCompatActivity {
             case MotionEvent.ACTION_DOWN: //タップしたとき
 
                 switch (envcount) {
+
                     case 0:
-                        Intent intent = new Intent(this, Endrool.class);
-                        startActivity(intent);
-                        finish();
 
-                        //アクティビティ遷移フェードイン
-                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                        m.onSe8();
+                        //アイテムを取っていない
+                        //アイテム有の画像
+                        backimage.setImageResource(R.drawable.south_rockerrighton);
+                        editor.putInt("north_preparationroominside_rocker", 1).apply();
 
-                        /*
-                        // 開く操作
-                        if (seleitem == R.drawable.item_boxkey) {
-
-                            //開けた効果音
-                            m.onSe6();
-                            editor.putInt("east_box", 1).apply();
-                            backimage.setImageResource(R.drawable.south_rockerrighton);
-                        } else {
-                            //ガチャガチャ効果音
-                            m.onSe4();
-                        }
-                         */
                         break;
 
                     case 1:
-                        //ドアを開ける
-                        m.onSe13();
-                        //ドアを開けた画像
+                        //アイテムをタッチ
+                        if (0 < xplace && 0 < yplace) {
+                            AlertDialog.Builder siyaku = new AlertDialog.Builder(this);
+                            siyaku.setMessage("粉")
+                                    .setPositiveButton("OK", null).show();
 
-                        backimage.setImageResource(R.drawable.south_rockerrightoff);
-                        editor.putInt("east_exit", 2).apply();
+                            //アイテムなしの画像に
+                            backimage.setImageResource(R.drawable.south_rockerrightoff);
+
+                            //アイテム欄に追加と背景変更の保存
+                            int itemboxnum = lib.getInt("itemboxnum", 0);
+                            itemboxnum++;
+                            editor.putInt("itemboxnum", itemboxnum).apply();
+                            editor.putInt("itembox" + itemboxnum, R.drawable.item_rubymaterial).apply();
+                            editor.putInt("north_preparationroominside_rocker", 2).apply();
+
+                            m.onSe3();
+
+                            //ボタンの画像読み込み
+                            new  btnload().refresh();
+                        }
+
                         break;
 
                     case 2:
-                        //脱出成功！！
-                        m.onSe2();
-                        m.onSe14();
+
+                        m.onSe8();
+                        //アイテムなしの画像
+                        backimage.setImageResource(R.drawable.south_rockerrightoff);
                 }
                 break;
         }
@@ -129,53 +144,52 @@ public class East_exit extends AppCompatActivity {
     }
 
 
-
     public void onitem1(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton1,"itembox1",1);
+        new  itemsele().itemselefun(view,R.id.itembutton1,"itembox1",1);
     }
 
     public void onitem2(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton2,"itembox2",2);
+        new  itemsele().itemselefun(view,R.id.itembutton2,"itembox2",2);
     }
 
     public void onitem3(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton3,"itembox3",3);
+        new  itemsele().itemselefun(view,R.id.itembutton3,"itembox3",3);
     }
 
     public void onitem4(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton4,"itembox4",4);
+        new  itemsele().itemselefun(view,R.id.itembutton4,"itembox4",4);
     }
 
     public void onitem5(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton5,"itembox5",5);
+        new  itemsele().itemselefun(view,R.id.itembutton5,"itembox5",5);
     }
 
     public void onitem6(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton6,"itembox6",6);
+        new  itemsele().itemselefun(view,R.id.itembutton6,"itembox6",6);
     }
 
     public void onitem7(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton7,"itembox7",7);
+        new  itemsele().itemselefun(view,R.id.itembutton7,"itembox7",7);
     }
 
     public void onitem8(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton8,"itembox8",8);
+        new  itemsele().itemselefun(view,R.id.itembutton8,"itembox8",8);
     }
 
     public void onitem9(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton9,"itembox9",9);
+        new  itemsele().itemselefun(view,R.id.itembutton9,"itembox9",9);
     }
 
     public void onitem10(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton10,"itembox10",10);
+        new  itemsele().itemselefun(view,R.id.itembutton10,"itembox10",10);
     }
 
     public void onitem11(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton11,"itembox11",11);
+        new  itemsele().itemselefun(view,R.id.itembutton11,"itembox11",11);
     }
 
     public void onitem12(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton12,"itembox12",12);
+        new  itemsele().itemselefun(view,R.id.itembutton12,"itembox12",12);
     }
 
 
@@ -183,7 +197,7 @@ public class East_exit extends AppCompatActivity {
         public void itemselefun (View view, int seleId, String selebox, int slnum) {
 
             //他のボタンを使えるようにする
-            new otherable().reable(view);
+            new  otherable().reable(view);
 
             //このボタンを使えないようにする
             ImageButton imageButton = findViewById(seleId);
@@ -198,6 +212,7 @@ public class East_exit extends AppCompatActivity {
             selenum = slnum;
         }
     }
+
 
     class otherable {
 
