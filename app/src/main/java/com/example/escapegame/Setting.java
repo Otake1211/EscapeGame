@@ -9,11 +9,32 @@ import android.view.View;
 
 public class Setting extends AppCompatActivity {
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        m.onCreate(this,R.raw.bgm);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        m.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        m.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        m.onDestroy();
     }
 
     public void onMain(View view) {
@@ -71,6 +92,8 @@ public class Setting extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        m.onSe1();
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);

@@ -21,6 +21,8 @@ public class West_scale extends AppCompatActivity {
     int screenHeight;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,8 @@ public class West_scale extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.bgm);
     }
 
     public void onMain(View view) {
@@ -56,6 +60,8 @@ public class West_scale extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -66,6 +72,8 @@ public class West_scale extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -89,6 +97,7 @@ public class West_scale extends AppCompatActivity {
                 if (envcount == 0 && seleitem == R.drawable.item_goldkey) {
 
                     //効果音と画像
+                    m.onSe6();
                     editor.putInt("west_drawerleft", 1).apply();
 
                 }

@@ -12,6 +12,8 @@ public class Endrool extends AppCompatActivity {
     private TextView textView;
     private Animation animationEndrool;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,26 @@ public class Endrool extends AppCompatActivity {
 
         textView = (TextView) this.findViewById(R.id.textView);
         textView.startAnimation(animationEndrool);
+
+        m.onCreate(this,R.raw.ending);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        m.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        m.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        m.onDestroy();
     }
 
     ///    アニメーションリスナの登録

@@ -26,6 +26,7 @@ public class MyMedia {
     int se12;
     int se13;
     int se14;
+    int se15;
 
 
     public void onCreate(Context context, int id) {
@@ -49,7 +50,7 @@ public class MyMedia {
 
         se1 = soundPool.load(context,R.raw.decision33,1);
         se2 = soundPool.load(context,R.raw.foot,1);
-        se3 = soundPool.load(context,R.raw.decision2,1);
+        se3 = soundPool.load(context,R.raw.decision4,1);
         se4 = soundPool.load(context,R.raw.closeddoor,1);
         se5 = soundPool.load(context,R.raw.enter,1);
         se6 = soundPool.load(context,R.raw.key2,1);
@@ -60,7 +61,8 @@ public class MyMedia {
         se11 = soundPool.load(context,R.raw.fit,1);
         se12 = soundPool.load(context,R.raw.drawer,1);
         se13 = soundPool.load(context,R.raw.slidedoor,1);
-        se14 = soundPool.load(context,R.raw.bomb2,2);
+        se14 = soundPool.load(context,R.raw.decision31,1);
+        se15 = soundPool.load(context,R.raw.water,1);
 
 
 
@@ -81,7 +83,7 @@ public class MyMedia {
     public void onSe12(){soundPool.play(se12,1.0f,1.0f,0,0,1.0f);}
     public void onSe13(){soundPool.play(se13,1.0f,1.0f,0,0,1.0f);}
     public void onSe14(){soundPool.play(se14,1.0f,1.0f,0,0,1.0f);}
-
+    public void onSe15(){soundPool.play(se15,1.0f,1.0f,0,0,1.0f);}
 
     public void onResume() {
         mediaPlayer.start();

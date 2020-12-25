@@ -22,6 +22,8 @@ public class South_saferight extends AppCompatActivity {
     int seleitem;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,8 @@ public class South_saferight extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.bgm);
     }
 
     public void onMain(View view) {
@@ -45,6 +49,8 @@ public class South_saferight extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -55,6 +61,8 @@ public class South_saferight extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -94,14 +102,18 @@ public class South_saferight extends AppCompatActivity {
                             new btnload().refresh();
 
                             //開けた効果音
+
+                            m.onSe9();
                             editor.putInt("south_saferight", 1).apply();
 
                         } else {
                             //ガチャガチャ効果音
+                            m.onSe7();
                         }
                         break;
 
                     case 1:
+                        m.onSe8();
                         //アイテムを取っていない
                         //アイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -127,10 +139,12 @@ public class South_saferight extends AppCompatActivity {
 
                             //ボタンの画像読み込み
                             new btnload().refresh();
+                            m.onSe3();
                         }
                         break;
 
                     case 3:
+                        m.onSe8();
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;

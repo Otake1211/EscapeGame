@@ -26,6 +26,8 @@ public class South_safeleft extends AppCompatActivity {
     int selenum;
     int passcode = 0;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ public class South_safeleft extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.bgm);
     }
 
     public void onMain(View view) {
@@ -49,6 +53,8 @@ public class South_safeleft extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -59,6 +65,8 @@ public class South_safeleft extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -141,13 +149,17 @@ public class South_safeleft extends AppCompatActivity {
                         if (passcode == 11111) {
                             editor.putInt("south_safeleft", 1).apply();
                             //開けた効果音
+                            m.onSe6();
+
                         } else {
                             //ガチャガチャ音
+                            m.onSe7();
                         }
                         break;
 
                     case 1:
                         //取っていないアイテム有の画像
+                        m.onSe8();
                         backimage.setImageResource(R.drawable.south_rockerrighton);
                         editor.putInt("south_safeleft", 2).apply();
                         break;
@@ -169,12 +181,15 @@ public class South_safeleft extends AppCompatActivity {
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_rockedousui).apply();
                             editor.putInt("south_safeleft", 3).apply();
 
+                            m.onSe3();
+
                             //ボタンの画像読み込み
                             new btnload().refresh();
                         }
                         break;
 
                     case 3:
+                        m.onSe8();
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;

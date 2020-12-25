@@ -34,7 +34,7 @@ public class North_experiment extends AppCompatActivity {
         ((ImageView) findViewById(R.id.rightbutton)).setImageResource(lib.getInt("rightbutton", R.drawable.clear));
         ((ImageView) findViewById(R.id.leftbutton)).setImageResource(lib.getInt("leftbutton", R.drawable.clear));
 
-        m.onCreate(this,R.raw.mainbgm);
+        m.onCreate(this,R.raw.bgm);
     }
 
 
@@ -109,7 +109,7 @@ public class North_experiment extends AppCompatActivity {
                 ((ImageView) findViewById(R.id.rightbutton)).setImageResource(R.drawable.clear);
                 editor.putInt("rightbutton", R.drawable.clear).apply();
 
-                m.onSe3();
+                m.onSe14();
 
             } else {
 
@@ -134,7 +134,7 @@ public class North_experiment extends AppCompatActivity {
 
                 seleitem = 0;
 
-                m.onSe3();
+                m.onSe14();
             }
 
         }
@@ -170,7 +170,7 @@ public class North_experiment extends AppCompatActivity {
 
                 seleitem = 0;
 
-                m.onSe3();
+                m.onSe14();
             }
 
         } else {
@@ -190,7 +190,7 @@ public class North_experiment extends AppCompatActivity {
                 editor.putInt("leftbutton", R.drawable.clear).apply();
 
 
-                m.onSe3();
+                m.onSe14();
 
             } else {
 
@@ -215,7 +215,7 @@ public class North_experiment extends AppCompatActivity {
 
                 seleitem = 0;
 
-                m.onSe3();
+                m.onSe14();
             }
 
         }
@@ -231,6 +231,9 @@ public class North_experiment extends AppCompatActivity {
         int leftitem = lib.getInt("leftbutton", R.drawable.clear);
 
         if ((rightitem == R.drawable.clear ) || (leftitem == R.drawable.clear )) {
+
+            m.onSe14();
+
             new AlertDialog.Builder(North_experiment.this).setMessage("上の欄にアイテムを入れてね。\nアイテムを選択した後、四角をタップするとアイテムが入るよ。").setPositiveButton("OK", null).show();
         }
 

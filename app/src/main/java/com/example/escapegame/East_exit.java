@@ -41,7 +41,7 @@ public class East_exit extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
-        m.onCreate(this,R.raw.mainbgm);
+        m.onCreate(this,R.raw.bgm);
     }
 
     public void onMain(View view) {
@@ -120,8 +120,8 @@ public class East_exit extends AppCompatActivity {
 
                     case 2:
                         //脱出成功！！
-                        m.onSe2();
-                        m.onSe14();
+                        m.onDestroy();
+
                 }
                 break;
         }

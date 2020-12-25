@@ -25,6 +25,8 @@ public class West_drawerright extends AppCompatActivity {
     int lfnum = 0;
     int rinum = 0;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ public class West_drawerright extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
+        m.onCreate(this,R.raw.bgm);
+
         //数字表示
         ((TextView) findViewById(R.id.lfnum)).setText("0");
         ((TextView) findViewById(R.id.rinum)).setText("0");
@@ -52,6 +56,8 @@ public class West_drawerright extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -62,6 +68,8 @@ public class West_drawerright extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -134,15 +142,18 @@ public class West_drawerright extends AppCompatActivity {
                         // 開く操作
                         if ((rinum == 1) && (lfnum == 1)) {
 
-                            //開けた効果音zzzz
+                            //開けた効果音
+                            m.onSe6();
                             editor.putInt("west_drawerright", 1).apply();
 
                         } else {
+                            m.onSe7();
                             //ガチャガチャ効果音
                         }
                         break;
 
                     case 1:
+                        m.onSe8();
                         //アイテムを取っていない
                         //アイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -166,12 +177,15 @@ public class West_drawerright extends AppCompatActivity {
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_cutter).apply();
                             editor.putInt("west_drawerright", 3).apply();
 
+                            m.onSe3();
+
                             //ボタンの画像読み込み
                             new btnload().refresh();
                         }
                         break;
 
                     case 3:
+                        m.onSe8();
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;

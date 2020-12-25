@@ -22,6 +22,8 @@ public class West_flask extends AppCompatActivity {
     int screenHeight;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,8 @@ public class West_flask extends AppCompatActivity {
             backimage.setImageResource(R.drawable.south_rockerrighton);
         }
 
+        m.onCreate(this,R.raw.bgm);
+
         //ボタンの画像読み込み
         new btnload().refresh();
     }
@@ -56,6 +60,8 @@ public class West_flask extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -66,6 +72,8 @@ public class West_flask extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
 
@@ -92,6 +100,7 @@ public class West_flask extends AppCompatActivity {
                         if (seleitem == R.drawable.item_ammonia) {
 
                             //開けた効果音
+                            m.onSe15();
 
                             //アイテムを取っていない,アイテム有の画像
                             backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -100,7 +109,9 @@ public class West_flask extends AppCompatActivity {
                             editor.putInt("west_flask", 1).apply();
 
                         } else {
-                            //ガチャガチャ効果音
+                            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                            builder.setMessage("白い溶液だ。")
+                                    .setPositiveButton("OK", null).show();
                         }
                         break;
 
@@ -132,6 +143,8 @@ public class West_flask extends AppCompatActivity {
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_sapphire).apply();
                             editor.putInt("west_flask", 3).apply();
 
+                            m.onSe3();
+
                             //ボタンの画像読み込み
                             new btnload().refresh();
 
@@ -141,6 +154,10 @@ public class West_flask extends AppCompatActivity {
                             reimageButton.setColorFilter(null);
 
                             editor.putInt("west_flask", 2).apply();
+                        }else{
+                            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                            builder.setMessage("素手で取るのはやめておこう。")
+                                    .setPositiveButton("OK", null).show();
                         }
                         break;
 

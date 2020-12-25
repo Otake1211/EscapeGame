@@ -55,10 +55,27 @@ public class North extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
-        m.onCreate(this,R.raw.mainbgm);
+        m.onCreate(this,R.raw.bgm);
         ///////////////////////////////↑流したいBGM
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        m.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        m.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        m.onDestroy();
+    }
 
     public void onMain(View view) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -95,6 +112,7 @@ public class North extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
         m.onSe2();
+
     }
 
 
@@ -157,6 +175,7 @@ public class North extends AppCompatActivity {
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
                     m.onSe2();
+
                 }
 
                 break;

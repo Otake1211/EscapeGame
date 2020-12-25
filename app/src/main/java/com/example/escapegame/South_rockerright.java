@@ -22,6 +22,8 @@ public class South_rockerright extends AppCompatActivity {
     int seleitem;
     int selenum;
 
+    MyMedia m = new MyMedia();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,8 @@ public class South_rockerright extends AppCompatActivity {
 
         //ボタンの画像読み込み
         new btnload().refresh();
+
+        m.onCreate(this,R.raw.bgm);
     }
 
     public void onMain(View view) {
@@ -45,6 +49,8 @@ public class South_rockerright extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe1();
     }
 
 
@@ -55,6 +61,8 @@ public class South_rockerright extends AppCompatActivity {
 
         //アクティビティ遷移フェードイン
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+
+        m.onSe2();
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
@@ -78,10 +86,12 @@ public class South_rockerright extends AppCompatActivity {
                     case 0:
                         // 開く操作
                         //開けた効果音
+                        m.onSe8();
                         editor.putInt("south_rockerright", 1).apply();
                         break;
 
                     case 1:
+                        m.onSe8();
                         //アイテムを取っていない
                         //アイテム有の画像
                         backimage.setImageResource(R.drawable.south_rockerrighton);
@@ -105,12 +115,16 @@ public class South_rockerright extends AppCompatActivity {
                             editor.putInt("itembox" + itemboxnum, R.drawable.item_pipette).apply();
                             editor.putInt("south_rockerright", 3).apply();
 
+                            m.onSe3();
+
                             //ボタンの画像読み込み
                             new btnload().refresh();
                         }
                         break;
 
                     case 3:
+                        m.onSe8();
+
                         //アイテムなしの画像
                         backimage.setImageResource(R.drawable.south_rockerrightoff);
                         break;

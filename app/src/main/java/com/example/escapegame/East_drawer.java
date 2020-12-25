@@ -39,7 +39,7 @@ public class East_drawer extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
-        m.onCreate(this,R.raw.mainbgm);
+        m.onCreate(this,R.raw.bgm);
     }
 
     public void onMain(View view) {
