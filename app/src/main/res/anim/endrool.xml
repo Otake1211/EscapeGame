@@ -5,7 +5,7 @@
     android:fillEnabled="true"
     android:shareInterpolator="true">
     <translate
-        android:duration="30000"
-        android:fromYDelta="100%p"
-        android:toYDelta="-100%p" />
+        android:duration="20000"
+        android:fromYDelta="-10%"
+        android:toYDelta="-60%" />
 </set>

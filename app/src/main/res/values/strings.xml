@@ -1,33 +1,33 @@
 <resources>
     <string name="app_name">EscapeGame</string>
     <string name="endrool">
-        Endrool
+        <font size="50">Endrool</font>
+
 \n
 \n
 \n
 \n
 \n
 \n
-\n[Making Staff]
+\n<font size="50">Making Staff</font>
 \n
 \n
 \n
 \n
+\n<font size="50">TOYU</font>
 \n
-\n
-\nSound Otake
-\n
-\n
-\n
+\nProduce Coding
 \n
 \n
 \n
 \n
+\n<font size="50">OTAKE</font>
+\n
+\nBGM  Story
+\nBackground image
 \n
 \n
-\n<b>Decembers\' products</b>
+\n<font size="50">Decembers\' products</font>
 \n
-\n
-\nTHE END
 	</string>
 </resources>
