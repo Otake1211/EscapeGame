@@ -96,8 +96,6 @@ public class North extends AppCompatActivity {
 
         // Step 3 - Get adaptive ad size and return for setting on the ad view.
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
-
-        ///////////////////////////////↑流したいBGM
     }
 
     @Override
