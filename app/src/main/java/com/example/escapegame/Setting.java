@@ -16,8 +16,12 @@ public class Setting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        m.onCreate(this,R.raw.bgm);
+        m.onCreate(this, R.raw.bgm);
+
+
     }
+
+
 
     @Override
     protected void onResume() {
@@ -93,9 +97,9 @@ public class Setting extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        m.onSe1();
-
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        m.onSe1();
     }
 }

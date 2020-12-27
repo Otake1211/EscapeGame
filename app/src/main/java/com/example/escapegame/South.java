@@ -9,10 +9,17 @@ import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -20,6 +27,8 @@ public class South extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
+    private AdView adView;
+    private FrameLayout adContainerView;
     int seleitem;
     int selenum;
 
@@ -53,7 +62,44 @@ public class South extends AppCompatActivity {
         //ボタンの画像読み込み
         new btnload().refresh();
 
-        m.onCreate(this,R.raw.mainbgm);
+        m.onCreate(this, R.raw.mainbgm);
+
+        adContainerView = findViewById(R.id.ad_view_container);
+        // Step 1 - Create an AdView and set the ad unit ID on it.
+        adView = new AdView(this);
+        adView.setAdUnitId(getString(R.string.adaptive_banner_ad_unit_id));
+        adContainerView.addView(adView);
+        loadBanner();
+    }
+
+    private void loadBanner() {
+        // Create an ad request. Check your logcat output for the hashed device ID
+        // to get test ads on a physical device, e.g.,
+        // "Use AdRequest.Builder.addTestDevice("ABCDE0123") to get test ads on this
+        // device."
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        AdSize adSize = getAdSize();
+        // Step 4 - Set the adaptive ad size on the ad view.
+        adView.setAdSize(adSize);
+
+        // Step 5 - Start loading the ad in the background.
+        adView.loadAd(adRequest);
+    }
+
+    private AdSize getAdSize() {
+        // Step 2 - Determine the screen width (less decorations) to use for the ad width.
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float widthPixels = outMetrics.widthPixels;
+        float density = outMetrics.density;
+
+        int adWidth = (int) (widthPixels / density);
+
+        // Step 3 - Get adaptive ad size and return for setting on the ad view.
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
     }
 
 
@@ -63,7 +109,7 @@ public class South extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         m.onSe1();
     }
@@ -75,7 +121,7 @@ public class South extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         m.onSe2();
     }
@@ -87,7 +133,7 @@ public class South extends AppCompatActivity {
         finish();
 
         //アクティビティ遷移フェードイン
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         m.onSe2();
     }
@@ -141,7 +187,7 @@ public class South extends AppCompatActivity {
                     finish();
 
                     //アクティビティ遷移フェードイン
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                     m.onSe2();
                 }
@@ -153,7 +199,7 @@ public class South extends AppCompatActivity {
                     finish();
 
                     //アクティビティ遷移フェードイン
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                     m.onSe2();
                 }
@@ -165,7 +211,7 @@ public class South extends AppCompatActivity {
                     finish();
 
                     //アクティビティ遷移フェードイン
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                     m.onSe2();
                 }
@@ -177,7 +223,7 @@ public class South extends AppCompatActivity {
                     finish();
 
                     //アクティビティ遷移フェードイン
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                     m.onSe2();
                 }
@@ -188,58 +234,57 @@ public class South extends AppCompatActivity {
     }
 
 
-
     public void onitem1(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton1,"itembox1",1);
+        new itemsele().itemselefun(view, R.id.itembutton1, "itembox1", 1);
     }
 
     public void onitem2(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton2,"itembox2",2);
+        new itemsele().itemselefun(view, R.id.itembutton2, "itembox2", 2);
     }
 
     public void onitem3(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton3,"itembox3",3);
+        new itemsele().itemselefun(view, R.id.itembutton3, "itembox3", 3);
     }
 
     public void onitem4(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton4,"itembox4",4);
+        new itemsele().itemselefun(view, R.id.itembutton4, "itembox4", 4);
     }
 
     public void onitem5(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton5,"itembox5",5);
+        new itemsele().itemselefun(view, R.id.itembutton5, "itembox5", 5);
     }
 
     public void onitem6(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton6,"itembox6",6);
+        new itemsele().itemselefun(view, R.id.itembutton6, "itembox6", 6);
     }
 
     public void onitem7(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton7,"itembox7",7);
+        new itemsele().itemselefun(view, R.id.itembutton7, "itembox7", 7);
     }
 
     public void onitem8(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton8,"itembox8",8);
+        new itemsele().itemselefun(view, R.id.itembutton8, "itembox8", 8);
     }
 
     public void onitem9(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton9,"itembox9",9);
+        new itemsele().itemselefun(view, R.id.itembutton9, "itembox9", 9);
     }
 
     public void onitem10(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton10,"itembox10",10);
+        new itemsele().itemselefun(view, R.id.itembutton10, "itembox10", 10);
     }
 
     public void onitem11(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton11,"itembox11",11);
+        new itemsele().itemselefun(view, R.id.itembutton11, "itembox11", 11);
     }
 
     public void onitem12(View view) {
-        new itemsele().itemselefun(view,R.id.itembutton12,"itembox12",12);
+        new itemsele().itemselefun(view, R.id.itembutton12, "itembox12", 12);
     }
 
 
     class itemsele {
-        public void itemselefun (View view, int seleId, String selebox, int slnum) {
+        public void itemselefun(View view, int seleId, String selebox, int slnum) {
 
             //他のボタンを使えるようにする
             new otherable().reable(view);

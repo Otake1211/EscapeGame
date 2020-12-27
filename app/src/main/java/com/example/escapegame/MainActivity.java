@@ -16,6 +16,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
+import com.google.android.gms.ads.AdView;
+
+import android.widget.FrameLayout;
+
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -32,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     int screenWidth;
     int screenHeight;
-
-    MyMedia m = new MyMedia();
     private AdView adView;
     private FrameLayout adContainerView;
+
+    MyMedia m = new MyMedia();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
         m.onCreate(this, R.raw.mainbgm);
 
 
-
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) { }
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
         });
 
         adContainerView = findViewById(R.id.ad_view_container);

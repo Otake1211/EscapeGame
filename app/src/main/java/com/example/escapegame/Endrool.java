@@ -26,7 +26,7 @@ public class Endrool extends AppCompatActivity {
         textView = (TextView) this.findViewById(R.id.textView);
         textView.startAnimation(animationEndrool);
 
-        m.onCreate(this,R.raw.ending);
+        m.onCreate(this, R.raw.ending);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class Endrool extends AppCompatActivity {
                     startActivity(intent);
 
                     //アクティビティ遷移フェードイン
-                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                     finish();
                 }
