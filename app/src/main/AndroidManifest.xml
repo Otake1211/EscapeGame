@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EscapeGame">
-        <activity android:name=".North_prerockerin"></activity>
-        <activity android:name=".South_safeleftin" />
-        <activity android:name=".Endrool" />
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
-
+        <activity
+            android:name=".North_prerockerin"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".South_safeleftin"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Endrool"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".North_experiment"
             android:screenOrientation="portrait" />
@@ -90,6 +92,11 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
+
+            <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
